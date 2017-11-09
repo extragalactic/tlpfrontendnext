@@ -1,0 +1,32 @@
+{
+  "plugins": [
+    "inline-react-svg",
+    [
+      "module-resolver", {
+        "root": ["."],
+        "alias": {
+          "styles": "./components/chat/styles"
+        },
+        "cwd": "babelrc"
+    }],
+    [
+      "wrap-in-js",
+      {
+        "extensions": ["css$", "scss$"]
+      }
+    ],
+    ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ],
+    [
+      "transform-assets-import-to-string",
+      {
+        "baseDir": "./components/chat/assets",
+        "baseUri": "./components/chat/assets"
+      }
+    ]
+  ],
+  "presets": [
+    "next/babel"
+  ],
+  "ignore": []
+}
+    
