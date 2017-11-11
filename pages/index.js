@@ -132,6 +132,7 @@ class Index extends Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <GlobalStyles>
         <TopBar/>
+        <MainPage />
         <Footer/>
         </GlobalStyles>
       </MuiThemeProvider>

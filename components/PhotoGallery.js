@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import FlatButton from 'material-ui/FlatButton';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import MediaQuery from 'react-responsive';
-// import Axios from 'axios';
+import fetch from 'isomorphic-fetch';
 import GalleryImage from './GalleryImage';
 import GalleryDetail from './GalleryDetail';
+
 
 const StyledGallery = styled.section`
   width: 100%;

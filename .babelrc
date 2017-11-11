@@ -1,5 +1,6 @@
 {
   "plugins": [
+    "inline-dotenv",
     "inline-react-svg",
     [
       "module-resolver", {
@@ -19,8 +20,8 @@
     [
       "transform-assets-import-to-string",
       {
-        "baseDir": "./components/chat/assets",
-        "baseUri": "./components/chat/assets"
+        "baseDir": "images",
+        "baseUri": "/"
       }
     ]
   ],
@@ -28,5 +29,8 @@
     "next/babel"
   ],
   "ignore": []
+
 }
-    
+
+
+

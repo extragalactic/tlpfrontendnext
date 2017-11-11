@@ -6,7 +6,6 @@ import AriaModal from 'react-aria-modal';
 import SlideShow from 'react-slick';
 import IconButton from 'material-ui/IconButton';
 import CloseIcon from 'material-ui/svg-icons/navigation/cancel';
-import Ionicon from 'react-ionicons';
 
 
 const styles = {
@@ -118,7 +117,6 @@ const GalleryDetail = (props) => {
 
           <div style={modalHeader}>
             <button onClick={() => { props.closeModal(); }} style={{ cursor: 'pointer', width: '55px', height: '55px' }} >
-              <Ionicon icon="ion-close-circled" fontSize="35px" color="#c00" />
             </button>
           </div>
         </div>
@@ -127,6 +125,9 @@ const GalleryDetail = (props) => {
   );
 };
 /*
+
+<Ionicon icon="ion-close-circled" fontSize="35px" color="#c00" />
+
             <RaisedButton
               label="return"
               secondary

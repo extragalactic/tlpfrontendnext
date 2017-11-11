@@ -6,8 +6,8 @@ import MediaQuery from 'react-responsive';
 import TestimonialCard from './TestimonialCard';
 import TestimonialData from './TestimonialData';
 
+/* eslint-disable */
 
-//const google = window.google;
 
 const StyledTestimonials = styled.section`
   width: 100%;
@@ -27,32 +27,21 @@ class Testimonials extends React.Component {
 
   componentWillMount() {
     // get testimonials from Google reviews API
-    const service = new google.maps.places.PlacesService(document.createElement('div'));
-    service.getDetails({
-      placeId: 'ChIJ74NmW2vTKogRAVn6jOwdYUI',
-    }, (place, status) => {
-      // map the Google testimonials into an array
-      if (status === google.maps.places.PlacesServiceStatus.OK) {
-        const testimonials = place.reviews.filter((review) => {
-          return review.text.length > 30; // filter out one-liner comments
-        }).map((review) => {
-          return {
-            title: '',
-            text: review.text,
-            name: review.author_name,
-            stars: review.rating,
-            location: '',
-          };
-        });
-        // append old (static) testimonials to the returned array
-        this.oldTestimonials.forEach((review) => {
-          testimonials.push(review);
-        });
-        this.numberTotal = testimonials.length;
-        this.setState({
-          testimonials,
-        });
-      }
+    fetch('https://tlpm.ca/reviews')
+    .then((response) => {
+      return response.json();
+    })
+    .then((reviews) => {
+       const testimonials = reviews.filter((rev) => {
+         return rev  
+       })    
+       this.oldTestimonials.forEach((review) => {
+        testimonials.push(review);
+      });
+      this.numberTotal = testimonials.length;
+      this.setState({
+        testimonials,
+      });
     });
   }
 
