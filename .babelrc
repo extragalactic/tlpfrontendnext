@@ -1,5 +1,6 @@
 {
   "plugins": [
+    "inline-dotenv",
     "inline-react-svg",
     [
       "module-resolver", {
@@ -28,5 +29,20 @@
     "next/babel"
   ],
   "ignore": []
+
 }
     
+
+/*
+  "env": {
+    "development": {
+      "plugins": ["inline-dotenv"]
+    },
+    "production": {
+      "plugins": ["transform-inline-environment-variables"]
+    }
+  }
+
+*/
+
+

@@ -6,8 +6,9 @@ import MediaQuery from 'react-responsive';
 import TestimonialCard from './TestimonialCard';
 import TestimonialData from './TestimonialData';
 
+/* eslint-disable */
 
-//const google = window.google;
+const google = window.google;
 
 const StyledTestimonials = styled.section`
   width: 100%;
