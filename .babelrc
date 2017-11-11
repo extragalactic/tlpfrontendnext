@@ -20,8 +20,8 @@
     [
       "transform-assets-import-to-string",
       {
-        "baseDir": "./components/chat/assets",
-        "baseUri": "./components/chat/assets"
+        "baseDir": "images",
+        "baseUri": "/"
       }
     ]
   ],
@@ -31,18 +31,6 @@
   "ignore": []
 
 }
-    
 
-/*
-  "env": {
-    "development": {
-      "plugins": ["inline-dotenv"]
-    },
-    "production": {
-      "plugins": ["transform-inline-environment-variables"]
-    }
-  }
-
-*/
 
 
