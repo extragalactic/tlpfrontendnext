@@ -109,14 +109,14 @@ const TopCarousel = (props) => {
   return (
     <TopDiv>
       <SlideShow {...settings}>
-        <div><SlickSlide src="/images/intro/intro2.jpg" alt="" /></div>
-        <div><SlickSlide src="/images/intro/intro4.jpg" alt="" /></div>
-        <div><SlickSlide src="/images/intro/intro1.jpg" alt="" /></div>
-        <div><SlickSlide src="/images/intro/intro3.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg" alt="" /></div>
       </SlideShow>
       <StyledCarouselContent>
         <MediaQuery minWidth={451}>
-          <StyledTagline src="/images/LogoBanner.png" alt="Warranties that blow the others away!" />
+          <StyledTagline src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/LogoBanner.png" alt="Warranties that blow the others away!" />
         </MediaQuery>
         <StyledQuoteRequest>
           <StyledPhoneSection>

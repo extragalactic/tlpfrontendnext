@@ -34,7 +34,7 @@ const AboutUs = () => {
       <h2>Our Commitment</h2>
       <StyledTextwithLogo>
         <MediaQuery minWidth={800}>
-          <img src="/images/logo-small.jpg" alt="Three Little Pigs Logo" />
+          <img src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/logo-small.jpg" alt="Three Little Pigs Logo" />
         </MediaQuery>
         <StyledText>
           <p>

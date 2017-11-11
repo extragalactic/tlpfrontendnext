@@ -91,7 +91,7 @@ class ServicePage extends React.Component {
   getSlides() {
     return this.serviceData.photos.map((photoPair) => {
       return photoPair.map((photoSrc) => {
-        const imgSrc = `/images/before-and-after-pics/${photoSrc}`;
+        const imgSrc = `https://s3.ca-central-1.amazonaws.com/3lpm/website/images/before-and-after-pics/${photoSrc}`;
         return <div><SlickSlide src={imgSrc} alt="" /></div>;
       });
     });

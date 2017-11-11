@@ -28,7 +28,7 @@ const ServiceThumbnail = (props) => {
   return (
     <StyledServiceThumbnail>
       <h3>{props.service.title}</h3>
-      <img src={`/images/services/${props.service.imgSrc}`} alt="" />
+      <img src={`https://s3.ca-central-1.amazonaws.com/3lpm/website/images/services/${props.service.imgSrc}`} alt="" />
       <div>
         <p>{props.service.summary}</p>
         <div>

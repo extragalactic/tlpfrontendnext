@@ -6,7 +6,6 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
-import logo from '../images/3LPM-title-light.png'
 
 const StyledTopBar = styled.div`
   justify-content: left;
