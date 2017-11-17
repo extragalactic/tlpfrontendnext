@@ -1,10 +1,10 @@
 /* eslint-disable */
 
-
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import SlideShow from 'react-slick';
+// import Slider from 'react-slick';
+import Carousel from 'nuka-carousel';
 import RaisedButton from 'material-ui/RaisedButton';
 import PhoneIcon from 'material-ui/svg-icons/communication/call';
 import MediaQuery from 'react-responsive';
@@ -108,12 +108,16 @@ const TopCarousel = (props) => {
 
   return (
     <TopDiv>
-      <SlideShow {...settings}>
+      <Carousel
+        autoplay
+        autoplayInterval={4000}
+        wrapAround
+      >
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg" alt="" /></div>
-      </SlideShow>
+      </Carousel>
       <StyledCarouselContent>
         <MediaQuery minWidth={451}>
           <StyledTagline src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/LogoBanner.png" alt="Warranties that blow the others away!" />
@@ -157,3 +161,12 @@ TopCarousel.propTypes = {
 };
 
 export default TopCarousel;
+
+/*
+      <SlideShow {...settings}>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg" alt="" /></div>
+      </SlideShow>
+*/

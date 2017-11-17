@@ -108,6 +108,7 @@ class MainPage extends React.Component {
       newMessagesCount: 0,
     });
   }
+  
   render() {
     return (
       <StyledMainPage>
@@ -127,7 +128,10 @@ class MainPage extends React.Component {
         <div id="testimonials">
           <Testimonials />
         </div>
-        </StyledMainPage>
+        <div id="service-area">
+          <Contact openChat={this.openChat} />
+        </div>       
+      </StyledMainPage>
     );
   }
 }

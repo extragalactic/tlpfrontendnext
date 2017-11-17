@@ -25,7 +25,7 @@ class Testimonials extends React.Component {
     this.numberTotal = TestimonialData.length;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // get testimonials from Google reviews API
     fetch('https://tlpm.ca/reviews')
     .then((response) => {
@@ -60,6 +60,7 @@ class Testimonials extends React.Component {
 
   render() {
     return (
+      this.state.testimonials.length > 0 && 
       <StyledTestimonials>
         <h2>Testimonials</h2>
         <ResponsiveMasonry columnsCountBreakPoints={{ 200: 1, 450: 2, 700: 3, 1000: 4 }}>
