@@ -1,15 +1,13 @@
 /* eslint-disable */
 
 import React from 'react';
+import createReactClass from 'create-react-class';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import Slider from 'react-slick';
 import Carousel from 'nuka-carousel';
 import RaisedButton from 'material-ui/RaisedButton';
 import PhoneIcon from 'material-ui/svg-icons/communication/call';
 import MediaQuery from 'react-responsive';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 //const location = window.location;
 const TopDiv = styled.div`
@@ -74,7 +72,7 @@ const StyledQuoteRequest = styled.div`
   }
 `;
 const StyledPhoneSection = styled.div`
-  padding: 3px 3px 0px 10px;
+  padding: 3px 3px 7px 10px;
   margin-top: 5px;
   background-color: rgba(0,0,0,0.5);
   border-radius: 0.5em;
@@ -92,19 +90,9 @@ const StyledPhoneSection = styled.div`
 const TopCarousel = (props) => {
   const openChat = props.openChat;
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 750,
-    autoplaySpeed: 4000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    autoplay: true,
-    lazyLoad: false,
-    pauseOnHover: false,
-  };
+  // Note: the Decorators array can be used to make custom controls for nuka-carousel. Here I'm just passing in an empty array to clear all the controls.
+  // How To: https://stackoverflow.com/questions/36879280/react-js-nuka-carousel-custom-arrow-positioning
+  const Decorators = [];
 
   return (
     <TopDiv>
@@ -112,6 +100,7 @@ const TopCarousel = (props) => {
         autoplay
         autoplayInterval={4000}
         wrapAround
+        decorators={Decorators}
       >
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
@@ -161,12 +150,3 @@ TopCarousel.propTypes = {
 };
 
 export default TopCarousel;
-
-/*
-      <SlideShow {...settings}>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg" alt="" /></div>
-      </SlideShow>
-*/

@@ -6,7 +6,7 @@ import MediaQuery from 'react-responsive';
 const StyledAboutUs = styled.section`
   background-color: #fff;
   min-height: 200px;
-  padding-top: 5px;
+  padding-top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +21,7 @@ const StyledAboutUs = styled.section`
 
 const StyledTextwithLogo = styled.section`
   display: flex;
+  margin-top: -20px;
   flex-direction: row;
 `;
 const StyledText = styled.section`

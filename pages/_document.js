@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
 
   // Note: trying different method to load fonts, either inside componentDidMount, or inside the <head> using a Fonts component... currently neither is working properly
   componentDidMount() {
-    Fonts();
+    // Fonts();
   }
 
   render () {
@@ -20,7 +20,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>Three Little Pigs Masonry</title>
-          {/* <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic|Libre+Baskerville" rel="stylesheet" type="text/css" /> */}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic|Libre+Baskerville" rel="stylesheet" type="text/css" />
           <meta property="og:title" content="Three Little Pigs Masonry"/>
           <meta property="og:type" content="website"/>
           <meta property="og:url" content="http://www.threelittlepigsmasonry.com"/>

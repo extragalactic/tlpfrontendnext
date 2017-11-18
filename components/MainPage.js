@@ -139,9 +139,6 @@ class MainPage extends React.Component {
 export default MainPage;
 /*
 
-  <div id="service-area">
-          <Contact openChat={this.openChat} />
-        </div>
         <Launcher
           style={{
             position: 'absolute',

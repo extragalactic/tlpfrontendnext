@@ -17,18 +17,23 @@ if (!process.tapEventInjected) {
 /* eslint-disable */
 
 const StyledApp = styled.section`
-text-align: center;
-position: relative;
-margin: auto;
-width: 100%;
-flex: 1;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  flex: 1;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 'lighter';
 `;
 
 const GlobalStyles = styled.div`
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
 }
 a:link, a:visited {
   color: #fff;
@@ -52,6 +57,7 @@ h2 {
   background-color: #841F27;
   background: linear-gradient(#841F27, #b9202c);
   font-size: 1.5em;
+  font-family: 'Libre Baskerville';
   padding: 5px 0px;
 }
 h3 {
@@ -72,35 +78,34 @@ h6 {
 }  
 `;
 
-
 const muiTheme = getMuiTheme({
-palette: {
-  primary1Color: '#841F27',
-  primary2Color: '#f00',
-  accent1Color: '#f00',
-  alternateTextColor: '#1a0000',
-},
-appBar: {
-  height: '100%',
-},
-inkBar: {
-  backgroundColor: '#b9202c',
-},
-tabs: {
-  backgroundColor: '#fff',
-  textColor: '#000',
-  fontSize: '1.0em',
-},
-raisedButton: {
-  primaryTextColor: '#fff',
-  secondaryTextColor: '#fff',
-  primaryColor: '#a00',
-  secondaryColor: '#1DA1F2', /* this is 'Twitter Blue' */
-  color: 'rgba(255, 0, 0, 0.87)',
-},
-dropDownMenu: {
-  accentColor: '#000',
-},
+  palette: {
+    primary1Color: '#841F27',
+    primary2Color: '#f00',
+    accent1Color: '#f00',
+    alternateTextColor: '#1a0000',
+  },
+  appBar: {
+    height: '100%',
+  },
+  inkBar: {
+    backgroundColor: '#b9202c',
+  },
+  tabs: {
+    backgroundColor: '#fff',
+    textColor: '#000',
+    fontSize: '1.0em',
+  },
+  raisedButton: {
+    primaryTextColor: '#fff',
+    secondaryTextColor: '#fff',
+    primaryColor: '#a00',
+    secondaryColor: '#1DA1F2', /* this is 'Twitter Blue' */
+    color: 'rgba(255, 0, 0, 0.87)',
+  },
+  dropDownMenu: {
+    accentColor: '#000',
+  },
 });
 
 class Index extends Component {
@@ -124,19 +129,17 @@ class Index extends Component {
     }
   }
 
-
-
   render () {
     return (
       <StyledApp>
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <GlobalStyles>
-        <TopBar/>
-        <MainPage />
-        <Footer/>
-        </GlobalStyles>
-      </MuiThemeProvider>
-    </StyledApp>
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <GlobalStyles>
+            <TopBar/>
+            <MainPage />
+            <Footer/>
+          </GlobalStyles>
+        </MuiThemeProvider>
+      </StyledApp>
     )
   }
 }

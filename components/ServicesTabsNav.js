@@ -113,8 +113,3 @@ ServicesTabsNav.defaultProps = {
 
 export default ServicesTabsNav;
 
-/*
-          style={{ height: '100%' }}
-          containerStyle={{ height: '100%' }}
-          slideStyle={{ height: '100%' }}
-*/

@@ -9,9 +9,8 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 const StyledTopBar = styled.div`
   justify-content: left;
-  margin-left: -20px;
-  background-color: #841f27;
-  background: linear-gradient(#841f27, #b9202c);
+  margin-left: -30px;
+  background-color: #fff;
 
   img {
     float: left;
