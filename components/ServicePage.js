@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import SlideShow from 'react-slick';
 import RaisedButton from 'material-ui/RaisedButton';
 import ServiceData from './ServiceData';
-import history from './history';
+//import history from './history';
 
 
 const StyledServicePage = styled.section`
@@ -57,9 +57,6 @@ const Arrow = (props) => {
 };
 
 class ServicePage extends React.Component {
-  static gotoSection(section) {
-    history.push(`/services/${section}`);
-  }
 
   constructor(props) {
     super(props);
@@ -166,3 +163,8 @@ ServicePage.propTypes = {
 };
 
 export default ServicePage;
+/*
+ static gotoSection(section) {
+    history.push(`/services/${section}`);
+  }
+*/

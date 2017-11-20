@@ -5,7 +5,7 @@ import ServiceData from './ServiceData';
 import ServicePage from './ServicePage';
 import ServicesTabsNav from './ServicesTabsNav';
 import { Launcher } from './chat/index';
-import returnLexResponse from './util/LexBot';
+//import returnLexResponse from './util/LexBot';
 import ScrollToTopOnMount from './util/ScrollToTopOnMount';
 
 
@@ -37,7 +37,7 @@ class ServicePageMain extends React.Component {
         this.serviceType = props.pageName;
       } else {
         // goto service type page (default to the 'refacing' page)
-        this.serviceType = props.match.params.type !== undefined ? props.match.params.type : 'refacing';
+       // this.serviceType = props.match.params.type !== undefined ? props.match.params.type : 'refacing';
       }
     } else {
       // url mapping from old site
@@ -157,20 +157,7 @@ class ServicePageMain extends React.Component {
         <StyledNavContainer>
           <ServicesTabsNav pageContent={this.allServices()} startIndex={this.state.selectedTab} variableHeight />
         </StyledNavContainer>
-        <Launcher
-          style={{
-            position: 'absolute',
-          }}
-          agentProfile={{
-            teamName: 'Automated Estimator Pig',
-            imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
-          }}
-          onMessageWasSent={this._onMessageWasSent}
-          messageList={this.state.messageList}
-          newMessagesCount={this.state.newMessagesCount}
-          handleClick={this._handleClick}
-          isOpen={this.state.isOpen}
-        />
+    
       </StyledServicePage>
     );
   }
@@ -187,3 +174,22 @@ ServicePageMain.defaultProps = {
 };
 
 export default ServicePageMain;
+/*
+
+
+    <Launcher
+          style={{
+            position: 'absolute',
+          }}
+          agentProfile={{
+            teamName: 'Automated Estimator Pig',
+            imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
+          }}
+          onMessageWasSent={this._onMessageWasSent}
+          messageList={this.state.messageList}
+          newMessagesCount={this.state.newMessagesCount}
+          handleClick={this._handleClick}
+          isOpen={this.state.isOpen}
+        />
+
+        */
