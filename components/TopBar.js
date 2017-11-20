@@ -5,13 +5,12 @@ import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-// import history from './history';
+
 
 const StyledTopBar = styled.div`
   justify-content: left;
-  margin-left: -20px;
-  background-color: #841f27;
-  background: linear-gradient(#841f27, #b9202c);
+  margin-left: -30px;
+  background-color: #fff;
 
   img {
     float: left;
@@ -56,7 +55,7 @@ class TopBar extends React.Component {
                 aria-hidden
                 style={{ backgroundColor: '#841F27' }}
               >
-                <img src="/images/3LPM-title-light.png" alt="Three Little Pigs Masonry" />
+                <img src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/3LPM-title-light.png" alt="Three Little Pigs Masonry" />
               </a>
             </div>
           }

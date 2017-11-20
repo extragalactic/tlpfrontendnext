@@ -67,7 +67,7 @@ class AboutUsFull extends React.Component {
           onRequestClose={this.closeModal}
           contentStyle={{ width: '98%', maxWidth: 'none', top: '-60px' }}
         >
-          <StyledImg src="/images/about-us-photo.jpg" alt="about us" />
+          <StyledImg src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/about-us-photo.jpg" alt="about us" />
           <p>Family owned and operated, we have been proudly serving homeowners since 2004. Our masonry history begins with working across Canada and the United States in commercial masonry building schools, churches plus commercial and industrial projects.</p>
           <p>Our estimator and partner was first introduced to the masonry trade at 19 years old, approximately 40 years ago. Our estimator accomplished a 4 year apprenticeship in Structural and Architectural masonry. He was trained to operate with National Building Code specifications, the most stringent procedures in Canada. Aside from the high rises, churches, many schools, shopping centres and many other commercial projects, our estimator has also been involved on the general contracting side of things. He has won the following awards:</p>
           <li>In 1983, our estimator started his own commercial company and achieved two first place awards from the Canadian Masonry Contractors Association (CMCA).</li>

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import FlatButton from 'material-ui/FlatButton';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+// import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+// import Masonry from 'react-masonry-component';
+import StackGrid from 'react-stack-grid';
 import MediaQuery from 'react-responsive';
 import fetch from 'isomorphic-fetch';
 import GalleryImage from './GalleryImage';
@@ -21,6 +23,7 @@ class PhotoGallery extends React.Component {
       numberToShow: 4,
       modalIsOpen: false,
       selectedPhoto: '',
+      active: 0,
     };
     this.numberTotal = 0;
     this.numPhotosModifier = 0;
@@ -30,7 +33,7 @@ class PhotoGallery extends React.Component {
     this.getDefaultNum = this.getDefaultNum.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('https://tlpm.ca/webimages')
       .then((response) => {
         return response.json();
@@ -59,7 +62,7 @@ class PhotoGallery extends React.Component {
     // get default num phots based on screen size
     // (the default number of pics is still not fully working when resizing the browser... is likely not noticeable though)
     this.numPhotosModifier = this.numPhotosByScreenSize[screenSize];
-    return this.numPhotosModifier;
+    return this.numPhotosModifier + 5;
   }
 
   openModal(photo) {
@@ -76,7 +79,12 @@ class PhotoGallery extends React.Component {
   }
 
   render() {
+    var masonryOptions = {
+      transitionDuration: 0,
+    }
+
     return (
+      this.state.photos.length > 0 &&
       <StyledGallery>
         {this.state.modalIsOpen && (
           <GalleryDetail
@@ -86,20 +94,26 @@ class PhotoGallery extends React.Component {
           />
         )}
         <h2>Photo Gallery</h2>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 200: 2, 450: 3, 700: 4, 1000: 5 }}>
-          <MediaQuery minWidth={1} maxWidth={449}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('XS'))}</Masonry>
-          </MediaQuery>
-          <MediaQuery minWidth={450} maxWidth={699}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('S'))}</Masonry>
-          </MediaQuery>
-          <MediaQuery minWidth={700} maxWidth={999}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('M'))}</Masonry>
-          </MediaQuery>
-          <MediaQuery minWidth={1000}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('L'))}</Masonry>
-          </MediaQuery>
-        </ResponsiveMasonry>
+        <MediaQuery minWidth={1} maxWidth={449}>
+          <StackGrid columnWidth={100} enableSSR monitorImagesLoaded>
+            {this.getPhotos(this.getDefaultNum('XS'))}
+          </StackGrid>
+        </MediaQuery>
+        <MediaQuery minWidth={450} maxWidth={699}>
+          <StackGrid columnWidth={150} enableSSR monitorImagesLoaded>
+            {this.getPhotos(this.getDefaultNum('S'))}
+          </StackGrid>
+        </MediaQuery>
+        <MediaQuery minWidth={700} maxWidth={999}>
+          <StackGrid columnWidth={200} enableSSR monitorImagesLoaded>
+            {this.getPhotos(this.getDefaultNum('M'))}
+        </StackGrid>
+        </MediaQuery>
+        <MediaQuery minWidth={1000}>
+          <StackGrid columnWidth={250} enableSSR monitorImagesLoaded>
+            {this.getPhotos(this.getDefaultNum('L'))}
+          </StackGrid>
+        </MediaQuery>
         {this.state.numberToShow < this.numberTotal && (
           <div>
             <h3>. . .</h3>
@@ -119,3 +133,46 @@ class PhotoGallery extends React.Component {
 }
 
 export default PhotoGallery;
+
+/*
+
+          <MediaQuery minWidth={1} maxWidth={449}>
+            <StackGrid columnWidth={100}>
+              {this.getPhotos(this.getDefaultNum('XS'))}
+            </StackGrid>
+          </MediaQuery>
+          <MediaQuery minWidth={450} maxWidth={699}>
+            <StackGrid columnWidth={200}>
+              {this.getPhotos(this.getDefaultNum('S'))}
+            </StackGrid>
+          </MediaQuery>
+          <MediaQuery minWidth={700} maxWidth={999}>
+            <StackGrid columnWidth={250}>
+              {this.getPhotos(this.getDefaultNum('M'))}
+          </StackGrid>
+          </MediaQuery>
+          <MediaQuery minWidth={1000}>
+            <StackGrid columnWidth={300}>
+              {this.getPhotos(this.getDefaultNum('L'))}
+            </StackGrid>
+          </MediaQuery>
+
+*/
+
+/*
+        <ResponsiveMasonry columnsCountBreakPoints={{ 200: 2, 450: 3, 700: 4, 1000: 5 }}>
+          <MediaQuery minWidth={1} maxWidth={449}>
+            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('XS'))}</Masonry>
+          </MediaQuery>
+          <MediaQuery minWidth={450} maxWidth={699}>
+            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('S'))}</Masonry>
+          </MediaQuery>
+          <MediaQuery minWidth={700} maxWidth={999}>
+            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('M'))}</Masonry>
+          </MediaQuery>
+          <MediaQuery minWidth={1000}>
+            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('L'))}</Masonry>
+          </MediaQuery>
+        </ResponsiveMasonry>
+
+*/

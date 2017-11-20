@@ -70,10 +70,10 @@ const GetQuote = (props) => {
               />
               <div>
                 <MediaQuery minDeviceWidth={800} orientation="landscape">
-                  <img src="/images/test-pig.jpg" alt="" />
+                  <img src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/test-pig.jpg" alt="" />
                 </MediaQuery>
                 <MediaQuery orientation="portrait">
-                  <img src="/images/test-pig.jpg" alt="" />
+                  <img src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/test-pig.jpg" alt="" />
                 </MediaQuery>
               </div>
             </div>

@@ -163,7 +163,7 @@ class ServicePageMain extends React.Component {
           }}
           agentProfile={{
             teamName: 'Automated Estimator Pig',
-            imageUrl: '/images/PigBot_small.png',
+            imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
           }}
           onMessageWasSent={this._onMessageWasSent}
           messageList={this.state.messageList}

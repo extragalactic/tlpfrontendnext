@@ -8,6 +8,7 @@ const StyledGalleryImage = styled.div`
   }
   img {
     width: 100%;
+    display: block;
     border: 1px solid #444;    
   }
 `;
@@ -19,13 +20,14 @@ const GalleryImage = (props) => {
 
   return (
     <StyledGalleryImage>
-      <div onClick={() => { launchFullsize(); }}>
+      <div>
         <img
+          onTouchTap={() => { launchFullsize(); }}
           src={props.photo}
           alt=""
         />
-      </div>
-    </StyledGalleryImage>
+     </div>
+   </StyledGalleryImage>
   );
 };
 

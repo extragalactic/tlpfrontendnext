@@ -6,7 +6,7 @@ import MediaQuery from 'react-responsive';
 const StyledAboutUs = styled.section`
   background-color: #fff;
   min-height: 200px;
-  padding-top: 5px;
+  padding-top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +21,7 @@ const StyledAboutUs = styled.section`
 
 const StyledTextwithLogo = styled.section`
   display: flex;
+  margin-top: -20px;
   flex-direction: row;
 `;
 const StyledText = styled.section`
@@ -34,7 +35,7 @@ const AboutUs = () => {
       <h2>Our Commitment</h2>
       <StyledTextwithLogo>
         <MediaQuery minWidth={800}>
-          <img src="/images/logo-small.jpg" alt="Three Little Pigs Logo" />
+          <img src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/logo-small.jpg" alt="Three Little Pigs Logo" />
         </MediaQuery>
         <StyledText>
           <p>

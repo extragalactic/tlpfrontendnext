@@ -117,6 +117,7 @@ const GalleryDetail = (props) => {
 
           <div style={modalHeader}>
             <button onClick={() => { props.closeModal(); }} style={{ cursor: 'pointer', width: '55px', height: '55px' }} >
+              <i class="fa fa-times fa-3x" aria-hidden="true" style={{ color: '#b00' }}></i>
             </button>
           </div>
         </div>
@@ -124,6 +125,8 @@ const GalleryDetail = (props) => {
     </StyledGetQuote>
   );
 };
+
+
 /*
 
 <Ionicon icon="ion-close-circled" fontSize="35px" color="#c00" />
