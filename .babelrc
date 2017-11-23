@@ -3,25 +3,19 @@
     "inline-dotenv",
     "inline-react-svg",
     [
-      "module-resolver", {
-        "root": ["."],
-        "alias": {
-          "styles": "./components/chat/styles"
-        },
-        "cwd": "babelrc"
-    }],
-    [
-      "wrap-in-js",
+      "styled-components",
       {
-        "extensions": ["css$", "scss$"]
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
       }
     ],
-    ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ],
     [
-      "transform-assets-import-to-string",
+      "inline-import",
       {
-        "baseDir": "images",
-        "baseUri": "/"
+        "extensions": [
+          ".css"
+        ]
       }
     ]
   ],
@@ -29,7 +23,4 @@
     "next/babel"
   ],
   "ignore": []
-
 }
-
-
