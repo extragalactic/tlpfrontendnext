@@ -9,7 +9,7 @@ import Contact from './Contact';
 import TextDivider from './TextDivider';
 import GetQuote from './GetQuote';
 import PhotoGallery from './PhotoGallery';
-//import returnLexResponse from './util/LexBot';
+import returnLexResponse from './util/LexBot';
 
 const StyledMainPage = styled.section`
   position: relative;
@@ -130,7 +130,21 @@ class MainPage extends React.Component {
         </div>
         <div id="service-area">
           <Contact openChat={this.openChat} />
-        </div>       
+        </div>   
+        <Launcher
+          style={{
+            position: 'absolute',
+          }}
+          agentProfile={{
+            teamName: 'Automated Estimator Pig',
+            imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
+          }}
+          onMessageWasSent={this._onMessageWasSent}
+          messageList={this.state.messageList}
+          newMessagesCount={this.state.newMessagesCount}
+          handleClick={this._handleClick}
+          isOpen={this.state.isOpen}
+        />    
       </StyledMainPage>
     );
   }
@@ -139,19 +153,6 @@ class MainPage extends React.Component {
 export default MainPage;
 /*
 
-        <Launcher
-          style={{
-            position: 'absolute',
-          }}
-          agentProfile={{
-            teamName: 'Automated Estimator Pig',
-            imageUrl: '/images/PigBot_small.png',
-          }}
-          onMessageWasSent={this._onMessageWasSent}
-          messageList={this.state.messageList}
-          newMessagesCount={this.state.newMessagesCount}
-          handleClick={this._handleClick}
-          isOpen={this.state.isOpen}
-        />
+    
     
 */
