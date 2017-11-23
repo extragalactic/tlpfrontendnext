@@ -5,7 +5,7 @@ import ServiceData from './ServiceData';
 import ServicePage from './ServicePage';
 import ServicesTabsNav from './ServicesTabsNav';
 import { Launcher } from './chat/index';
-//import returnLexResponse from './util/LexBot';
+import returnLexResponse from './util/LexBot';
 import ScrollToTopOnMount from './util/ScrollToTopOnMount';
 
 
