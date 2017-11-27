@@ -26,6 +26,7 @@
     "material-ui": "^0.19.4",
     "mime": "^2.0.3",
     "next": "^4.1.4",
+    "next-routes": "^1.1.0",
     "node-sass": "^4.4.0",
     "normalize.css": "^7.0.0",
     "nuka-carousel": "^3.0.0",
@@ -58,7 +59,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",

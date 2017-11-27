@@ -53,6 +53,7 @@ class MainPage extends React.Component {
       });
     }, 30000);
   }
+  
   openChat() {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -151,8 +152,3 @@ class MainPage extends React.Component {
 }
 
 export default MainPage;
-/*
-
-    
-    
-*/

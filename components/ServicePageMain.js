@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ServiceData from './ServiceData';
 import ServicePage from './ServicePage';
 import ServicesTabsNav from './ServicesTabsNav';
+import TopBar from '../components/TopBar';
+import Footer from '../components/Footer';
 import { Launcher } from './chat/index';
 import returnLexResponse from './util/LexBot';
 import ScrollToTopOnMount from './util/ScrollToTopOnMount';
-
+import muiTheme from './muiTheme';
+import GlobalStyles from './globalStyles';
 
 const StyledServicePage = styled.section`
   padding: 5px;
@@ -31,30 +35,58 @@ const StyledNavContainer = styled.div`
 class ServicePageMain extends React.Component {
   constructor(props) {
     super(props);
+    let selectedTab;
 
-    if (props.redirect === '') {  
-      if (props.pageName !== undefined) { // (this may no longer get used...)
-        this.serviceType = props.pageName;
-      } else {
-        // goto service type page (default to the 'refacing' page)
-       // this.serviceType = props.match.params.type !== undefined ? props.match.params.type : 'refacing';
-      }
+    if (props.page !== undefined && props.page !== '') { 
+      // props.page is passed in via getInitialProps on services.js ... check if the page name exists
+      selectedTab = ServiceData.indexOf(
+        ServiceData.find((obj) => {
+          return obj.pageName === props.page;
+        }),
+      );
+      // if the page name doesn't exist, check if it's an old site re-direct
+      if (selectedTab === -1) {
+        let gotoPage;
+
+        switch (props.page) {
+          case 'brick-repair':
+          case 'chimneys--stone-chimneys':
+          case 'masonry-repairs':
+          case 'window-sills':
+            gotoPage = 'masonry';
+            break;
+          case 'basement-waterproofing':
+          case 'foundations--piling--footings':
+          case 'parging--foundation-repairs':
+            gotoPage = 'foundations'
+            break;
+          case 'concrete-repair':
+          case 'concrete-step-repair':
+          case 'concrete-walkways':
+            gotoPage = 'concrete';
+            break;
+          case 'retaining-walls':
+            gotoPage = 'walls';
+            break;
+          case 'stone-refacing':
+          case 'stone-refacing-for-stucco-wood-and-siding':
+            gotoPage = 'refacing';
+          default:
+            gotoPage = 'refacing';
+        }
+        // find the data index of the newly determined page name
+        selectedTab = ServiceData.indexOf(
+          ServiceData.find((obj) => {
+            return obj.pageName === gotoPage;
+          }),
+        );
+        this.serviceType = gotoPage;
+      }   
     } else {
-      // url mapping from old site
-      this.serviceType = props.redirect;
-    }
-
-    // find the page's tab index (associated with the array order in ServiceData) based on the page name/type indicated in the URL
-    let selectedTab = ServiceData.indexOf(
-      ServiceData.find((obj) => {
-        return obj.pageName === this.serviceType;
-      }),
-    );
-    // if page name/type is not found, default to the first one
-    if (selectedTab === -1) {
       selectedTab = 0;
+      this.serviceType = 'refacing';
     }
-
+    
     this.state = {
       modalIsOpen: false,
       selectedTab,
@@ -78,7 +110,9 @@ class ServicePageMain extends React.Component {
     this._sendMessage = this._sendMessage.bind(this);
     this._handleClick = this._handleClick.bind(this);
   }
+ 
   openChat() {
+    console.log(this.props);
     this.setState({
       isOpen: !this.state.isOpen,
     });
@@ -152,13 +186,32 @@ class ServicePageMain extends React.Component {
 
   render() {
     return (
-      <StyledServicePage>
-        <ScrollToTopOnMount /> { /* the only purpose of this component is to reset the page position to the top */ }
-        <StyledNavContainer>
-          <ServicesTabsNav pageContent={this.allServices()} startIndex={this.state.selectedTab} variableHeight />
-        </StyledNavContainer>
-    
-      </StyledServicePage>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <GlobalStyles>
+          <StyledServicePage>
+            <ScrollToTopOnMount /> { /* the only purpose of this component is to reset the page position to the top */ }
+            <TopBar/>
+            <StyledNavContainer>
+              <ServicesTabsNav pageContent={this.allServices()} startIndex={this.state.selectedTab} variableHeight />
+            </StyledNavContainer>
+            <Footer/>
+          </StyledServicePage>
+          <Launcher
+            style={{
+              position: 'absolute',
+            }}
+            agentProfile={{
+              teamName: 'Automated Estimator Pig',
+              imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
+            }}
+            onMessageWasSent={this._onMessageWasSent}
+            messageList={this.state.messageList}
+            newMessagesCount={this.state.newMessagesCount}
+            handleClick={this._handleClick}
+            isOpen={this.state.isOpen}
+          />
+        </GlobalStyles>
+      </MuiThemeProvider>
     );
   }
 }
@@ -166,7 +219,7 @@ class ServicePageMain extends React.Component {
 ServicePageMain.propTypes = {
   match: PropTypes.object,
   redirect: PropTypes.string,
-  pageName: PropTypes.string,
+  page: PropTypes.string,
 };
 ServicePageMain.defaultProps = {
   match: null,

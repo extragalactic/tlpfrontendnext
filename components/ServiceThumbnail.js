@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import RaisedButton from 'material-ui/RaisedButton';
 // import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
-import Router from 'next/router';
-
+// import Link from 'next/link';
+// import Router from 'next/router';
+import { Router } from '../routes';
 
 const StyledServiceThumbnail = styled.section`
   padding: 0px 5px 5px 5px;
@@ -39,7 +39,7 @@ const ServiceThumbnail = (props) => {
             labelStyle={{ fontSize: '0.8em' }}
             label="Learn more..."
             secondary
-            onClick={() => { Router.push(`/services/${props.service.pageName}`); }}
+            onClick={() => { Router.pushRoute('services', { page: props.service.pageName }, { shallow: true }); }}
           />
         </div>
       </div>
@@ -52,17 +52,3 @@ ServiceThumbnail.propTypes = {
 };
 
 export default ServiceThumbnail;
-
-
-/*
-
-          <Link href={`/services/${props.service.pageName}`} >
-          <RaisedButton
-            labelStyle={{ fontSize: '0.8em' }}
-            label="Learn more..."
-            secondary
-            // onClick={() => { history.push(`/services/${props.service.pageName}`); }}
-          />
-          </Link>
-
-*/

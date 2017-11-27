@@ -1,6 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import Fonts from '../components/Fonts';
 
 export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
@@ -8,11 +7,6 @@ export default class MyDocument extends Document {
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
     const styleTags = sheet.getStyleElement()
     return { ...page, styleTags }
-  }
-
-  // Note: trying different method to load fonts, either inside componentDidMount, or inside the <head> using a Fonts component... currently neither is working properly
-  componentDidMount() {
-    // Fonts();
   }
 
   render () {
