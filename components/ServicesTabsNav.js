@@ -58,7 +58,7 @@ class ServicesTabsNav extends React.Component {
 
   
   // **** 
-  // Note: need to updateHeight onResize
+  // Note: need to updateHeight onResize (via react-window-resize-listener?)
   // ****
 
 

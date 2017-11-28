@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import SlideShow from 'react-slick';
 import Carousel from 'nuka-carousel';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+// import { WindowResizeListener } from 'react-window-resize-listener';
 import ServiceData from './ServiceData';
 
 
@@ -64,28 +66,6 @@ class ServicePage extends React.Component {
 
     this.serviceType = props.serviceType;
     this.serviceData = ServiceData.find((service) => { return service.pageName === this.serviceType; });
-
-    /*
-    this.settings = {
-      dots: true,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      arrows: true,
-      fade: false,
-      autoplay: false,
-      lazyLoad: false,
-      swipe: true,
-      swipeToSlide: false,
-      prevArrow: <Arrow />,
-      nextArrow: <Arrow />,
-      responsive: [
-        { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-        { breakpoint: 1000, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      ],
-    };
-    */
   }
 
   getSlides() {
@@ -174,9 +154,3 @@ ServicePage.propTypes = {
 };
 
 export default ServicePage;
-
-/*
-        <StyledSlideshow {...this.settings}>
-          {this.getSlides()}
-        </StyledSlideshow>
-*/
