@@ -43,6 +43,7 @@ class ServicesTabsNav extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
+    this.refresh = this.refresh.bind(this);
     this.swipeableViewsRef = null;
   }
 
@@ -55,18 +56,17 @@ class ServicesTabsNav extends React.Component {
     }, 10);
   }
 
-
-  
-  // **** 
-  // Note: need to updateHeight onResize (via react-window-resize-listener?)
-  // ****
-
-
-
   handleChange(value) {
     this.setState({
       selectedTab: value,
     });
+  }
+
+  // This refresh to recalculate the screen height needs to be called *after* the MaterialUI Card gets expanded, but there is no callback to know when the expansion is complete, so instead we'll wait a few milliseconds.
+  refresh() {
+    setTimeout(() => {
+      this.swipeableViewsRef.updateHeight();
+    }, 25);
   }
 
   render() {
@@ -109,14 +109,17 @@ class ServicesTabsNav extends React.Component {
     );
   }
 }
+
 ServicesTabsNav.propTypes = {
   pageContent: PropTypes.array.isRequired,
   startIndex: PropTypes.number,
   variableHeight: PropTypes.bool,
+  refresh: PropTypes.func,
 };
 ServicesTabsNav.defaultProps = {
   startIndex: 0,
   variableHeight: false,
+  refresh: null,
 };
 
 export default ServicesTabsNav;

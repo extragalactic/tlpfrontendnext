@@ -5,7 +5,6 @@ import SlideShow from 'react-slick';
 import Carousel from 'nuka-carousel';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-// import { WindowResizeListener } from 'react-window-resize-listener';
 import ServiceData from './ServiceData';
 
 
@@ -31,8 +30,8 @@ const SlickSlide = styled.img`
   width: 100%;
 `;
 const StyledMain = styled.div`
-  padding: 50px 5px 15px 5px;
-  margin-top: -40px;
+  padding: 40px 5px 30px 5px;
+  margin-top: 0px;
   text-align: left;
 
   div {
@@ -68,6 +67,11 @@ class ServicePage extends React.Component {
     this.serviceData = ServiceData.find((service) => { return service.pageName === this.serviceType; });
   }
 
+  componentDidMount() {
+    // need to recalculate the height of the page on resize (for Card components)
+    window.addEventListener("resize", this.props.refresh);
+  }
+
   getSlides() {
     return this.serviceData.photos.map((photoPair) => {
       return photoPair.map((photoSrc) => {
@@ -79,52 +83,78 @@ class ServicePage extends React.Component {
 
   getContent() {
     return this.serviceData.content.map((section, i) => {
-      if (section.list !== undefined) {
-        // section type "list" displays paragraphs in a bulleted list
-        return (
-          <div key={`${section.title}${i}`}> {/* ...just a creative way to get a unique key, linter still doesn't like the "i" */}
-            {
-              section.title !== '' &&
-                section.mainTitle === true ? <h4>{section.title}</h4> : <h5>{section.title}</h5>
-            }
-            <ul>
+      return (
+        <Card
+          key={`${section.title}`}
+          initiallyExpanded={false}
+          onExpandChange={() => { this.props.refresh(); }}
+        >
+          <CardHeader
+            title={section.title}
+            actAsExpander
+            showExpandableButton
+            titleStyle={{ fontSize: '1.2em', marginTop: '10px', padding: '3px 3px 10px 3px' }}
+            style={{ backgroundColor: '#eee' }}
+          />
+          <CardText expandable >
+            <div>
               {
-                section.list.map((body) => {
+                section.content.map((subsection, i) => {
+                  /* render section as a list */
+                  if (subsection.list !== undefined) {
+                    return (
+                      <div key={`${subsection.title}${i}`}>  
+                        {
+                          subsection.title !== '' &&
+                            subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
+                        }
+                        <ul>
+                          {
+                            subsection.list.map((body) => {
+                              return (
+                                <StyledListItem key={body.substring(0, 30)}>
+                                  <li>{body}</li>
+                                </StyledListItem>
+                              );
+                            })
+                          }
+                        </ul>
+                      </div>
+                    );
+                  }
+                  // else render section as regular paragraphs
                   return (
-                    <StyledListItem key={body.substring(0, 30)}>
-                      <li>{body}</li>
-                    </StyledListItem>
+                    <div key={`${subsection.title}${i}`}>  
+                      {
+                        subsection.title !== '' &&
+                          subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
+                      }
+                      {
+                        subsection.text.map((body) => {
+                          return (
+                            <StyledParagraph key={body.substring(0, 30)}>
+                              <p>{body}</p>
+                            </StyledParagraph>
+                          );
+                        })
+                      }
+                      {
+                        // if it's the last text item in the array, leave a bottom spacer
+                        (i + 1) >= section.content.length &&
+                          <div style={{ paddingBottom: '30px' }} />
+                      }
+                    </div>
                   );
                 })
               }
-            </ul>
-          </div>
-        );
-      }
-      // section type "text" displays content as regular paragraphs
-      return (
-        <div key={`${section.title}${i}`}>
-          {
-            section.title !== '' &&
-              section.mainTitle === true ? <h4>{section.title}</h4> : <h5>{section.title}</h5>
-          }
-          {
-            section.text.map((body) => {
-              return (
-                <StyledParagraph key={body.substring(0, 30)}>
-                  <p>{body}</p>
-                </StyledParagraph>
-              );
-            })
-          }
-        </div>
+            </div>
+          </CardText>
+        </Card>
       );
     });
   }
 
   render() {
-    // const Decorators = [];
-
     return (
       <StyledServicePage>
         <h1>{this.serviceData.title}</h1>
@@ -151,6 +181,7 @@ class ServicePage extends React.Component {
 ServicePage.propTypes = {
   serviceType: PropTypes.string.isRequired,
   openChat: PropTypes.func.isRequired,
+  refresh: PropTypes.func.isRequired,
 };
 
 export default ServicePage;
