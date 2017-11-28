@@ -53,6 +53,7 @@ class MainPage extends React.Component {
       });
     }, 30000);
   }
+  
   openChat() {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -111,26 +112,28 @@ class MainPage extends React.Component {
   
   render() {
     return (
-      <StyledMainPage>
-        {this.state.modalIsOpen && <GetQuote closeModal={this.closeChat} />}
-        <TopCarousel openChat={this.openChat} />
-        <TextDivider quoteID={0} />
-        <div id="services">
-          <ServicesThumbContainer />
-        </div>
-        <div id="about-us">
-          <AboutUs />
-        </div>
-        <TextDivider quoteID={1} />
-        <div id="photos">
-          <PhotoGallery />
-        </div>
-        <div id="testimonials">
-          <Testimonials />
-        </div>
-        <div id="service-area">
-          <Contact openChat={this.openChat} />
-        </div>   
+      <div>
+        <StyledMainPage>
+          {this.state.modalIsOpen && <GetQuote closeModal={this.closeChat} />}
+          <TopCarousel openChat={this.openChat} />
+          <TextDivider quoteID={0} />
+          <div id="services">
+            <ServicesThumbContainer />
+          </div>
+          <div id="about-us">
+            <AboutUs />
+          </div>
+          <TextDivider quoteID={1} />
+          <div id="photos">
+            <PhotoGallery />
+          </div>
+          <div id="testimonials">
+            <Testimonials />
+          </div>
+          <div id="service-area">
+            <Contact openChat={this.openChat} />
+          </div>   
+        </StyledMainPage>
         <Launcher
           style={{
             position: 'absolute',
@@ -144,15 +147,10 @@ class MainPage extends React.Component {
           newMessagesCount={this.state.newMessagesCount}
           handleClick={this._handleClick}
           isOpen={this.state.isOpen}
-        />    
-      </StyledMainPage>
+        />   
+      </div>
     );
   }
 }
 
 export default MainPage;
-/*
-
-    
-    
-*/
