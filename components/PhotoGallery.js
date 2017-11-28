@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import FlatButton from 'material-ui/FlatButton';
-// import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
-// import Masonry from 'react-masonry-component';
 import StackGrid from 'react-stack-grid';
 import MediaQuery from 'react-responsive';
 import fetch from 'isomorphic-fetch';
@@ -133,46 +131,3 @@ class PhotoGallery extends React.Component {
 }
 
 export default PhotoGallery;
-
-/*
-
-          <MediaQuery minWidth={1} maxWidth={449}>
-            <StackGrid columnWidth={100}>
-              {this.getPhotos(this.getDefaultNum('XS'))}
-            </StackGrid>
-          </MediaQuery>
-          <MediaQuery minWidth={450} maxWidth={699}>
-            <StackGrid columnWidth={200}>
-              {this.getPhotos(this.getDefaultNum('S'))}
-            </StackGrid>
-          </MediaQuery>
-          <MediaQuery minWidth={700} maxWidth={999}>
-            <StackGrid columnWidth={250}>
-              {this.getPhotos(this.getDefaultNum('M'))}
-          </StackGrid>
-          </MediaQuery>
-          <MediaQuery minWidth={1000}>
-            <StackGrid columnWidth={300}>
-              {this.getPhotos(this.getDefaultNum('L'))}
-            </StackGrid>
-          </MediaQuery>
-
-*/
-
-/*
-        <ResponsiveMasonry columnsCountBreakPoints={{ 200: 2, 450: 3, 700: 4, 1000: 5 }}>
-          <MediaQuery minWidth={1} maxWidth={449}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('XS'))}</Masonry>
-          </MediaQuery>
-          <MediaQuery minWidth={450} maxWidth={699}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('S'))}</Masonry>
-          </MediaQuery>
-          <MediaQuery minWidth={700} maxWidth={999}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('M'))}</Masonry>
-          </MediaQuery>
-          <MediaQuery minWidth={1000}>
-            <Masonry gutter={'5px'}>{this.getPhotos(this.getDefaultNum('L'))}</Masonry>
-          </MediaQuery>
-        </ResponsiveMasonry>
-
-*/

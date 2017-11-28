@@ -39,8 +39,34 @@ const StyledTopBar = styled.div`
 class TopBar extends React.Component {
   static goToAnchor(anchor) {
     const hashAnchor = anchor === '' ? '' : `/#${anchor}`;
+    console.log('anchor: ' + hashAnchor);
     document.location = `${document.location.protocol}//${document.location.host}${hashAnchor}`;
     return false;
+  }
+
+  componentDidMount() {
+    // using this component to handle old site redirects to index page anchors (prop passed in from index.js)
+    if(this.props.redirect !== undefined && this.props.redirect !== '') {
+      let redirect;
+      switch (this.props.redirect) {
+        case 'our-commitment':
+        case 'our-history':
+          redirect = 'about-us';
+          break;
+        case 'testimonials':
+          redirect = 'testimonials';
+          break;
+        case 'contact-us':
+          redirect = 'service-area';
+          break;
+        default:
+          redirect = '';
+      }
+      // Note: the redirect is currently not fully working since the photo gallery does not compute its vertical size until later, which pushes down the page.
+      if(redirect !== '') {
+        TopBar.goToAnchor(redirect);
+      }
+    }
   }
 
   render() {

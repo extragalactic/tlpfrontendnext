@@ -55,6 +55,14 @@ class ServicesTabsNav extends React.Component {
     }, 10);
   }
 
+
+  
+  // **** 
+  // Note: need to updateHeight onResize (via react-window-resize-listener?)
+  // ****
+
+
+
   handleChange(value) {
     this.setState({
       selectedTab: value,
@@ -65,7 +73,7 @@ class ServicesTabsNav extends React.Component {
     return (
       // the media queries determine if the tabs are displayed on 1 or 2 rows
       <div>
-        <MediaQuery minWidth={1} maxWidth={624}>
+        <MediaQuery minWidth={1} maxWidth={624} values={{ width: 600 }}>
           <StyledTabs
             onChange={this.handleChange}
             value={this.state.selectedTab}
@@ -112,4 +120,3 @@ ServicesTabsNav.defaultProps = {
 };
 
 export default ServicesTabsNav;
-

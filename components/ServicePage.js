@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SlideShow from 'react-slick';
+import Carousel from 'nuka-carousel';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+// import { WindowResizeListener } from 'react-window-resize-listener';
 import ServiceData from './ServiceData';
-//import history from './history';
 
 
 const StyledServicePage = styled.section`
@@ -25,11 +27,12 @@ const StyledSlideshow = styled(SlideShow)`
   margin: -20px 30px 0px 30px;
 `;
 const SlickSlide = styled.img`
-  width: 97%;
+  height: 75vw;
+  width: 100%;
 `;
 const StyledMain = styled.div`
   padding: 50px 5px 15px 5px;
-  margin-top: -15px;
+  margin-top: -40px;
   text-align: left;
 
   div {
@@ -63,26 +66,6 @@ class ServicePage extends React.Component {
 
     this.serviceType = props.serviceType;
     this.serviceData = ServiceData.find((service) => { return service.pageName === this.serviceType; });
-
-    this.settings = {
-      dots: true,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      arrows: true,
-      fade: false,
-      autoplay: false,
-      lazyLoad: false,
-      swipe: true,
-      swipeToSlide: false,
-      prevArrow: <Arrow />,
-      nextArrow: <Arrow />,
-      responsive: [
-        { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-        { breakpoint: 1000, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      ],
-    };
   }
 
   getSlides() {
@@ -140,12 +123,20 @@ class ServicePage extends React.Component {
   }
 
   render() {
+    // const Decorators = [];
+
     return (
       <StyledServicePage>
         <h1>{this.serviceData.title}</h1>
-        <StyledSlideshow {...this.settings}>
+        <Carousel
+          autoplay={false}
+          autoplayInterval={3000}
+          wrapAround
+          style={{marginTop: '-20px'}}
+          // decorators={Decorators}
+        >
           {this.getSlides()}
-        </StyledSlideshow>
+        </Carousel>
         <StyledMain>
           <div>
             {this.getContent()}
@@ -163,8 +154,3 @@ ServicePage.propTypes = {
 };
 
 export default ServicePage;
-/*
- static gotoSection(section) {
-    history.push(`/services/${section}`);
-  }
-*/
