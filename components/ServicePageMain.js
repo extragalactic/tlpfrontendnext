@@ -1,17 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ServiceData from './ServiceData';
 import ServicePage from './ServicePage';
 import ServicesTabsNav from './ServicesTabsNav';
-import TopBar from '../components/TopBar';
-import Footer from '../components/Footer';
 import { Launcher } from './chat/index';
 import returnLexResponse from './util/LexBot';
 import ScrollToTopOnMount from './util/ScrollToTopOnMount';
-import muiTheme from './muiTheme';
-import GlobalStyles from './globalStyles';
 
 const StyledServicePage = styled.section`
   padding: 5px;
@@ -186,32 +181,28 @@ class ServicePageMain extends React.Component {
 
   render() {
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <GlobalStyles>
-          <StyledServicePage>
-            <ScrollToTopOnMount /> { /* the only purpose of this component is to reset the page position to the top */ }
-            <TopBar/>
-            <StyledNavContainer>
-              <ServicesTabsNav pageContent={this.allServices()} startIndex={this.state.selectedTab} variableHeight />
-            </StyledNavContainer>
-            <Footer/>
-          </StyledServicePage>
-          <Launcher
-            style={{
-              position: 'absolute',
-            }}
-            agentProfile={{
-              teamName: 'Automated Estimator Pig',
-              imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
-            }}
-            onMessageWasSent={this._onMessageWasSent}
-            messageList={this.state.messageList}
-            newMessagesCount={this.state.newMessagesCount}
-            handleClick={this._handleClick}
-            isOpen={this.state.isOpen}
-          />
-        </GlobalStyles>
-      </MuiThemeProvider>
+      <div>
+        <StyledServicePage>
+          <ScrollToTopOnMount /> { /* the only purpose of this component is to reset the page position to the top */ }
+          <StyledNavContainer>
+            <ServicesTabsNav pageContent={this.allServices()} startIndex={this.state.selectedTab} variableHeight />
+          </StyledNavContainer>
+        </StyledServicePage>
+        <Launcher
+          style={{
+            position: 'absolute',
+          }}
+          agentProfile={{
+            teamName: 'Automated Estimator Pig',
+            imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
+          }}
+          onMessageWasSent={this._onMessageWasSent}
+          messageList={this.state.messageList}
+          newMessagesCount={this.state.newMessagesCount}
+          handleClick={this._handleClick}
+          isOpen={this.state.isOpen}
+        />
+      </div>
     );
   }
 }
@@ -227,22 +218,3 @@ ServicePageMain.defaultProps = {
 };
 
 export default ServicePageMain;
-/*
-
-
-    <Launcher
-          style={{
-            position: 'absolute',
-          }}
-          agentProfile={{
-            teamName: 'Automated Estimator Pig',
-            imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
-          }}
-          onMessageWasSent={this._onMessageWasSent}
-          messageList={this.state.messageList}
-          newMessagesCount={this.state.newMessagesCount}
-          handleClick={this._handleClick}
-          isOpen={this.state.isOpen}
-        />
-
-        */

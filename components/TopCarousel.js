@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Carousel from 'nuka-carousel';
@@ -9,7 +8,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import PhoneIcon from 'material-ui/svg-icons/communication/call';
 import MediaQuery from 'react-responsive';
 
-//const location = window.location;
 const TopDiv = styled.div`
   width: 100%;
   height: 0px;
@@ -22,7 +20,10 @@ const TopDiv = styled.div`
     padding-bottom: 59%;
   }
 `;
-const SlickSlide = styled.img`width: 100%;`;
+const SlickSlide = styled.img`
+  height: 62.5vw;
+  width: 100%;
+`;
 const StyledCarouselContent = styled.section`
   position: absolute;
   float: left;
