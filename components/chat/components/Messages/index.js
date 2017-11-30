@@ -46,7 +46,7 @@ class Message extends Component {
 }
 
 .sc-message--avatar {
-  background-image: url(https://d13yacurqjgara.cloudfront.net/assets/avatar-default-aa2eab7684294781f93bc99ad394a0eb3249c5768c21390163c9f55ea8ef83a4.gif);
+  background-image: url(https://s3.ca-central-1.amazonaws.com/3lpm/website/images/Pighead.png);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;

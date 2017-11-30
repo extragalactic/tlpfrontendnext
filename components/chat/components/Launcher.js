@@ -1,7 +1,14 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ChatWindow from "./ChatWindow";
-import launcherIcon from '../../../static/logo-no-bg.svg';
+//import launcherIcon from '../../../static/chat-icon.svg';
+
+const launcherIcon = () => (
+  <svg>
+  <circle cx={50} cy={50} r={10} fill="red" />
+</svg>
+)
+
 
 class Launcher extends Component {
   constructor() {
@@ -119,7 +126,14 @@ class Launcher extends Component {
         >
           <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
           <img className={"sc-open-icon"} src={'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/close-icon.png'} />
-          <img className={"sc-closed-icon"} src={launcherIcon} />
+          
+          <div>
+
+          </div>
+          <div className={"sc-closed-icon"}>
+          <launcherIcon/>
+          </div>
+          
         </div>
         <ChatWindow
           messageList={this.props.messageList}
