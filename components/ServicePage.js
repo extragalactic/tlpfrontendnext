@@ -155,6 +155,8 @@ class ServicePage extends React.Component {
   }
 
   render() {
+    // const Decorators = [];
+
     return (
       <StyledServicePage>
         <h1>{this.serviceData.title}</h1>

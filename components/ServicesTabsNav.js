@@ -56,6 +56,14 @@ class ServicesTabsNav extends React.Component {
     }, 10);
   }
 
+
+  
+  // **** 
+  // Note: need to updateHeight onResize (via react-window-resize-listener?)
+  // ****
+
+
+
   handleChange(value) {
     this.setState({
       selectedTab: value,
