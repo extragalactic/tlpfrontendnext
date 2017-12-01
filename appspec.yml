@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/tlpfrontend
+hooks:
+  ApplicationStart:
+    - location: ./npm-start.sh
+      timeout: 1200
+      user: ubuntu

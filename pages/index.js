@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import TopBar from '../components/TopBar';
 import Footer from '../components/Footer';
 import MainPage from '../components/MainPage';
-import muiTheme from '../components/muiTheme';
-import GlobalStyles from '../components/globalStyles';
+import muiTheme from '../components/styles/muiTheme';
+import GlobalStyles from '../components/styles/globalStyles';
 
 
 // Make sure react-tap-event-plugin only gets injected once
@@ -20,7 +20,7 @@ if (!process.tapEventInjected) {
 const StyledApp = styled.section`
   text-align: center;
   position: relative;
-  margin: auto;
+  margin: -8px;
   width: 100%;
   flex: 1;
   font-family: 'Open Sans', sans-serif;
