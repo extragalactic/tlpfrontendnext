@@ -119,7 +119,7 @@ class Launcher extends Component {
         >
           <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
           <img className={"sc-open-icon"} src={'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/close-icon.png'} />
-          <img className={"sc-closed-icon"} src={launcherIcon} />
+          <img className={"sc-closed-icon"} src={'https://s3.ca-central-1.amazonaws.com/tlpm/web/chat-icon.png'} />
         </div>
         <ChatWindow
           messageList={this.props.messageList}
