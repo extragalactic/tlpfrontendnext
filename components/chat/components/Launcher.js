@@ -1,20 +1,12 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ChatWindow from "./ChatWindow";
-//import launcherIcon from '../../../static/chat-icon.svg';
-
-const launcherIcon = () => (
-  <svg>
-  <circle cx={50} cy={50} r={10} fill="red" />
-</svg>
-)
 
 
 class Launcher extends Component {
   constructor() {
     super();
     this.state = {
-      launcherIcon,
       isOpen: false
     };
   }
