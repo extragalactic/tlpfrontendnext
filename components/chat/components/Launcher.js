@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ChatWindow from "./ChatWindow";
-import launcherIcon from '../../../static/logo-no-bg.svg';
+
 
 class Launcher extends Component {
   constructor() {
     super();
     this.state = {
-      launcherIcon,
       isOpen: false
     };
   }
