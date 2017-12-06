@@ -15,7 +15,7 @@ const StyledTopBar = styled.div`
   img {
     float: left;
     padding: 3px;
-    margin-left: -5px;
+    margin-left: 0px;
     height: 175px;
     @media (max-width: 1000px) {
       height: 165px;
@@ -24,13 +24,13 @@ const StyledTopBar = styled.div`
       height: 130px;
     }    
     @media (max-width: 650px) {
-      height: 90px;
+      height: 85px;
     }
     @media (max-width: 450px) {
-      height: 80px;
+      height: 70px;
     }    
     @media (max-width: 370px) {
-      height: 50px;
+      height: 45px;
     }    
   }
 `;

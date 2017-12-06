@@ -33,6 +33,7 @@ class Header extends Component {
             user-select: none;
             cursor: default;
             border-radius: 5px;
+            margin-left: -10px;
           }
 
           .sc-header--team-name:hover {
@@ -43,13 +44,16 @@ class Header extends Component {
             align-self: center;
             height: 40px;
             margin-right: 10px;
+            padding-top: 8px;
             box-sizing: border-box;
             cursor: pointer;
             border-radius: 5px;
+            border: 2px solid #1da1f2;
+            background: #1da1f2;
           }
 
           .sc-header--close-button:hover {
-            background: #1da1f2;
+            border: 2px solid #fff;
           }
 
           .sc-header--close-button img {
@@ -68,7 +72,7 @@ class Header extends Component {
         <img className="sc-header--img" src={this.props.imageUrl} alt="" />
         <div className="sc-header--team-name"> {this.props.teamName} </div>
         <div className="sc-header--close-button" onClick={this.props.onClose}>
-        <CloseIcon className={'img'}/>
+          <CloseIcon className={'img'} style={{color: '#fff'}}/>
         </div>
       </div>
     );
@@ -76,7 +80,3 @@ class Header extends Component {
 }
 
 export default Header;
-/*
-
-
-*/

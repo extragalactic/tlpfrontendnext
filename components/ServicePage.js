@@ -26,8 +26,8 @@ const StyledSlideshow = styled(SlideShow)`
   margin: -20px 30px 0px 30px;
 `;
 const SlickSlide = styled.img`
-  height: 75vw;
-  width: 100%;
+  height: 45vw;
+  width: 60%;
 `;
 const StyledMain = styled.div`
   padding: 40px 5px 30px 5px;
