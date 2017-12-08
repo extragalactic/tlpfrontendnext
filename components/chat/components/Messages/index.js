@@ -46,12 +46,12 @@ class Message extends Component {
 }
 
 .sc-message--avatar {
-  background-image: url(https://s3.ca-central-1.amazonaws.com/3lpm/website/images/Pighead.png);
+  background-image: url(https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot-icon.png);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 50%;
   align-self: center;
   margin-right: 15px;
