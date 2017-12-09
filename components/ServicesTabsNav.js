@@ -5,6 +5,9 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import MediaQuery from 'react-responsive';
 import ServiceData from './ServiceData';
+import ServicePage from './ServicePage';
+import ServiceThumbnail from './ServiceThumbnail';
+
 
 // styled-components needs this small workaround to pass in a custom prop when wrapping another component to prevent an 'unknown prop' warning
 const StyledTabs = styled(({ isBottomRow, ...rest }) => { return <Tabs {...rest} />; })`
@@ -44,6 +47,7 @@ class ServicesTabsNav extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.refresh = this.refresh.bind(this);
+    this.allServices = this.allServices.bind(this);
     this.swipeableViewsRef = null;
   }
 
@@ -56,13 +60,9 @@ class ServicesTabsNav extends React.Component {
     }, 10);
   }
 
-
-  
   // **** 
-  // Note: need to updateHeight onResize (via react-window-resize-listener?)
+  // Note: need to updateHeight onResize (via react-window-resize-listener maybe?)
   // ****
-
-
 
   handleChange(value) {
     this.setState({
@@ -75,6 +75,31 @@ class ServicesTabsNav extends React.Component {
     setTimeout(() => {
       this.swipeableViewsRef.updateHeight();
     }, 25);
+  }
+
+  allServices() {
+    if (this.props.bIsMainPage) {
+      return ServiceData.map((service) => {
+        return (
+          <div key={service.pageName}>
+            <ServiceThumbnail service={service} />
+          </div>
+        );
+      });
+    } else {
+      return ServiceData.map((service) => {
+        return (
+          <div key={service.pageName} style={{ overflowY: 'auto' }}>
+            <ServicePage 
+              serviceType={service.pageName}
+              openChat={this.props.openChat}
+              refresh={this.refresh}
+              selectedTab={this.state.selectedTab}
+            />
+          </div>
+        );
+      });
+    }
   }
 
   render() {
@@ -111,7 +136,7 @@ class ServicesTabsNav extends React.Component {
           animateTransitions={false}
           ref={(view) => { this.swipeableViewsRef = view; }}
         >
-          {this.props.pageContent}
+          {this.allServices()}
         </SwipeableViews>
       </div>
     );
@@ -119,15 +144,15 @@ class ServicesTabsNav extends React.Component {
 }
 
 ServicesTabsNav.propTypes = {
-  pageContent: PropTypes.array.isRequired,
   startIndex: PropTypes.number,
   variableHeight: PropTypes.bool,
-  refresh: PropTypes.func,
+  openChat: PropTypes.func,
+  bIsMainPage: PropTypes.bool,
 };
 ServicesTabsNav.defaultProps = {
   startIndex: 0,
   variableHeight: false,
-  refresh: null,
+  bIsMainPage: false,
 };
 
 export default ServicesTabsNav;

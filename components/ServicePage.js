@@ -27,7 +27,7 @@ const StyledSlideshow = styled(SlideShow)`
 `;
 const SlickSlide = styled.img`
   height: 45vw;
-  width: 60%;
+  width: 98%;
 `;
 const StyledMain = styled.div`
   padding: 40px 5px 30px 5px;
@@ -63,8 +63,13 @@ class ServicePage extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      currentSlideIndex: 0,
+    };
+
     this.serviceType = props.serviceType;
     this.serviceData = ServiceData.find((service) => { return service.pageName === this.serviceType; });
+    this.handleAfterSlide = this.handleAfterSlide.bind(this);
   }
 
   componentDidMount() {
@@ -72,12 +77,27 @@ class ServicePage extends React.Component {
     window.addEventListener("resize", this.props.refresh);
   }
 
+	handleAfterSlide(newSlideIndex) {
+    console.log(newSlideIndex);
+		this.setState({
+			currentSlideIndex: newSlideIndex,
+		});
+  }
+  
   getSlides() {
-    return this.serviceData.photos.map((photoPair) => {
-      return photoPair.map((photoSrc) => {
+    let selectedService = ServiceData[this.props.selectedTab].pageName;
+    // console.log(selectedService, this.serviceType);
+    if (selectedService !== this.serviceType) {
+      return <div></div>;
+    }
+    const numSlides = this.serviceData.photos.length;
+
+    return this.serviceData.photos.map((photoSrc, key) => {
+      if (key <= this.state.currentSlideIndex + 3 || key >= numSlides - 2) {
         const imgSrc = `https://s3.ca-central-1.amazonaws.com/3lpm/website/images/before-and-after-pics/${photoSrc}`;
-        return <div><SlickSlide src={imgSrc} alt="" /></div>;
-      });
+        return <div key={key}><SlickSlide src={imgSrc} alt=""/></div>;
+      }
+      return <div key={key}></div>;
     });
   }
 
@@ -162,9 +182,12 @@ class ServicePage extends React.Component {
         <h1>{this.serviceData.title}</h1>
         <Carousel
           autoplay={false}
-          autoplayInterval={3000}
           wrapAround
+          slidesToShow={2}
+          slidesToScroll={2}
+          cellSpacing={5}
           style={{marginTop: '-20px'}}
+          afterSlide={ this.handleAfterSlide }
           // decorators={Decorators}
         >
           {this.getSlides()}
@@ -184,6 +207,7 @@ ServicePage.propTypes = {
   serviceType: PropTypes.string.isRequired,
   openChat: PropTypes.func.isRequired,
   refresh: PropTypes.func.isRequired,
+  selectedTab: PropTypes.number.isRequired,
 };
 
 export default ServicePage;

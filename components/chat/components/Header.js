@@ -44,7 +44,7 @@ class Header extends Component {
             align-self: center;
             height: 40px;
             margin-right: 10px;
-            padding-top: 8px;
+            padding-top: 7px;
             box-sizing: border-box;
             cursor: pointer;
             border-radius: 5px;
