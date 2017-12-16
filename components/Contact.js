@@ -5,6 +5,7 @@ import Columns from 'react-columns';
 import RaisedButton from 'material-ui/RaisedButton';
 //import Ionicon from 'react-ionicons';
 
+/* Note: This component should be renamed (is no longer for contact, it's for Service Area) */
 
 const StyledContact = styled.section`
   padding: 5px 0px;
@@ -27,19 +28,19 @@ const StyledArea = styled.div`
   }
   div {
     text-align: center;
-    margin-bottom: 10px;   
-  }  
+    margin-bottom: 10px;
+  }
   img {
     width: 100%;
     border: 1px solid #000;
   }
   a:link, a:visited {
-    color: #c65757 !important; 
+    color: #c65757 !important;
     padding: 0px !important;
   }
   a:hover, a:active {
     color: #d00 !important;
-    padding: 0px !important;     
+    padding: 0px !important;
   }
 `;
 const StyledColumns = styled(Columns)`
@@ -75,9 +76,53 @@ const queries = [{
   query: 'min-width: 1000px',
 }];
 
-/* Note: This component should be renamed (is not longer for contact, and is confusing) */
+// -- old service area list --
+// const serviceAreaList = ['Aurora', 'Bethesda', 'Bradford', 'Brampton', 'Etobicoke', 'Gormley', 'Holland Landing', 'Kettleby', 'King City', 'Maple', 'Markham', 'Mississauga', 'Newmarket', 'Nobleton', 'North York', 'Oak Ridges', 'Oakville', 'Richmond Hill', 'Scarborough', 'Sharon', 'Stouffville', 'Thornhill', 'Toronto', 'Unionville', 'Vandor'];
 
-const serviceAreaList = ['Aurora', 'Bethesda', 'Bradford', 'Brampton', 'Etobicoke', 'Gormley', 'Holland Landing', 'Kettleby', 'King City', 'Maple', 'Markham', 'Mississauga', 'Newmarket', 'Nobleton', 'North York', 'Oak Ridges', 'Oakville', 'Richmond Hill', 'Scarborough', 'Sharon', 'Stouffville', 'Thornhill', 'Toronto', 'Unionville', 'Vandor'];
+const serviceAreaList = [
+  'Ajax',
+  'Angus',
+  'Aurora',
+  'Ballantrae',
+  'Barrie',
+  'Bradford West Gwillimbury',
+  'Brampton',
+  'Caledon',
+  'Cannington',
+  'East Gwillimbury',
+  'Etobicoke',
+  'Georgina',
+  'Gilford Beach',
+  'Glen Major',
+  'Gormley',
+  'Innisfil',
+  'Leaskdale',
+  'Mississauga',
+  'Mt. Albert',
+  'New Tecumseth',
+  'Newmarket',
+  'Newton Robinson',
+  'Nobleton',
+  'North York',
+  'Oakville',
+  'Pickering',
+  'Port Bolster',
+  'Port Perry',
+  'Richmond Hill',
+  'Scarborough',
+  'Schomberg',
+  'Seagrave',
+  'Sonya',
+  'Sunderland',
+  'Toronto',
+  'Udora',
+  'Utica',
+  'Uxbridge',
+  'Vaughan',
+  'Whitby',
+  'Whitchurch-Stouffville',
+  'Zephyr',
+];
 
 const Contact = (props) => {
   const openChat = props.openChat;
