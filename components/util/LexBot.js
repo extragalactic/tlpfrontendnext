@@ -2,7 +2,7 @@ import AWS from 'aws-sdk';
 
 AWS.config.update({
   credentials: new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-1:1262b4ef-7f35-4a74-8c0b-a05b26c9ab4b',
+    IdentityPoolId: "us-east-1:bd1dbc7e-9c42-4bb5-af6a-8823879203e3", // Identity pool ID
   }),
   region: 'us-east-1',
 });
@@ -10,8 +10,8 @@ AWS.config.update({
 
 const returnLexResponse = (inputText) => {
   const params = {
-    botAlias: 'tlpbotprod' /* required, has to be '$LATEST' */,
-    botName: 'ThreeLittlePigsCustomerService' /* required, the name of you bot */,
+    botAlias: 'tlp' /* required, has to be '$LATEST' */,
+    botName: 'tlpchatbot' /* required, the name of you bot */,
     inputText /* required, your text */,
     userId: 'USER0122' /* required, arbitrary identifier */,
     sessionAttributes: {
