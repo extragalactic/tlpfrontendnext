@@ -7,12 +7,13 @@ class AmpPageHead extends React.Component {
   }
 
   render() {
+    /*
     const { head, styles, __NEXT_DATA__ } = this.context._documentProps
     const { pathname, buildId, assetPrefix, nextExport } = __NEXT_DATA__
     const pagePathname = getPagePathname(pathname, nextExport)
-
+    */
     return (
-      <head>
+      <head {...this.props}>
         <meta charset="utf-8" />
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
@@ -75,7 +76,7 @@ class AmpPageHead extends React.Component {
             align-content: flex-start;
           }
           .carousel {
-            margin-bottom: 5px;
+            margin: 0px 11px 5px 11px;
           }
           .preview-button {
             border: 1px solid #ddd;
@@ -91,7 +92,7 @@ class AmpPageHead extends React.Component {
             text-align: justify;
             font-size: 0.9em;
             color: #666;
-            line-height: 1.3;    
+            line-height: 1.3;
           }
           .testimonialTitleBar {
             height: 1.4em;
@@ -125,9 +126,9 @@ class AmpPageHead extends React.Component {
             background-image: linear-gradient(to bottom, #99ceef, #1DA1F2);
             text-decoration: none;
             cursor: pointer;
-          } 
+          }
           .btn:visited, .btn:active, .btn:focus {
-            outline: none;  
+            outline: none;
           }
           .btnLarge {
             -webkit-border-radius: 5;
@@ -143,7 +144,7 @@ class AmpPageHead extends React.Component {
             border-radius: 12px;
             font-size: 16px;
             padding: 8px 15px 8px 15px;
-          }  
+          }
           .bottomImage {
             display: flex;
           }
@@ -151,15 +152,17 @@ class AmpPageHead extends React.Component {
         </style>
 
         <style amp-boilerplate=''>{`body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}`}</style><noscript><style amp-boilerplate=''>{`body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}`}</style></noscript>
+
+        {this.props.children}
       </head>
     );
   }
 }
-
+/*
 function getPagePathname (pathname, nextExport) {
   if (!nextExport) return pathname
   if (pathname === '/') return '/index.js'
   return `${pathname}/index.js`
 }
-
+*/
 export default AmpPageHead;

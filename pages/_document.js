@@ -1,9 +1,10 @@
-import Document, { Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
-import flush from 'styled-jsx/server'
+
+import React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
+import flush from 'styled-jsx/server';
 import PropTypes from 'prop-types';
 import AmpPageHead from '../components/AmpPageHead';
-import AmpPageBody from '../components/AmpPageBody';
 
 
 export default class MyDocument extends Document {
@@ -18,8 +19,11 @@ export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
     const { html, head, errorHtml, chunks } = renderPage()
     const sheet = new ServerStyleSheet()
+
+    // Note: 'page' and 'styleTags' vars will prevent the screen from flashing the unformatted page before styles are applied
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
     const styleTags = sheet.getStyleElement()
+
     const styles = flush()
     let amp = false
     head.forEach(element => {
@@ -42,9 +46,11 @@ export default class MyDocument extends Document {
   render () {
     if (this.props.amp) {
       return (
-        <html>
+        <html amp="">
           <AmpPageHead />
-          <AmpPageBody />
+          <body>
+            <Main />
+          </body>
         </html>
       );
     } else {
@@ -67,7 +73,8 @@ export default class MyDocument extends Document {
             <meta name="twitter:creator" content="@3PigsMasonry" />
             <meta name="twitter:image" content="%PUBLIC_URL%/images/social-media/3LPM-twitter-card.jpg" />
             <meta name="twitter:summary_large_image" content="%PUBLIC_URL%/images/social-media/3LPM-twitter-card-large.jpg" />
-            <script src="https://use.fontawesome.com/94c5c8189a.js"></script>          
+            <link rel="amphtml" href="http://www.3lpm.ca?amp=1" />
+            <script src="https://use.fontawesome.com/94c5c8189a.js"></script>
             {this.props.styleTags}
           </Head>
           <body>

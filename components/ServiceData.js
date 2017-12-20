@@ -1,9 +1,9 @@
 const services = [
-  
-    // Format notes: 
+
+    // Format notes:
     //
-    // If the context object has "text" then the items are displayed as paragraphs. If instead the content is a "list" it will show items as a bulleted list.
-  
+    // If the content object has "text" then the items are displayed as paragraphs. If instead the content is a "list" it will show items as a bulleted list.
+
     //
     // ------- Refacing -------
     //
@@ -16,11 +16,11 @@ const services = [
           title: 'Give Your Home a Brand New Look',
           content: [
             {
-              text: ['Stone refacing has become a popular way to enhance the exterior beauty of your home using stone products. Real stone refacing allows us to change the look of your home through custom stone renovations eliminating the need to move away from your existing neighbourhood while achieving an updated look for your home or business.', 'Three Little Pigs Masonry installs a full 4 inches of real stone to the exterior walls of your home. Why do we choose to install full 4 inches of stone? The GTA has experienced extreme weather conditions such as heavy rains, ice storms, and extreme cold. How could we offer any less to our customers? Our choice will withstand the weather conditions of the GTA, other options will not.'],
+              text: ['Stone refacing has become a popular way to enhance the exterior beauty of your home using real stone products. Natural refacing allows us to change the look of your home through custom stone renovations eliminating the need to move away from your existing neighbourhood while achieving an updated look for your home or business.', 'Three Little Pigs Masonry installs a full 4 inches of real stone veneer to the exterior walls of your home. Why do we choose to install full 4 inches of stone? The GTA has experienced extreme weather conditions such as heavy rains, ice storms, and extreme cold. How could we offer any less to our customers? Our choice will withstand the weather conditions of the GTA, other options will not.'],
             },
             {
               title: 'The Process',
-              text: ['The existing brick veneer is dismantled and the building envelope sealed. The new stone is expertly installed with quality control. We can work with all your custom requests. New stone window sills, parging, flagstone and address stones are just a few of the custom features we provide. Three Little Pigs Masonry installs many types of natural stone, sandstone and limestone. Our team will be happy to assist you with your stone refacing ideas.'],
+              text: ['The existing brick veneer is dismantled, along with usually existing damaged vapour barrier. A new vapour barrier is installed and the building envelope sealed. The new stone is expertly installed with quality control. We can work with all your custom requests. New stone window sills, parging, flagstone and address stones are just a few of the custom features we provide. Three Little Pigs Masonry installs many types of natural stone, sandstone and limestone. Our team will be happy to assist you with your stone refacing ideas.'],
             },
           ],
         },
@@ -36,8 +36,8 @@ const services = [
         'refacing/refacing4-before.jpg', 'refacing/refacing4-after.jpg',
       ],
     },
-  
-    // 
+
+    //
     // ------- Flagstone -------
     //
     { pageName: 'flagstone',
@@ -49,11 +49,11 @@ const services = [
           title: 'Complete Your Dream Exterior with Flagstone',
           content: [
             {
-              text: ['Three Little Pigs Masonry in the Greater Toronto Area will install all natural stone to any surface that has a structurally sound and reinforced foundation. The foundation is the most important aspect of any flagstone project. A structurally sound foundation will prevent cracking and moving as the earth shifts and reacts to the changing climate. We will work closely with you achieve your design ideas. We install all types of natural flagstone. We install flagstone for landings, steps, walkways, pool areas and patios.'],
+              text: ['Three Little Pigs Masonry in the Greater Toronto Area will install all natural stone to any surface that has a structurally sound and reinforced foundation. The foundation is the most important aspect of any flagstone project. A structurally sound foundation will prevent cracking and moving as the earth shifts and reacts to the changing climate. We will work closely with you to achieve your design ideas. We install all types of natural flagstone for landings, steps, walkways, pool areas and patios.'],
             },
             {
               title: 'Caring for Your Flagstone',
-              text: ['Flagstone can be used to complete your front entrance by adding the beauty of natural stone. Installed properly, it enhances your curb appeal and will be enjoyed for many years to come. Like all things of great beauty, it must be treated with care. During the winter months, salt and other harsh chemicals cannot be used to add traction or melt ice. Salt is very damaging to the flagstone, the mortar joints and your garden. To maintain your beautiful flagstone, Three Little Pigs Masonry only recommends the use of coarse sand for traction during winter weather. Coarse sand can be purchased in bags from your local landscaping or masonry supplier. If you have any questions about flagstone, please call our office.'],
+              text: ['Flagstone can be used to complete your front entrance by adding the beauty of natural stone. Installed properly, it enhances your curb appeal and will be enjoyed for many years to come. Like all things of great beauty, it must be treated with care. During the winter months, salt and other harsh chemicals cannot be used to add traction or melt ice, including products that state they are "safe for stone". They still harm the mortar joints. Salt is very damaging to the flagstone, the mortar joints and your garden. To maintain your beautiful flagstone, Three Little Pigs Masonry only recommends the use of coarse sand for traction during winter weather. Coarse sand can be purchased in bags from your Home Depot or masonry supplier. If you have any questions about flagstone, please call our office.'],
             },
           ],
         },
@@ -75,7 +75,7 @@ const services = [
           title: 'Functional Masonry Retaining Walls',
           content: [
             {
-              text: ['Three Little Pigs Masonry follows fundamental masonry procedures to have a successfully functional masonry retaining wall. We drill 4-foot deep pilings, 10" in diameter and at maximum 5-foot intervals (from lowest grade level of retainer). No matter how high your retaining wall, it must have these pilings or the frost will move it. We install 15m rebar (bent 90 degrees to tie into horizontal rebar or wire mesh or both into pilings) and pour or place concrete to level of lowest grade.', 'Next, we install small 1/2" to 3/4" tubing at 3-foot intervals on top of footing to allow water to drain from the hydro-static pressure, but we also cover the tubing on the inside with a large aggregate to ensure that the rubber weepers do not get plugged up from soil or clay. In addition to installing active weepers, we install a waterproof membrane on the inside. The retaining wall can be built out of stone, brick or block, the choice is yours.', 'The final component is the limestone coping that is installed on the top of the retaining wall with a 2" overhang and complete with drip edges to guide water away from your retaining wall.'],
+              text: ['Three Little Pigs Masonry follows fundamental masonry procedures to have a successfully functional masonry retaining wall. We drill 4-foot deep pilings, 8" to 12" in diameter and at maximum 5-foot intervals (from lowest grade level of retainer). No matter how high your retaining wall, it must have these pilings or the frost will move it. We install 15m rebar (bent 90 degrees to tie into horizontal rebar or wire mesh or both into pilings) and pour or place concrete to level of lowest grade.', 'Next, we install small 1/2" to 3/4" tubing at two foot intervals on top of footing to allow water to drain from the hydro-static pressure, but we also cover the tubing on the inside with a large aggregate to ensure that the weepers do not get plugged up from soil or clay. In addition to installing active weepers, we install a waterproof membrane on the inside. The retaining wall can be built out of stone, brick or block, the choice is yours.', 'The final component is the limestone coping that is installed on the top of the retaining wall with a 2" overhang and complete with drip edges to guide water away from your retaining wall.'],
             },
           ],
         },
@@ -96,7 +96,7 @@ const services = [
           title: 'Reasons for Brick Repair',
           content: [
             {
-              list: ['Poor design at the architectural stage allowing brick to be exposed to abnormal amounts of water or moisture.', 'The lack of, or the incorrect installation of through wall flashing and weepers. Flashings functions to guide water out and away from the inside masonry cavity wall. The weepers are holes in the mortar that are installed so the water can escape and not be trapped behind the wall. Brick needs to breathe and its weepers can be plugged therefore not functioning correctly. The bricks/masonry soak up the water and deterioration begins.', 'Bricks need protection from water. The existence of a coping stone with proper drip edges will guide water away from the brick. Window sills also need to have drip edges so the face of the brick underneath is protected. Chimneys also require a cap or coping stone to ensure that the masonry remains healthy.', 'All masonry veneer should be raised a minimum of 8" from the ground or grade level. The masonry will soak up water if continuously covered with snow and moisture. Flashing and active weepers will not help but work in conjunction with a properly constructed wall. The bottom 8" should be parged to protect the concrete foundation from the elements. Masonry repair should be done upon discovery as it may lead to more extensive brick repair and other repairs due to water penetration.'],
+              list: ['Poor design at the architectural stage allowing brick to be exposed to abnormal amounts of water or moisture.', 'The lack of, or the incorrect installation of through wall flashing and weepers. Flashing functions to guide water out and away from the inside masonry cavity wall. The weepers are holes in the mortar that are installed so the water can escape and not be trapped behind the wall. Brick needs to breathe and its weepers can be plugged therefore not functioning correctly. The bricks/masonry soak up the water and deterioration begins as it has no way to weep out.', 'Bricks need protection from water. The existence of a coping stone with proper drip edges will guide water away from the brick. Window sills also need to have drip edges so the face of the brick underneath is protected. Chimneys also require a cap or coping stone to ensure that the masonry remains healthy.', 'All masonry veneer should be raised a minimum of 8" from the ground or grade level. The masonry will soak up water if continuously covered with snow and moisture. Flashing and active weepers will not help but work in conjunction with a properly constructed wall. The bottom exterior 8" should be parged to protect the concrete foundation from the elements. Masonry repair should be done upon discovery as it may lead to more extensive brick repair and other repairs due to water penetration.'],
             },
             {
               title: 'Tuck Pointing or Repointing',
@@ -104,7 +104,7 @@ const services = [
             },
             {
               title: 'Brick Spalling Repairs',
-              text: ['Deterioration, or spalling as it is referred to in our industry, is an indication that water is penetrating and causing damage. Spalling of bricks can occur at various locations around your home. Brick, stone or block installed too close to grade level (too low to the ground) is exposed to the environment. It should have been installed above grade level by a minimum of 8 inches. Parge should be troweled on as it resists the water, snow and salt, and protects the foundation. Another reason that brick spalling occurs is when there is no flashing or weep vents properly installed. If you can visually see the vents, they may be plugged. Lack of vents or plugged vents does not allow water to drain to the outside of the home or building. The water is trapped and is slowly damaging the brick from the inside out or worse, the water is slowly making its way into the home or building. Our forces will expertly install the necessary flashing and active weepers and reinstall new brick or parge over new brick (depending on location).'],
+              text: ['Deterioration, or spalling as it is referred to in our industry, is an indication that water is penetrating and causing damage. Spalling of bricks can occur at various locations around your home. Brick, stone or block installed too close to grade level (too low to the ground) is exposed to the environment. It should have been installed above grade level by a minimum of 8 inches. Parge should be troweled on as it resists the water, snow and salt, and protects the foundation. Another reason that brick spalling occurs is when there is no flashing or weep vents properly installed. If you can visually see the vents, they may still be plugged. Lack of vents or plugged vents does not allow water to drain to the outside of the home or building. The water is trapped and is slowly damaging the brick from the inside out or worse, the water is slowly making its way into the home or building. Our forces will expertly install the necessary flashing and active weepers and reinstall new brick or parge over new brick (depending on location).'],
             },
             {
               title: 'Chimney Rebuilding',
@@ -116,7 +116,7 @@ const services = [
           title: 'Chimney Repairs and Rebuilds to Building Codes and Standards',
           content: [
             {
-              text: ['The condition of your chimney is very important for many reasons. Even an unused chimney must be maintained to avoid water penetration that can cause exterior as well as interior damage. The chimney requires several key components to be present in order for it to resist the harsh elements. Remember, the chimney stands above the structure and is exposed to the elements wile chimney area under roof is protected.', 'A chimney must be built according to fire code standards. It must have a crown (a sloped centre) that will stop water from entering the chimney. The cap (a coping stone that sits on top of the bricks) with a drip edge will protect your brick by directing the water away from it. The clay flue liners that are located inside the chimney stack must be in good condition. The chimney flashing (where the chimney meets the roof) must be in good condition to avoid water penetration into the structure. All elements are sealed with a commercial grade fire rated caulking.', 'Customers often ask us when they should they be repairing their chimney. The best time would be in the very early signs of decay. The longer you wait the more decay will spread outside and inside. Repairing only the damaged bricks you see on the outside will result in repairs again and again, as the inside brick decay makes its way on the outside where you can see it. The chimney must be taken down to the point where there is no more damaged bricks visible on the inside and in many cases, it is best to rebuild the complete chimney (to roof line). A complete rebuild will give you peace of mind for many years.'],
+              text: ['The condition of your chimney is very important for many reasons. Even an unused chimney must be maintained to avoid water penetration that can cause exterior as well as interior damage. The chimney requires several key components to be present in order for it to resist the harsh elements. Remember, the chimney stands above the structure and is exposed to the elements wile chimney area under roof is protected.', 'A chimney must be built according to fire code standards. It must have a crown (a sloped centre) that will stop water from entering the chimney. The cap (a coping stone that sits on top of the bricks) with a drip edge will protect your brick by directing the water away from it. The clay flue liners that are located inside the chimney stack must be in good condition. The chimney flashing (where the chimney meets the roof) must be in good condition to avoid water penetration into the structure. All elements are sealed with a commercial grade fire rated caulking.', 'Customers often ask us when they should they be repairing their chimney. The best time would be in the very early signs of decay. The longer you wait the more decay will spread outside and inside. Repairing only the damaged bricks you see on the outside will result in repairs again and again, as the inside brick decay makes its way on the outside where you can see it. However the rule of thumb is that from the lowest spalled brick you can see on the outside, there are at least 6 additional courses of brick that are probably contaminated on the inside. The chimney must be taken down to the point where there is no more damaged bricks visible on the inside, and in many cases it is best to rebuild the complete chimney (to roof line). A complete rebuild will give you peace of mind for many years.'],
             },
             {
               title: 'Stone Chimneys',
@@ -125,7 +125,7 @@ const services = [
           ],
         },
         {
-          title: 'Restore Brick Window Sills or Install Limestone Window Sills',
+          title: 'Window Sills',
           content: [
             {
               text: ['Properly installed window sills are essential for the complete building envelope. Brick window sills tend to breakdown for a number of reasons:'],
@@ -153,7 +153,7 @@ const services = [
     //
     // ------- Foundations -------
     //
-    { pageName: 'foundations',
+    { pageName: 'foundation',
       imgSrc: 'service_foundation_repair.jpg',
       title: 'Foundations',
       summary: 'The foundation must be installed with all the necessary and essential components for it to withstand the earth’s shifting and our cold climate.',
@@ -162,23 +162,19 @@ const services = [
           title: 'Concrete Foundations Need to be Maintained',
           content: [
             {
-              text: ["The health of your home's foundation is a very important aspect to the overall health of your home. Great care was taken to protect the below grade foundation of your home at time of building. Two, and at times three, layers of water membrane have been installed to protect the foundation below grade. Little or no care has been given to the above grade foundation."],
-            },
-            {
-              title: 'Protecting Your Above Grade Foundation',
-              text: ['The above grade foundation is left exposed to the elements and will deteriorate over time. Crumbling, cracking, peeling, breaking and signs of water leakage are all indicators that your foundation needs immediate attention. In addition, if the concrete of your foundation shows visible aggregates such as stones or gravel, it must be repaired to prevent costly damage.', 'Our forces are trained to deal with all the issues that your foundation requires. We professionally seal all the cracks or holes in your foundation. Once we have sealed the foundation, we professionally grind the surface of the foundation to ensure we have a clean masonry bond for our next step.'],
+              text: ["The health of your home's foundation is a very important aspect to the overall health of your home. Great care was taken to protect the below grade foundation of your home at time of building. Two, and at times three, layers of water membrane have been installed to protect the foundation below grade. Little or no care has been given to the above grade foundation.", 'The above grade foundation is left exposed to the elements and will deteriorate over time. Crumbling, cracking, peeling, breaking and signs of water leakage are all indicators that your foundation needs immediate attention. In addition, if the concrete of your foundation shows visible aggregates such as stones or gravel, it must be repaired to prevent future costly damage.', 'Our forces are trained to deal with all the issues that your foundation requires. We professionally seal all the cracks or holes in your foundation. Once we have sealed the foundation, we professionally grind the surface of the foundation to ensure we have a clean masonry bond for our next step.'],
             },
             {
               title: 'PARGING: Grinding for a Perfect Foundation',
-              text: ['Grinding is the only sure way to achieve a surface that is as similar as possible to newly poured concrete. Acid wash or pressure wash prior to troweling on parge will not achieve a long-term result. Also by grinding, we can achieve a crisp, clean result as the foundation acts as a pedestal for your home.', 'Our next step is parging your above grade foundation. We use the highest quality parge available on the market. It is professionally applied to the prepared foundation and achieves a sandstone water repellant finish.'],
+              text: ['Grinding is the only sure way to achieve a surface that is as similar as possible to newly poured concrete. Acid wash or pressure wash prior to troweling on parge will not achieve a long-term result. Also by grinding, we can achieve a crisp, clean result as the foundation acts as a pedestal for your home.', 'Our next step is parging your above grade foundation. We use the highest quality fibre parge available on the market. It is professionally applied to the prepared foundation and achieves a sandstone water repellant finish.'],
             },
             {
               title: 'Washable Water Repellant Colour Coating',
-              text: ['Our final recommended step is a washable water repellant colour coating that leaves your foundation with an even clean and crisp appearance that will last for many years. Our parging process can be applied to many other concrete areas of your home that require attention.'],
+              text: ['Our final recommended step is a washable water repellant fibre colour coating that leaves your foundation with an even clean and crisp appearance that will last for many years. Our parging process can be applied to many other concrete areas of your home that require attention.'],
             },
             {
               title: 'Preparing the Foundation',
-              text: ['Our method of preparing the foundation for any stone application and or new concrete pad or sidewalk is in accordance with the more stringent National Building Code standards. We actually drill 4 foot deep holes (below grade) that are 10 inches to 12 inches in diameter and at 5 foot intervals. We install 15M steel rebar into the pilings and tie this steel 15M rebar to a minimum 6 inch concrete slab. While preparing the concrete slab, wire reinforcement is also installed and tied to the 15M steel rebar for vertical reinforcement. The wire reinforcement is placed overlapping within the concrete to provide the horizontal reinforcement.', 'We pour or place the concrete and the new concrete is ready for use. Projects that include flagstone installation require s concrete curing period. We pour or place the concrete and wait a minimum of 28 days for the concrete to fully cure. Concrete must be left to cure to avoid possible cracking if stone is installed immediately. After the curing period, we return and install your natural stone or flagstone. If these steps are not followed accurately, the chance for your flagstone to crack is a very definite possibility.', 'We back up our foundation installation with a 20 year warranty.'],
+              text: ['Our method of preparing the foundation for any stone application and or new concrete pad or sidewalk is in accordance with the more stringent National Building Code standards. We actually drill 4 foot deep holes (below grade) that are 8 inches to 12 inches in diameter and at 5 foot intervals. We install 15M steel rebar into the pilings and tie this steel 15M rebar to a minimum 6 inch thick concrete slab. While preparing the concrete slab, wire reinforcement is also installed and tied to the 15M steel rebar for vertical reinforcement. The wire reinforcement is placed overlapping within the concrete to provide the horizontal reinforcement.', 'We pour or place the concrete and the new concrete is ready for use. Projects that include flagstone installation require s concrete curing period. We pour or place the concrete and wait a minimum of 28 days for the concrete to fully cure. Concrete must be left to cure to avoid possible cracking if stone is installed immediately. After the curing period, we return and install your natural stone or flagstone. If these steps are not followed accurately, the chance for your flagstone to crack is a very definite possibility.', 'We back up our foundation installation with a 20 year warranty.'],
             },
           ],
         },
@@ -250,7 +246,7 @@ const services = [
           title: 'Concrete Walkways',
           content: [
             {
-              text: ['Concrete has always been a wise choice for walkways and sidewalks. It is long-lasting, easy to care for and has a nice clean appearance. Given our climate, proper installation is essential. Three Little Pigs Masonry follows the National Building Code (NBC) guidelines for concrete installation. This includes 4-foot pilings (below frost line) installed at 5-foot intervals and reinforced with steel rebar and concrete. This step is very important in keeping the concrete in place over time when the earth is subject to constant movement. Six to eight inches thick concrete is placed to create the concrete walkway or sidewalk. The concrete is also reinforced with overlapping steel mesh.', 'Our team works closely with the customer to achieve the correct design and finish. Three Little Pigs Masonry provides a 20-year warranty on your new NBC concrete walkway or sidewalk. The walkway or sidewalk is ideal for customers who would like to have flagstone installed as the finished product. It will ensure that no cracking or shifting will affect the flagstone, providing many years of enjoyment and pride.', 'Three Little Pigs Masonry also offers concrete walkways and sidewalks installed by the Ontario Building Code.'],
+              text: ['Concrete has always been a wise choice for walkways and sidewalks. It is long-lasting, easy to care for and has a nice clean appearance. Given our climate, proper installation is essential. Three Little Pigs Masonry follows the National Building Code (NBC) guidelines for concrete installation. This includes 4-foot pilings (below frost line) installed at 5-foot intervals and reinforced with steel rebar and concrete. This procedure is very important in keeping the concrete in place over time when the earth is subject to constant movement. Six to eight inches thick concrete is placed to create the concrete walkway or sidewalk. The concrete is also reinforced with overlapping steel mesh.', 'Our team works closely with the customer to achieve the correct design and finish. Three Little Pigs Masonry provides a 20-year warranty on your new NBC concrete walkway or sidewalk. The walkway or sidewalk is ideal for customers who would like to have flagstone installed as the finished product. It will ensure that no cracking or shifting will affect the flagstone, providing many years of enjoyment and pride.', 'Three Little Pigs Masonry also offers concrete walkways and sidewalks installed by the Ontario Building Code.'],
             },
           ],
         },
@@ -262,7 +258,7 @@ const services = [
             },
             {
               title: 'Preparing the Foundation',
-              text: ['Our method of preparing the foundation for any stone application and or new concrete pad or sidewalk is in accordance with the more stringent National Building Code standards. We actually drill 4 foot deep holes (below grade) that are 10 inches to 12 inches in diameter and at 5 foot intervals. We install 15M steel rebar into the pilings and tie this steel 15M rebar to a minimum 6 inch concrete slab. While preparing the concrete slab, wire reinforcement is also installed and tied to the 15M steel rebar for vertical reinforcement. The wire reinforcement is placed overlapping within the concrete to provide the horizontal reinforcement.', 'We pour or place the concrete and the new concrete is ready for use. Projects that include flagstone installation require s concrete curing period. We pour or place the concrete and wait a minimum of 28 days for the concrete to fully cure. Concrete must be left to cure to avoid possible cracking if stone is installed immediately. After the curing period, we return and install your natural stone or flagstone. If these steps are not followed accurately, the chance for your flagstone to crack is a very definite possibility.'],
+              text: ['Our method of preparing the foundation for any stone application and or new concrete pad or sidewalk is in accordance with the more stringent National Building Code standards. We actually drill 4 foot deep holes (below grade) that are 8 inches to 12 inches in diameter and at 5 foot intervals. We install 15M steel rebar into the pilings and tie 15M rebar to a minimum 6 inch concrete slab. While preparing the concrete slab, wire reinforcement is also installed and tied to the 15M steel rebar for vertical reinforcement. The wire reinforcement is placed overlapping within the concrete to provide the horizontal reinforcement.', 'We pour or place the concrete and the new concrete is ready for use. Projects that include flagstone installation require s concrete curing period. We pour or place the concrete and wait a minimum of 28 days for the concrete to fully cure. Concrete must be left to cure to avoid possible cracking if stone is installed immediately. After the curing period, we return and install your natural stone or flagstone. If these steps are not followed accurately, the chance for your flagstone to crack is a very definite possibility.'],
             },
           ],
         },
@@ -276,6 +272,5 @@ const services = [
       ],
     },
   ];
-  
+
   export default services;
-  

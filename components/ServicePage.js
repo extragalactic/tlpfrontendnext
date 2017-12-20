@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import ServiceData from './ServiceData';
 
+import defaultDecorators from 'nuka-carousel/lib/decorators';
 
 const StyledServicePage = styled.section`
   padding: 5px;
@@ -19,7 +20,7 @@ const StyledServicePage = styled.section`
   }
   p {
     font-size: 1.0em;
-    text-align: left;  
+    text-align: left;
   }
 `;
 const StyledSlideshow = styled(SlideShow)`
@@ -83,7 +84,7 @@ class ServicePage extends React.Component {
 			currentSlideIndex: newSlideIndex,
 		});
   }
-  
+
   getSlides() {
     let selectedService = ServiceData[this.props.selectedTab].pageName;
     // console.log(selectedService, this.serviceType);
@@ -123,7 +124,7 @@ class ServicePage extends React.Component {
                   /* render section as a list */
                   if (subsection.list !== undefined) {
                     return (
-                      <div key={`${subsection.title}${i}`}>  
+                      <div key={`${subsection.title}${i}`}>
                         {
                           subsection.title !== '' &&
                             subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
@@ -144,7 +145,7 @@ class ServicePage extends React.Component {
                   }
                   // else render section as regular paragraphs
                   return (
-                    <div key={`${subsection.title}${i}`}>  
+                    <div key={`${subsection.title}${i}`}>
                       {
                         subsection.title !== '' &&
                           subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
@@ -175,7 +176,8 @@ class ServicePage extends React.Component {
   }
 
   render() {
-    // const Decorators = [];
+    // removes the dots from the interface
+    const Decorators = defaultDecorators.slice(0,2);
 
     return (
       <StyledServicePage>
@@ -188,7 +190,7 @@ class ServicePage extends React.Component {
           cellSpacing={5}
           style={{marginTop: '-20px'}}
           afterSlide={ this.handleAfterSlide }
-          // decorators={Decorators}
+          decorators={Decorators}
         >
           {this.getSlides()}
         </Carousel>
