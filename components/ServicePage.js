@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import ServiceData from './ServiceData';
 
+import defaultDecorators from 'nuka-carousel/lib/decorators';
 
 const StyledServicePage = styled.section`
   padding: 5px;
@@ -19,15 +20,15 @@ const StyledServicePage = styled.section`
   }
   p {
     font-size: 1.0em;
-    text-align: left;  
+    text-align: left;
   }
 `;
 const StyledSlideshow = styled(SlideShow)`
   margin: -20px 30px 0px 30px;
 `;
 const SlickSlide = styled.img`
-  height: 75vw;
-  width: 100%;
+  height: 45vw;
+  width: 98%;
 `;
 const StyledMain = styled.div`
   padding: 40px 5px 30px 5px;
@@ -63,8 +64,13 @@ class ServicePage extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      currentSlideIndex: 0,
+    };
+
     this.serviceType = props.serviceType;
     this.serviceData = ServiceData.find((service) => { return service.pageName === this.serviceType; });
+    this.handleAfterSlide = this.handleAfterSlide.bind(this);
   }
 
   componentDidMount() {
@@ -72,12 +78,27 @@ class ServicePage extends React.Component {
     window.addEventListener("resize", this.props.refresh);
   }
 
+	handleAfterSlide(newSlideIndex) {
+    console.log(newSlideIndex);
+		this.setState({
+			currentSlideIndex: newSlideIndex,
+		});
+  }
+
   getSlides() {
-    return this.serviceData.photos.map((photoPair) => {
-      return photoPair.map((photoSrc) => {
+    let selectedService = ServiceData[this.props.selectedTab].pageName;
+    // console.log(selectedService, this.serviceType);
+    if (selectedService !== this.serviceType) {
+      return <div></div>;
+    }
+    const numSlides = this.serviceData.photos.length;
+
+    return this.serviceData.photos.map((photoSrc, key) => {
+      if (key <= this.state.currentSlideIndex + 3 || key >= numSlides - 2) {
         const imgSrc = `https://s3.ca-central-1.amazonaws.com/3lpm/website/images/before-and-after-pics/${photoSrc}`;
-        return <div><SlickSlide src={imgSrc} alt="" /></div>;
-      });
+        return <div key={key}><SlickSlide src={imgSrc} alt=""/></div>;
+      }
+      return <div key={key}></div>;
     });
   }
 
@@ -103,7 +124,7 @@ class ServicePage extends React.Component {
                   /* render section as a list */
                   if (subsection.list !== undefined) {
                     return (
-                      <div key={`${subsection.title}${i}`}>  
+                      <div key={`${subsection.title}${i}`}>
                         {
                           subsection.title !== '' &&
                             subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
@@ -124,7 +145,7 @@ class ServicePage extends React.Component {
                   }
                   // else render section as regular paragraphs
                   return (
-                    <div key={`${subsection.title}${i}`}>  
+                    <div key={`${subsection.title}${i}`}>
                       {
                         subsection.title !== '' &&
                           subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
@@ -155,17 +176,21 @@ class ServicePage extends React.Component {
   }
 
   render() {
-    // const Decorators = [];
+    // removes the dots from the interface
+    const Decorators = defaultDecorators.slice(0,2);
 
     return (
       <StyledServicePage>
         <h1>{this.serviceData.title}</h1>
         <Carousel
           autoplay={false}
-          autoplayInterval={3000}
           wrapAround
+          slidesToShow={2}
+          slidesToScroll={2}
+          cellSpacing={5}
           style={{marginTop: '-20px'}}
-          // decorators={Decorators}
+          afterSlide={ this.handleAfterSlide }
+          decorators={Decorators}
         >
           {this.getSlides()}
         </Carousel>
@@ -184,6 +209,7 @@ ServicePage.propTypes = {
   serviceType: PropTypes.string.isRequired,
   openChat: PropTypes.func.isRequired,
   refresh: PropTypes.func.isRequired,
+  selectedTab: PropTypes.number.isRequired,
 };
 
 export default ServicePage;

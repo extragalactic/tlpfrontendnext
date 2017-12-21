@@ -1,4 +1,5 @@
 import React from "react";
+import Head from 'next/head'
 import styled from 'styled-components';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import muiTheme from '../components/styles/muiTheme';
@@ -19,21 +20,37 @@ const StyledApp = styled.section`
 `;
 
 class Services extends React.Component {
-  static async getInitialProps({ query }) {
-    return { query }
+  static getInitialProps ({ req, query }) {
+    let userAgent
+    if (process.browser) {
+      userAgent = navigator.userAgent
+    } else {
+      userAgent = req.headers['user-agent']
+    }
+    const amp = query.amp == '1'
+    const url = req ? req.url : window.location.href
+    const ampUrl = amp ? url.replace('?amp=1', '') : url + '?amp=1'
+
+    return { userAgent, query, ampUrl }
   }
 
   render() {
-    return(
-      <StyledApp>
-        <MuiThemeProvider muiTheme={muiTheme}>
-          <GlobalStyles>
-            <TopBar/>
-            <ServicesPageMain page={this.props.query.page} />
-            <Footer/>
-          </GlobalStyles>
-        </MuiThemeProvider>
-      </StyledApp>
+    const { ampUrl } = this.props;
+    return (
+      <div className="page">
+        <Head>
+          <link rel="amphtml" href={ampUrl} />
+        </Head>
+        <StyledApp>
+          <MuiThemeProvider muiTheme={muiTheme}>
+            <GlobalStyles>
+              <TopBar/>
+              <ServicesPageMain page={this.props.query.page} />
+              <Footer/>
+            </GlobalStyles>
+          </MuiThemeProvider>
+        </StyledApp>
+      </div>
     );
   }
 }

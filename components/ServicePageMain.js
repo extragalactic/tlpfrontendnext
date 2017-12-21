@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ServiceData from './ServiceData';
-import ServicePage from './ServicePage';
 import ServicesTabsNav from './ServicesTabsNav';
 import { Launcher } from './chat/index';
 import returnLexResponse from './util/LexBot';
@@ -99,18 +98,13 @@ class ServicePageMain extends React.Component {
     };
     this.openChat = this.openChat.bind(this);
     this.closeChat = this.closeChat.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.allServices = this.allServices.bind(this);
     this._onMessageWasSent = this._onMessageWasSent.bind(this);
     this._sendMessage = this._sendMessage.bind(this);
     this._handleClick = this._handleClick.bind(this);
-    this.refresh = this.refresh.bind(this);
- 
     this.serviceTabsRef = null;
   }
  
   openChat() {
-    console.log(this.props);
     this.setState({
       isOpen: !this.state.isOpen,
     });
@@ -121,6 +115,7 @@ class ServicePageMain extends React.Component {
       modalIsOpen: false,
     });
   }
+
   _onMessageWasSent(message) {
     returnLexResponse(message.data.text).then((res) => {
       const response = {
@@ -166,33 +161,6 @@ class ServicePageMain extends React.Component {
     });
   }
 
-  allServices() {
-    return ServiceData.map((service) => {
-      return (
-        <div key={service.pageName} style={{ overflowY: 'auto' }}>
-          <ServicePage 
-            serviceType={service.pageName}
-            openChat={this.openChat}
-            refresh={this.refresh}
-          />
-        </div>
-      );
-    });
-  }
-
-  handleChange(value) {
-    this.setState({
-      selectedTab: value,
-    });
-  }
-
-  // An indirect call to the refresh() function (called from ServicePage's) on the ServicesTabsNav component to recalculate the page's vertical size
-  refresh() {
-    if (this.serviceTabsRef !== null) {
-      this.serviceTabsRef.refresh();
-    }
-  }
-
   render() {
     return (
       <div>
@@ -200,11 +168,9 @@ class ServicePageMain extends React.Component {
           <ScrollToTopOnMount /> { /* the only purpose of this component is to reset the page position to the top */ }
           <StyledNavContainer>
             <ServicesTabsNav
-              pageContent={this.allServices()}
               startIndex={this.state.selectedTab}
               variableHeight
-              ref={(view) => { this.serviceTabsRef = view; }}
-              refresh={this.refresh()}
+              openChat={this.openChat}
             />
           </StyledNavContainer>
         </StyledServicePage>

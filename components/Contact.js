@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Columns from 'react-columns';
 import RaisedButton from 'material-ui/RaisedButton';
-//import Ionicon from 'react-ionicons';
 
+/* Note: This component should be renamed (is no longer for contact, it's for Service Area) */
 
 const StyledContact = styled.section`
   padding: 5px 0px;
@@ -27,19 +27,19 @@ const StyledArea = styled.div`
   }
   div {
     text-align: center;
-    margin-bottom: 10px;   
-  }  
+    margin-bottom: 10px;
+  }
   img {
     width: 100%;
     border: 1px solid #000;
   }
   a:link, a:visited {
-    color: #c65757 !important; 
+    color: #c65757 !important;
     padding: 0px !important;
   }
   a:hover, a:active {
     color: #d00 !important;
-    padding: 0px !important;     
+    padding: 0px !important;
   }
 `;
 const StyledColumns = styled(Columns)`
@@ -75,9 +75,37 @@ const queries = [{
   query: 'min-width: 1000px',
 }];
 
-/* Note: This component should be renamed (is not longer for contact, and is confusing) */
-
-const serviceAreaList = ['Aurora', 'Bethesda', 'Bradford', 'Brampton', 'Etobicoke', 'Gormley', 'Holland Landing', 'Kettleby', 'King City', 'Maple', 'Markham', 'Mississauga', 'Newmarket', 'Nobleton', 'North York', 'Oak Ridges', 'Oakville', 'Richmond Hill', 'Scarborough', 'Sharon', 'Stouffville', 'Thornhill', 'Toronto', 'Unionville', 'Vandor'];
+const serviceAreaList = [
+  'Ajax',
+  'Aurora',
+  'Ballantrae',
+  'Bradford West Gwillimbury',
+  'Brampton',
+  'Caledon',
+  'East Gwillimbury',
+  'Etobicoke',
+  'Glen Major',
+  'Gormley',
+  'Mississauga',
+  'Mt. Albert',
+  'Newmarket',
+  'Newton Robinson',
+  'Nobleton',
+  'North York',
+  'Oakville',
+  'Oshawa',
+  'Pickering',
+  'Richmond Hill',
+  'Scarborough',
+  'Schomberg',
+  'Toronto',
+  'Utica',
+  'Uxbridge',
+  'Vaughan',
+  'Whitby',
+  'Whitchurch-Stouffville',
+  'Zephyr',
+];
 
 const Contact = (props) => {
   const openChat = props.openChat;
@@ -120,9 +148,3 @@ Contact.propTypes = {
 };
 
 export default Contact;
-/*
-            <Ionicon icon="ion-social-twitter" fontSize="35px" color="#55acee" />
-
-            <Ionicon icon="ion-social-facebook" fontSize="35px" color="#3b5999" />
-
-*/

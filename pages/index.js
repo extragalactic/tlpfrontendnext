@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Head from 'next/head'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import styled from 'styled-components';
@@ -7,6 +8,7 @@ import Footer from '../components/Footer';
 import MainPage from '../components/MainPage';
 import muiTheme from '../components/styles/muiTheme';
 import GlobalStyles from '../components/styles/globalStyles';
+import AmpPageBody from '../components/AmpPageBody';
 
 
 // Make sure react-tap-event-plugin only gets injected once
@@ -37,8 +39,11 @@ class Index extends Component {
     } else {
       userAgent = req.headers['user-agent']
     }
+    const amp = query.amp == '1'
+    const url = req ? req.url : window.location.href
+    const ampUrl = amp ? url.replace('?amp=1', '') : url + '?amp=1'
 
-    return { userAgent, query }
+    return { userAgent, query, amp, ampUrl }
   }
 
   constructor (props, context) {
@@ -50,18 +55,37 @@ class Index extends Component {
   }
 
   render () {
+    const {amp, ampUrl} = this.props;
     return (
-      <StyledApp>
-        <MuiThemeProvider muiTheme={muiTheme}>
-          <GlobalStyles>
-            <TopBar redirect={this.props.query.redirect} />
-            <MainPage />
-            <Footer />
-          </GlobalStyles>
-        </MuiThemeProvider>
-      </StyledApp>
-    )
+      <div className="page">
+        <Head>
+          {
+            amp ? (
+              <link rel="canonical" href={ampUrl} />
+            ) : (
+              <link rel="amphtml" href={ampUrl} />
+            )
+          }
+        </Head>
+        {
+          amp ? (
+            <AmpPageBody />
+          ) : (
+            <StyledApp>
+              <MuiThemeProvider muiTheme={muiTheme}>
+                <GlobalStyles>
+                  <TopBar redirect={this.props.query.redirect} />
+                  <MainPage />
+                  <Footer />
+                </GlobalStyles>
+              </MuiThemeProvider>
+            </StyledApp>
+          )
+        }
+      </div>
+    );
   }
+
 }
 
 export default Index
