@@ -1,24 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class AmpPageBody extends React.Component {
-  static contextTypes = {
-    _documentProps: PropTypes.any
-  }
-
   render() {
-    /*
-    const { head, styles, __NEXT_DATA__ } = this.context._documentProps
-    const { pathname, buildId, assetPrefix, nextExport } = __NEXT_DATA__
-    const pagePathname = getPagePathname(pathname, nextExport)
-    */
     return (
       <div>
         <amp-fit-text
           width="750"
           height="186"
           layout="responsive"
-          style={{backgroundColor: '#841F27', marginLeft: '11px', marginRight: '11px'}}
+          style={{backgroundColor: '#841F27', marginLeft: '0px', marginRight: '0px', padding: '5px'}}
         >
           <amp-img
             className="headerImg"
@@ -33,7 +23,7 @@ class AmpPageBody extends React.Component {
 
         <amp-carousel
           id="carousel-with-preview"
-          style={{margin: '0px 11px 5px 11px'}}
+          style={{margin: '0px 0px 5px 0px'}}
           width="400"
           height="250"
           type="slides"
@@ -94,7 +84,7 @@ class AmpPageBody extends React.Component {
           </button>
         </div>
         <amp-fit-text
-          media="(max-width: 549px)" width="300" height="140" max-font-size="20" min-font-size="15" layout="responsive" >
+          media="(max-width: 549px)" width="300" height="140" max-font-size="20" min-font-size="16" layout="responsive" >
           <div className="contentBlock">
             <h1>Premium Work, Amazing Warranty!</h1>
             <p>Our mission is to provide high quality masonry restoration & renovation services for the GTA home and business owner. Family owned and operated, we have been proudly serving homeowners since 2004.</p>
@@ -107,7 +97,7 @@ class AmpPageBody extends React.Component {
           </div>
         </amp-fit-text>
         <div className="centerBlock buttonRow">
-          <a href="http://www.3lpm.ca/#services" target="_self">
+          <a href="http://www.threelittlepigsmasonry.com/#services" target="_self">
             <button
               className="btn btnLarge"
             >
@@ -115,18 +105,9 @@ class AmpPageBody extends React.Component {
             </button>
           </a>
         </div>
-        <amp-fit-text
-          width="300"
-          height="40"
-          max-font-size="18"
-          min-font-size="15"
-          layout="responsive"
-        >
-          <div className="contentBlock testimonialCard">
-            <h1>See what our customers say...</h1>
-          </div>
-        </amp-fit-text>
-
+        <div className="titleBlock">
+          <h1>See what our customers say...</h1>
+        </div>
         <div className="testimonialCard contentBlock">
           <div className="testimonialTitleBar">★★★★★</div>
           <p>I contacted 3 pigs for a quote to repair crumbling stone work. Tyler came out to look and take photos (I didn't even need to be home), then Darren phoned me. Darren was extremely knowledgeable and gave me lots of advice on the phone. It turns out it would be a big job ($50,000), but rather than give me hard sell about why I should go ahead, he actually explained why it might be best to leave it and monitor the situation over the next few years. I was very impressed that customer service is more important to them than getting work. I would absolutely trust them in future because I know they are not going to try to rip me off. Highly recommended.</p>
@@ -144,7 +125,7 @@ class AmpPageBody extends React.Component {
         </div>
 
         <div className="centerBlock buttonRow">
-          <a href="http://www.3lpm.ca/#testimonials" target="_self">
+          <a href="http://www.threelittlepigsmasonry.com/#testimonials" target="_self">
             <button
               className="btn btnLarge"
             >
@@ -160,17 +141,10 @@ class AmpPageBody extends React.Component {
           className="bottomImage">
         </amp-img>
         <div className="centerBlock footer">
-          <p>Copyright &#169; 2017 Three Little Pigs Masonry</p>
+          <p>Copyright &#169; 2018 Three Little Pigs Masonry</p>
         </div>
       </div>
     );
   }
 }
-/*
-function getPagePathname (pathname, nextExport) {
-  if (!nextExport) return pathname
-  if (pathname === '/') return '/index.js'
-  return `${pathname}/index.js`
-}
-*/
 export default AmpPageBody;

@@ -73,7 +73,6 @@ export default class MyDocument extends Document {
             <meta name="twitter:creator" content="@3PigsMasonry" />
             <meta name="twitter:image" content="%PUBLIC_URL%/images/social-media/3LPM-twitter-card.jpg" />
             <meta name="twitter:summary_large_image" content="%PUBLIC_URL%/images/social-media/3LPM-twitter-card-large.jpg" />
-            <link rel="amphtml" href="http://www.3lpm.ca?amp=1" />
             <script src="https://use.fontawesome.com/94c5c8189a.js"></script>
             {this.props.styleTags}
           </Head>

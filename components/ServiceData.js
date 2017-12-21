@@ -26,14 +26,15 @@ const services = [
         },
       ],
       photos: [
-        'refacing/stone1-before.jpg', 'refacing/stone1-after.jpg',
-        'refacing/stone3-before.jpg', 'refacing/stone3-after.jpg',
         'refacing/stone5-before.jpg', 'refacing/stone5-after.jpg',
         'refacing/stone6-before.jpg', 'refacing/stone6-after.jpg',
         'refacing/refacing1-before.jpg', 'refacing/refacing1-after.jpg',
         'refacing/refacing2-before.jpg', 'refacing/refacing2-after.jpg',
-        'refacing/refacing3-before.jpg', 'refacing/refacing3-after.jpg',
         'refacing/refacing4-before.jpg', 'refacing/refacing4-after.jpg',
+        'refacing/refacing1_b.jpg', 'refacing/refacing1_a.jpg',
+        'refacing/refacing2_b.jpg', 'refacing/refacing2_a.jpg',
+        'refacing/refacing3_b.jpg', 'refacing/refacing3_a.jpg',
+        'refacing/refacing4_b.jpg', 'refacing/refacing4_a.jpg',
       ],
     },
 
@@ -61,6 +62,9 @@ const services = [
       photos: [
         'flagstone/flagstone2-before.jpg', 'flagstone/flagstone2-after.jpg',
         'flagstone/flagstone1-before.jpg', 'flagstone/flagstone1-after.jpg',
+        'flagstone/flagstone_noba_b.jpg', 'flagstone/flagstone_noba_a.jpg',
+        'flagstone/flagstone2_b.jpg', 'flagstone/flagstone2_a.jpg',
+        'flagstone/flagstone3_b.jpg', 'flagstone/flagstone3_a.jpg',
       ],
     },
     //
@@ -82,6 +86,9 @@ const services = [
       ],
       photos: [
         'walls/wall1-before.jpg', 'walls/wall1-after.jpg',
+        'walls/walls1-b.jpg', 'walls/walls1_a.jpg',
+        'walls/walls2-b.jpg', 'walls/walls2_a.jpg',
+        'walls/walls3-b.jpg', 'walls/walls3_a.jpg',
       ],
     },
     //
@@ -146,8 +153,8 @@ const services = [
         'brick-stone/brick3-before.jpg', 'brick-stone/brick3-after.jpg',
         'brick-stone/chimney1-before.jpg', 'brick-stone/chimney1-after.jpg',
         'brick-stone/steps3-before.jpg', 'brick-stone/steps3-after.jpg',
-        'brick-stone/window1-before.jpg', 'brick-stone/window1-after.jpg',
-        'brick-stone/window2-before.jpg', 'brick-stone/window2-after.jpg',
+        'brick-stone/masonry1_b.jpg', 'brick-stone/masonry1_a.jpg',
+        'brick-stone/masonry2_b.jpg', 'brick-stone/masonry2_a.jpg',
       ],
     },
     //
@@ -269,6 +276,9 @@ const services = [
         'concrete/steps1-before.jpg', 'concrete/steps1-after.jpg',
         'concrete/steps2-before.jpg', 'concrete/steps2-after.jpg',
         'concrete/sidewalk1-before.jpg', 'concrete/sidewalk1-after.jpg',
+        'walls/wall1-before.jpg', 'walls/wall1-after.jpg',
+        'concrete/concrete2_b.jpg', 'concrete/concrete2_a.jpg',
+        'concrete/concrete3_b.jpg', 'concrete/concrete3_a.jpg',
       ],
     },
   ];
