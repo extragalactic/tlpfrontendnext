@@ -147,5 +147,4 @@ class AmpPageBody extends React.Component {
     );
   }
 }
-
 export default AmpPageBody;

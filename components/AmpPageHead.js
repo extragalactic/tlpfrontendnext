@@ -7,10 +7,11 @@ class AmpPageHead extends React.Component {
   }
 
   render() {
+    /*
     const { head, styles, __NEXT_DATA__ } = this.context._documentProps
     const { pathname, buildId, assetPrefix, nextExport } = __NEXT_DATA__
     const pagePathname = getPagePathname(pathname, nextExport)
-
+    */
     return (
       <head {...this.props}>
         <meta charset="utf-8" />
@@ -162,11 +163,11 @@ class AmpPageHead extends React.Component {
     );
   }
 }
-
+/*
 function getPagePathname (pathname, nextExport) {
   if (!nextExport) return pathname
   if (pathname === '/') return '/index.js'
   return `${pathname}/index.js`
 }
-
+*/
 export default AmpPageHead;
