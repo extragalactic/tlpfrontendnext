@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Columns from 'react-columns';
 import RaisedButton from 'material-ui/RaisedButton';
-//import Ionicon from 'react-ionicons';
 
 /* Note: This component should be renamed (is no longer for contact, it's for Service Area) */
 
@@ -75,9 +74,6 @@ const queries = [{
   columns: 4,
   query: 'min-width: 1000px',
 }];
-
-// -- old service area list --
-// const serviceAreaList = ['Aurora', 'Bethesda', 'Bradford', 'Brampton', 'Etobicoke', 'Gormley', 'Holland Landing', 'Kettleby', 'King City', 'Maple', 'Markham', 'Mississauga', 'Newmarket', 'Nobleton', 'North York', 'Oak Ridges', 'Oakville', 'Richmond Hill', 'Scarborough', 'Sharon', 'Stouffville', 'Thornhill', 'Toronto', 'Unionville', 'Vandor'];
 
 const serviceAreaList = [
   'Ajax',
@@ -152,9 +148,3 @@ Contact.propTypes = {
 };
 
 export default Contact;
-/*
-            <Ionicon icon="ion-social-twitter" fontSize="35px" color="#55acee" />
-
-            <Ionicon icon="ion-social-facebook" fontSize="35px" color="#3b5999" />
-
-*/

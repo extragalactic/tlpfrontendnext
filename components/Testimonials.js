@@ -32,8 +32,8 @@ class Testimonials extends React.Component {
     })
     .then((reviews) => {
        const testimonials = reviews.filter((rev) => {
-         return rev  
-       })    
+         return rev
+       })
        this.oldTestimonials.forEach((review) => {
         testimonials.push(review);
       });
@@ -59,7 +59,7 @@ class Testimonials extends React.Component {
 
   render() {
     return (
-      this.state.testimonials.length > 0 && 
+      this.state.testimonials.length > 0 &&
       <StyledTestimonials>
         <h2>Testimonials</h2>
         <ResponsiveMasonry columnsCountBreakPoints={{ 200: 1, 450: 2, 700: 3, 1000: 4 }}>
@@ -88,9 +88,11 @@ class Testimonials extends React.Component {
           <div>
             <h3>. . .</h3>
             <div><FlatButton labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }} label="Read more testimonials" primary onClick={() => { this.setState({ numberToShow: this.state.numberToShow + 5 }); }} /></div>
-            <div><FlatButton labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }} label="Write a testimonial" primary onClick={() => { window.open('https://search.google.com/local/writereview?placeid=ChIJ74NmW2vTKogRAVn6jOwdYUI', '_blank'); }} /></div>
           </div>
         }
+        <div>
+          <div><FlatButton labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }} label="Write a testimonial" primary onClick={() => { window.open('https://search.google.com/local/writereview?placeid=ChIJ74NmW2vTKogRAVn6jOwdYUI', '_blank'); }} /></div>
+        </div>
       </StyledTestimonials>
     );
   }

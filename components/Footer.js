@@ -10,7 +10,7 @@ const StyledFooter = styled.section`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p>Copyright &#169; 2017 Three Little Pigs Masonry</p>
+      <p>Copyright &#169; 2018 Three Little Pigs Masonry</p>
     </StyledFooter>
   );
 };

@@ -7,11 +7,10 @@ class AmpPageHead extends React.Component {
   }
 
   render() {
-    /*
     const { head, styles, __NEXT_DATA__ } = this.context._documentProps
     const { pathname, buildId, assetPrefix, nextExport } = __NEXT_DATA__
     const pagePathname = getPagePathname(pathname, nextExport)
-    */
+
     return (
       <head {...this.props}>
         <meta charset="utf-8" />
@@ -22,7 +21,6 @@ class AmpPageHead extends React.Component {
         <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
         <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic|Libre+Baskerville" rel="stylesheet" type="text/css" />
-        <link rel="canonical" href="http://www.3lpm.ca" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
         <title>Three Little Pigs Masonry</title>
 
@@ -64,6 +62,10 @@ class AmpPageHead extends React.Component {
             background-color: #fff;
             margin: 5px 10px 20px 10px;
             padding: 5px 0px 20px 0px;
+          }
+          .titleBlock {
+            background-color: #fff;
+            margin: 5px 10px 5px 10px;
           }
           .centerBlock {
             text-align: center;
@@ -153,16 +155,18 @@ class AmpPageHead extends React.Component {
 
         <style amp-boilerplate=''>{`body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}`}</style><noscript><style amp-boilerplate=''>{`body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}`}</style></noscript>
 
+        {(head || []).map((h, i) => React.cloneElement(h, { key: i }))}
+        {styles || null}
         {this.props.children}
       </head>
     );
   }
 }
-/*
+
 function getPagePathname (pathname, nextExport) {
   if (!nextExport) return pathname
   if (pathname === '/') return '/index.js'
   return `${pathname}/index.js`
 }
-*/
+
 export default AmpPageHead;

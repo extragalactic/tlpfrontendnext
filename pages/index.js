@@ -56,24 +56,36 @@ class Index extends Component {
 
   render () {
     const {amp, ampUrl} = this.props;
-    if (amp) {
-      return (
-        <AmpPageBody />
-      );
-    } else {
-      return (
-        <StyledApp>
-          <MuiThemeProvider muiTheme={muiTheme}>
-            <GlobalStyles>
-              <TopBar redirect={this.props.query.redirect} />
-              <MainPage />
-              <Footer />
-            </GlobalStyles>
-          </MuiThemeProvider>
-        </StyledApp>
-      );
-    }
+    return (
+      <div className="page">
+        <Head>
+          {
+            amp ? (
+              <link rel="canonical" href={ampUrl} />
+            ) : (
+              <link rel="amphtml" href={ampUrl} />
+            )
+          }
+        </Head>
+        {
+          amp ? (
+            <AmpPageBody />
+          ) : (
+            <StyledApp>
+              <MuiThemeProvider muiTheme={muiTheme}>
+                <GlobalStyles>
+                  <TopBar redirect={this.props.query.redirect} />
+                  <MainPage />
+                  <Footer />
+                </GlobalStyles>
+              </MuiThemeProvider>
+            </StyledApp>
+          )
+        }
+      </div>
+    );
   }
+
 }
 
 export default Index
