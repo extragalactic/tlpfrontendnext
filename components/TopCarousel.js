@@ -107,6 +107,12 @@ const TopCarousel = (props) => {
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_a.jpeg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_b.jpeg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_mark.jpeg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_sai.jpeg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_stone.jpeg" alt="" /></div>
+
       </Carousel>
       <StyledCarouselContent>
         <MediaQuery minWidth={451}>
