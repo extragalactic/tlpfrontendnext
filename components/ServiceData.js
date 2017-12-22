@@ -86,9 +86,9 @@ const services = [
       ],
       photos: [
         'walls/wall1-before.jpg', 'walls/wall1-after.jpg',
-        'walls/walls1_b.jpg', 'walls/walls1_a.jpg',
-        'walls/walls2_b.jpg', 'walls/walls2_a.jpg',
-        'walls/walls3_b.jpg', 'walls/walls3_a.jpg',
+        'walls/walls1-b.jpg', 'walls/walls1_a.jpg',
+        'walls/walls2-b.jpg', 'walls/walls2_a.jpg',
+        'walls/walls3-b.jpg', 'walls/walls3_a.jpg',
       ],
     },
     //
