@@ -76,17 +76,23 @@ const queries = [{
 }];
 
 const serviceAreaList = [
+    'Acton',
     'Ajax',
     'Aurora',
     'Ballantrae',
+    'Belfountain',
     'Beaverton',
     'Bradford',
     'Brampton',
+    'Brock',
+    'Bowmanville',
     'Burlington',
     'Caledon',
+    'Courtice',
     'Clarington',
     'East Gwillimbury',
     'Etobicoke',
+    'Erin',
     'Glen Major',
     'Gormley',
     'Georgetown',
@@ -96,7 +102,7 @@ const serviceAreaList = [
     'Keswick',
     'King City',
     'Maple',
-    'Mt. Albert',
+    'Mount Albert',
     'Newmarket',
     'Newton Robinson',
     'Nobleton',
@@ -107,12 +113,14 @@ const serviceAreaList = [
     'Oshawa',
     'Orangeville',
     'Pickering',
+    'Port Perry',
     'Richmond Hill',
     'Scarborough',
     'Schomberg',
     'Scugog',
     'Sharon',
     'Sutton',
+    'Sonya',
     'Toronto',
     'Thornhill',
     'Utica',
@@ -120,7 +128,7 @@ const serviceAreaList = [
     'Vaughan',
     'Whitby',
     'Whitchurch-Stouffville',
-    'Zephyr',
+    'Zephyr'
 ];
 
 const Contact = (props) => {
