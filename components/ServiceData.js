@@ -35,6 +35,10 @@ const services = [
         'refacing/refacing2_b.jpg', 'refacing/refacing2_a.jpg',
         'refacing/refacing3_b.jpg', 'refacing/refacing3_a.jpg',
         'refacing/refacing4_b.jpg', 'refacing/refacing4_a.jpg',
+        'refacing/refacing_steeple_b.jpg', 'refacing/refacing_steeple_a.jpg',
+        'refacing/refacing_york_b.jpg', 'refacing/refacing_york_a.jpg',
+        'refacing/refacing_king_b.jpg', 'refacing/refacing_king_a.jpg',
+
       ],
     },
 
