@@ -77,7 +77,7 @@ const services = [
     { pageName: 'walls',
       imgSrc: 'service_retainingwalls.jpg',
       title: 'Retaining Walls & Walkouts',
-      summary: 'Stone refacing has become a popular way to enhance the exterior beauty of your home using stone products.',
+      summary: 'Three Little Pigs Masonry follows fundamental masonry procedures to have a successfully functional masonry retaining wall.',
       content: [
         {
           title: 'Functional Masonry Retaining Walls',
