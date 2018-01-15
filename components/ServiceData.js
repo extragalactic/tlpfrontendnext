@@ -203,6 +203,15 @@ const services = [
             },
           ],
         },
+        {
+          title: 'Underpinning',
+          content: [
+                  
+            {
+              text: ['Most people renovate or restore their homes from the grade levels up but never does a homeowner think they have to replace their foundation', 'Underpinning is seldom heard of outside of the GTA which adheres to the Provincial building code ( OBC ) which still today does not use steel reinforcement in their foundations.', 'The rest of the province and the rest of the country work by the Federal building code ( NBC) which is a much superior building code and really is supposed to be the minimum requirements for all the provinces of Canada, except for British Columbia, because of their seismic areas the building code is much higher there than the NBC.', 'For many years, right up until the mid-70s, foundations in the GTA were mostly built by ‘’hollow’’ concrete blocks ( except for the filled top course ) unlike NBC which requires solid steel reinforcement and solid filled concrete block from the footing to the sill plate, or formed and poured ( placed ) concrete with steel reinforcement. In the mid-70s, the GTA was experiencing problems with their foundations and blamed it on the concrete blocks, so they decided to switch and start using formed and poured concrete.', 'The problem that they know they have solid concrete but there is still no reinforcement unlike the homes for example, in the Ottawa area, please see in pics, how often the rebar is placed, and special bridging placed to ensure steel rebar rods are located in the center of concrete.'],
+            },
+          ],
+        },
       ],
       photos: [
         'foundation/parging1-before.jpg', 'foundation/parging1-after.jpg',
