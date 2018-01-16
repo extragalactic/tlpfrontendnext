@@ -20,7 +20,7 @@ const services = [
             },
             {
               title: 'The Process',
-              text: ['The existing brick veneer is dismantled, along with usually existing damaged vapour barrier. A new vapour barrier is installed and the building envelope sealed. The new stone is expertly installed with quality control. We can work with all your custom requests. New stone window sills, parging, flagstone and address stones are just a few of the custom features we provide. Three Little Pigs Masonry installs many types of natural stone, sandstone and limestone. Our team will be happy to assist you with your stone refacing ideas.'],
+              text: ['The existing brick veneer is dismantled, along with usually existing damaged vapour barrier. A new vapour barrier is installed and the building envelope sealed. The new stone is expertly installed with quality control. We can work with all your custom requests. New stone window sills, parging, flagstone and address stones are just a few of the custom features we provide. Three Little Pigs Masonry installs many types of natural stone, sandstone and limestone. Our team will be happy to assist you with your stone refacing ideas.','The homeowner can choose one, two or all elevations, or just feature one area. We choose to provide real stone options for our customers as we know that our real stone installation will provide a maintenance free result we all come to expect of masonry. There are other options available in the market but our experience has proven that in this climate, our real stone installation is the best option.'],
             },
           ],
         },
@@ -216,7 +216,6 @@ const services = [
       photos: [
         'foundation/parging1-before.jpg', 'foundation/parging1-after.jpg',
         'foundation/parging2-before.jpg', 'foundation/parging2-after.jpg',
-        'foundation/parging3-before.jpg', 'foundation/parging3-after.jpg',
         'foundation/parging4-before.jpg', 'foundation/parging4-after.jpg',
         'foundation/parging5-before.jpg', 'foundation/parging5-after.jpg',
         'foundation/parging6-before.jpg', 'foundation/parging6-after.jpg',
