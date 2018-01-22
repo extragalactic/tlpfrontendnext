@@ -78,13 +78,16 @@ const StyledPhoneSection = styled.div`
   background-color: rgba(0,0,0,0.5);
   border-radius: 0.5em;
   height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h6 {
     color: #fff;
-    font-size: 1.0em !important;
+    font-size: 1.5em !important;
     padding-top: 5px;
     padding-bottom: 20px;
-    margin-top -5px;
+    margin-top -14px;
   }  
 `;
 
@@ -142,7 +145,7 @@ const TopCarousel = (props) => {
             </div>
             <div>
               <h6 style={{ float: 'left' }}>
-                <a href="tel:+19055080500">905-508-0500</a> or <a href="tel:+14165950100">416-595-0100</a>
+                <a href="tel:+18336000505">1-833-600-0505</a>
               </h6>
             </div>
           </StyledPhoneSection>

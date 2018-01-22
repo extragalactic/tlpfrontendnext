@@ -142,7 +142,7 @@ const Contact = (props) => {
           <img src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/service_area_map.jpg" alt="service area" />
         </StyledArea>
         <StyledArea style={{ paddingLeft: '15px', paddingRight: '10px' }}>
-          <p>Three Little Pigs Masonry services a large part of the Greater Toronto Area. If you live in one of the areas listed below, let&#39;s get started! <br /><br />You can call us at <a href="tel:+19055080500">905-508-0500</a> or <a href="tel:+14165950100">416-595-0100</a>, or for an immediate estimate just click on the button below:</p>
+          <p>Three Little Pigs Masonry services a large part of the Greater Toronto Area. If you live in one of the areas listed below, let&#39;s get started! <br /><br />You can call us at <a href="tel:+18336000505">1-833-600-0505</a>, or for an immediate estimate just click on the button below:</p>
           <p> You can also chat with our automated system by sending a text to <a href="sms:+16476991590">647-699-1590.</a></p>
           <p>If you need to email us, its <a href={"mailto: info@threelittlepigsmasonry.ca"}> info@threelittlepigsmasonry.ca</a></p>
           <div>
