@@ -10,5 +10,5 @@ const certB = fs.readFileSync('./certs/gd2.crt').toString();
 const certC = fs.readFileSync('./certs/gd3.crt').toString();
 const {createServer} = require('https');
 app.prepare().then(() => {
-  createServer({key, cert, ca: [certA, certB, certC] }, handler).listen(443)
+  createServer({key, cert, ca: [certA, certB, certC] }, handler).listen(8443)
 })

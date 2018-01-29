@@ -77,16 +77,16 @@ const StyledPhoneSection = styled.div`
   margin-top: 5px;
   background-color: rgba(0,0,0,0.5);
   border-radius: 0.5em;
-  height: 120px;
+  height: 125px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   h6 {
     color: #fff;
-    font-size: 1.5em !important;
+    font-size: 1.8em !important;
     padding-top: 5px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     margin-top -14px;
   }  
 `;
