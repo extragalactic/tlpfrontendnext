@@ -44,13 +44,15 @@ class AboutUsFull extends React.Component {
         label="OK"
         secondary
         onTouchTap={this.closeModal}
-        style={{ width: '100px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+        style={{
+ width: '100px', display: 'block', marginLeft: 'auto', marginRight: 'auto' 
+}}
       />,
     ];
     return (
       <StyledAbout>
         <FlatButton
-          className={'button'}
+          className="button"
           labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }}
           label="Read the full story"
           primary
@@ -66,7 +68,7 @@ class AboutUsFull extends React.Component {
           open={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           contentStyle={{ width: '98%', maxWidth: 'none', top: '-60px' }}
-          titleStyle={{fontFamily: 'Libre Baskerville'}}
+          titleStyle={{ fontFamily: 'Libre Baskerville' }}
         >
           <StyledImg src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/about-us-photo.jpg" alt="about us" />
           <p>Family owned and operated, we have been proudly serving homeowners since 2004. Our masonry history begins with working across Canada and the United States in commercial masonry building schools, churches plus commercial and industrial projects.</p>
