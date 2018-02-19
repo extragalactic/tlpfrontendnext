@@ -25,7 +25,7 @@ class MainPage extends React.Component {
         {
           author: 'them',
           data: {
-            text: 'Welcome to Three Little Pigs Masonry. How can I help you?, You can say things like, I need an estimate or I need my chimney repaired.',
+            text: 'Welcome to Three Little Pigs Masonry. How can I help you?, You can say things like, I need my home refaced or I need my chimney repaired.',
           },
           type: 'text',
         },
