@@ -82,7 +82,7 @@ class MainPage extends React.Component {
         this.setState({
           messageList: [...this.state.messageList, response],
         });
-      }, 2000);
+      }, 1000);
     });
   }
 
