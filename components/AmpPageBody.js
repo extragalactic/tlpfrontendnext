@@ -16,8 +16,7 @@ class AmpPageBody extends React.Component {
               height="186"
               layout="responsive"
               srcset="./static/images/3LPM-title-light.png 800w"
-            >
-            </amp-img>
+             />
           </div>
         </amp-fit-text>
 
@@ -31,71 +30,97 @@ class AmpPageBody extends React.Component {
           delay="4000"
           layout="responsive"
         >
-          <amp-img src="./static/images/intro/intro3.jpg"
+          <amp-img
+src="./static/images/intro/intro3.jpg"
             width="1280"
             height="800"
-            layout="responsive">
+            layout="responsive"
+          >
           </amp-img>
-          <amp-img src="./static/images/intro/intro1.jpg"
+          <amp-img
+src="./static/images/intro/intro1.jpg"
             width="1280"
             height="800"
-            layout="responsive">
+            layout="responsive"
+          >
           </amp-img>
-          <amp-img src="./static/images/intro/intro4.jpg"
+          <amp-img
+src="./static/images/intro/intro4.jpg"
             width="1280"
             height="800"
-            layout="responsive">
+            layout="responsive"
+          >
           </amp-img>
-          <amp-img src="./static/images/intro/intro2.jpg"
+          <amp-img
+src="./static/images/intro/intro2.jpg"
             width="1280"
             height="800"
-            layout="responsive">
+            layout="responsive"
+          >
           </amp-img>
-          <amp-img src="./static/images/intro/intro5.jpg"
+          <amp-img
+src="./static/images/intro/intro5.jpg"
             width="1280"
             height="800"
-            layout="responsive">
+            layout="responsive"
+          >
           </amp-img>
         </amp-carousel>
         <div className="carousel-preview centerBlock">
           <button on="tap:carousel-with-preview.goToSlide(index=0)" className="preview-button">
-            <amp-img src="./static/images/intro/intro3-thumb.jpg"
+            <amp-img
+src="./static/images/intro/intro3-thumb.jpg"
               width="60"
               height="38"
-              alt="Three Little Pigs">
+              alt="Three Little Pigs"
+            >
             </amp-img>
           </button>
           <button on="tap:carousel-with-preview.goToSlide(index=1)" className="preview-button">
-            <amp-img src="./static/images/intro/intro1-thumb.jpg"
+            <amp-img
+src="./static/images/intro/intro1-thumb.jpg"
               width="60"
               height="38"
-              alt="Three Little Pigs">
+              alt="Three Little Pigs"
+            >
             </amp-img>
           </button>
           <button on="tap:carousel-with-preview.goToSlide(index=2)" className="preview-button">
-            <amp-img src="./static/images/intro/intro4-thumb.jpg"
+            <amp-img
+src="./static/images/intro/intro4-thumb.jpg"
               width="60"
               height="38"
-              alt="Three Little Pigs">
+              alt="Three Little Pigs"
+            >
             </amp-img>
           </button>
           <button on="tap:carousel-with-preview.goToSlide(index=3)" className="preview-button">
-            <amp-img src="./static/images/intro/intro2-thumb.jpg"
+            <amp-img
+src="./static/images/intro/intro2-thumb.jpg"
               width="60"
               height="38"
-              alt="Three Little Pigs">
+              alt="Three Little Pigs"
+            >
             </amp-img>
           </button>
           <button on="tap:carousel-with-preview.goToSlide(index=4)" className="preview-button">
-            <amp-img src="./static/images/intro/intro5-thumb.jpg"
+            <amp-img
+src="./static/images/intro/intro5-thumb.jpg"
               width="60"
               height="38"
-              alt="Three Little Pigs">
+              alt="Three Little Pigs"
+            >
             </amp-img>
           </button>
         </div>
         <amp-fit-text
-          media="(max-width: 549px)" width="300" height="140" max-font-size="20" min-font-size="16" layout="responsive" >
+          media="(max-width: 549px)"
+width="300"
+height="140"
+max-font-size="20"
+min-font-size="16"
+layout="responsive"
+        >
           <div className="contentBlock">
             <h1>Premium Work, Amazing Warranty!</h1>
             <p>Our mission is to provide high quality masonry restoration & renovation services for the GTA home and business owner. Family owned and operated, we have been proudly serving homeowners since 2004.</p>
@@ -144,13 +169,6 @@ class AmpPageBody extends React.Component {
             </button>
           </a>
         </div>
-        <amp-img
-          src="./static/images/LogoBanner-white.png"
-          width="812"
-          height="328"
-          layout="responsive"
-        >
-        </amp-img>
         <div className="centerBlock footer">
           <p>Copyright &#169; 2018 Three Little Pigs Masonry</p>
         </div>

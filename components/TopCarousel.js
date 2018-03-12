@@ -118,9 +118,6 @@ const TopCarousel = (props) => {
 
       </Carousel>
       <StyledCarouselContent>
-        <MediaQuery minWidth={451}>
-          <StyledTagline src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/LogoBanner.png" alt="Warranties that blow the others away!" />
-        </MediaQuery>
         <StyledQuoteRequest>
           <StyledPhoneSection>
             <div>
