@@ -8,3 +8,4 @@ hooks:
     - location: ./npm-start.sh
       timeout: 2400
       user: ubuntu
+      runas: ubuntu
