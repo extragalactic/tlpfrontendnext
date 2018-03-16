@@ -17,7 +17,7 @@ app.prepare().then(() => {
 
   server.get('*', (req, res, next) => {
     if (req.headers['x-forwarded-proto'] === 'http') {
-      return res.redirect('https://threelittlepigsmasonry.com');
+      return res.redirect('https://threelittlepigsmasonry.ca');
       next();
     }
     return handle(req, res);
