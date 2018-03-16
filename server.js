@@ -9,8 +9,10 @@ const handle = routes.getRequestHandler(app);
 
 app.prepare().then(() => {
   const server = express();
+  server.set('trust proxy');
   server.get('*', (req, res) => {
     console.log(req.protocol);
+    console.log(req.headers);
     return handle(req, res);
   });
 
