@@ -61,6 +61,7 @@ export default class MyDocument extends Document {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic|Libre+Baskerville" rel="stylesheet" type="text/css" />
             <link rel="icon" type="image/png" href="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/favicon.ico"/>
+            <link rel="canonical" href="https://threelittlepigsmasonry.com"/>
             <meta property="og:title" content="Three Little Pigs Masonry"/>
             <meta property="og:type" content="website"/>
             <meta property="og:url" content="http://www.threelittlepigsmasonry.com"/>
