@@ -10,9 +10,10 @@ const handle = routes.getRequestHandler(app);
 app.prepare().then(() => {
   const server = express();
   server.set('trust proxy');
-  server.get('*', (req, res) => {
+  server.get('*', (req, res, next) => {
     if (req.headers['x-forwarded-proto'] === 'http') {
-      res.redirect('https://threelittlepigsmasonry.com');
+      return res.redirect('https://threelittlepigsmasonry.com');
+      next();
     }
     return handle(req, res);
   });
