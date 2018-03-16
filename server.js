@@ -14,6 +14,9 @@ app.prepare().then(() => {
     console.log('1', req.headers.host);
     console.log('2', req.headers.referer);
     console.log('3', req.headers['x-forwarded-for']);
+    console.log('3', req.headers['x-forwarded-proto']);
+
+    console.log(req.headers);
 
     return handle(req, res);
   });
