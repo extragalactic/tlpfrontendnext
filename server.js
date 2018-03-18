@@ -1,29 +1,33 @@
 const next = require('next');
 const routes = require('./routes');
 const express = require('express');
+const { join } = require('path');
+const { parse } = require('url');
+const fs = require('fs');
+const { createServer } = require('https');
 
-const port = 8080;
+const port = 8443;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = routes.getRequestHandler(app);
 
+const key = fs.readFileSync('./certs/private.key');
+const cert = fs.readFileSync('./certs/cert.crt');
+const gd1 = fs.readFileSync('./certs/gd1.crt');
+const gd2 = fs.readFileSync('./certs/gd2.crt');
+const gd3 = fs.readFileSync('./certs/gd3.crt');
+
 app.prepare().then(() => {
-  const server = express();
-  server.set('trust proxy');
-  server.get('/robots.txt', (req, res) => {
-    res.type('text/plain');
-    res.send('User-agent: *\nDisallow: /');
-  });
-
-  server.get('*', (req, res, next) => {
-    if (req.headers['x-forwarded-proto'] === 'http') {
-      return res.redirect('https://threelittlepigsmasonry.ca');
-      next();
+  createServer({ key, cert, ca: [gd1, gd2, gd3] }, (req, res) => {
+    const parsedUrl = parse(req.url, true);
+    const rootStaticFiles = ['/robots.txt', '/sitemap.xml'];
+    if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
+      const path = join(__dirname, 'static', parsedUrl.pathname);
+      app.serveStatic(req, res, path);
+    } else {
+      handle(req, res, parsedUrl);
     }
-    return handle(req, res);
-  });
-
-  server.listen(port, (err) => {
+  }).listen(port, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${port}`);
   });
