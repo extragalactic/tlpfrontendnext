@@ -1,13 +1,13 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import Footer from './Footer';
-import TopBar from './TopBar';
-import MainPage from './MainPage';
-import ServicePageMain from './ServicePageMain';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import styled from "styled-components";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import injectTapEventPlugin from "react-tap-event-plugin";
+import Footer from "./Footer";
+import TopBar from "./TopBar";
+import MainPage from "./MainPage";
+import ServicePageMain from "./ServicePageMain";
 // import './App.css'; /* using this css for testing */
 
 const StyledApp = styled.section`
@@ -22,19 +22,21 @@ const GlobalStyles = styled.div`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
-  a:link, a:visited {
+  a:link,
+  a:visited {
     color: #fff;
     background-color: none;
     text-decoration: none;
     padding: 3px;
   }
-  a:hover, a:active {
+  a:hover,
+  a:active {
     color: #c65757;
     text-decoration: none;
-    padding: 3px;     
-  }  
+    padding: 3px;
+  }
   h1 {
     font-size: 1.8em;
     color: #777;
@@ -43,8 +45,8 @@ const GlobalStyles = styled.div`
   }
   h2 {
     color: #fff;
-    background-color: #841F27;
-    background: linear-gradient(#841F27, #b9202c);
+    background-color: #841f27;
+    background: linear-gradient(#841f27);
     font-size: 1.5em;
     padding: 5px 0px;
   }
@@ -62,39 +64,38 @@ const GlobalStyles = styled.div`
     color: #444;
   }
   h6 {
-    font-size: 1.0em; 
-  }  
+    font-size: 1em;
+  }
 `;
-
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: '#841F27',
-    primary2Color: '#f00',
-    accent1Color: '#f00',
-    alternateTextColor: '#1a0000',
+    primary1Color: "#8f9499",
+    primary2Color: "#f00",
+    accent1Color: "#f00",
+    alternateTextColor: "#1a0000"
   },
   appBar: {
-    height: '100%',
+    height: "100%"
   },
   inkBar: {
-    backgroundColor: '#b9202c',
+    backgroundColor: "#b9202c"
   },
   tabs: {
-    backgroundColor: '#fff',
-    textColor: '#000',
-    fontSize: '1.0em',
+    backgroundColor: "#fff",
+    textColor: "#000",
+    fontSize: "1.0em"
   },
   raisedButton: {
-    primaryTextColor: '#fff',
-    secondaryTextColor: '#fff',
-    primaryColor: '#a00',
-    secondaryColor: '#1DA1F2', /* this is 'Twitter Blue' */
-    color: 'rgba(255, 0, 0, 0.87)',
+    primaryTextColor: "#fff",
+    secondaryTextColor: "#fff",
+    primaryColor: "#a00",
+    secondaryColor: "#1DA1F2" /* this is 'Twitter Blue' */,
+    color: "rgba(255, 0, 0, 0.87)"
   },
   dropDownMenu: {
-    accentColor: '#000',
-  },
+    accentColor: "#000"
+  }
 });
 const myMuiTheme = getMuiTheme(muiTheme);
 
@@ -110,27 +111,112 @@ const App = () => {
             <Route exact path="/" component={MainPage} />
 
             {/* Route re-directs from old website, linking to different Services pages */}
-            <Route path="/services/brick-repair" render={(props) => { return <ServicePageMain redirect="masonry" {...props} />; }} />
-            <Route path="/services/basement-waterproofing" render={(props) => { return <ServicePageMain redirect="foundations" {...props} />; }} />
-            <Route path="/services/chimneys--stone-chimneys" render={(props) => { return <ServicePageMain redirect="masonry" {...props} />; }} />
-            <Route path="/services/concrete-repair" render={(props) => { return <ServicePageMain redirect="concrete" {...props} />; }} />
-            <Route path="/services/concrete-step-repair" render={(props) => { return <ServicePageMain redirect="concrete" {...props} />; }} />
-            <Route path="/services/concrete-walkways" render={(props) => { return <ServicePageMain redirect="concrete" {...props} />; }} />
-            <Route path="/services/foundations--piling--footings" render={(props) => { return <ServicePageMain redirect="foundations" {...props} />; }} />
-            <Route path="/services/masonry-repairs" render={(props) => { return <ServicePageMain redirect="masonry" {...props} />; }} />
-            <Route path="/services/parging--foundation-repairs" render={(props) => { return <ServicePageMain redirect="foundations" {...props} />; }} />
-            <Route path="/services/retaining-walls" render={(props) => { return <ServicePageMain redirect="walls" {...props} />; }} />
-            <Route path="/services/stone-refacing" render={(props) => { return <ServicePageMain redirect="refacing" {...props} />; }} />
-            <Route path="/services/stone-refacing-for-stucco-wood-and-siding" render={(props) => { return <ServicePageMain redirect="refacing" {...props} />; }} />
-            <Route path="/services/window-sills" render={(props) => { return <ServicePageMain redirect="masonry" {...props} />; }} />
+            <Route
+              path="/services/brick-repair"
+              render={props => {
+                return <ServicePageMain redirect="masonry" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/basement-waterproofing"
+              render={props => {
+                return <ServicePageMain redirect="foundations" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/chimneys--stone-chimneys"
+              render={props => {
+                return <ServicePageMain redirect="masonry" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/concrete-repair"
+              render={props => {
+                return <ServicePageMain redirect="concrete" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/concrete-step-repair"
+              render={props => {
+                return <ServicePageMain redirect="concrete" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/concrete-walkways"
+              render={props => {
+                return <ServicePageMain redirect="concrete" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/foundations--piling--footings"
+              render={props => {
+                return <ServicePageMain redirect="foundations" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/masonry-repairs"
+              render={props => {
+                return <ServicePageMain redirect="masonry" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/parging--foundation-repairs"
+              render={props => {
+                return <ServicePageMain redirect="foundations" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/retaining-walls"
+              render={props => {
+                return <ServicePageMain redirect="walls" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/stone-refacing"
+              render={props => {
+                return <ServicePageMain redirect="refacing" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/stone-refacing-for-stucco-wood-and-siding"
+              render={props => {
+                return <ServicePageMain redirect="refacing" {...props} />;
+              }}
+            />
+            <Route
+              path="/services/window-sills"
+              render={props => {
+                return <ServicePageMain redirect="masonry" {...props} />;
+              }}
+            />
 
             {/* Route re-directs from old website, linking to anchors on the main page  */}
-            <Route path="/our-commitment" render={(props) => { return <MainPage anchor="about-us" {...props} />; }} />
-            <Route path="/our-history" render={(props) => { return <MainPage anchor="about-us" {...props} />; }} />
-            <Route path="/testimonials" render={(props) => { return <MainPage anchor="testimonials" {...props} />; }} />
-            <Route path="/contact-us" render={(props) => { return <MainPage anchor="service-area" {...props} />; }} />
+            <Route
+              path="/our-commitment"
+              render={props => {
+                return <MainPage anchor="about-us" {...props} />;
+              }}
+            />
+            <Route
+              path="/our-history"
+              render={props => {
+                return <MainPage anchor="about-us" {...props} />;
+              }}
+            />
+            <Route
+              path="/testimonials"
+              render={props => {
+                return <MainPage anchor="testimonials" {...props} />;
+              }}
+            />
+            <Route
+              path="/contact-us"
+              render={props => {
+                return <MainPage anchor="service-area" {...props} />;
+              }}
+            />
 
-            {/* New routes */}          
+            {/* New routes */}
             <Route path="/services/:type" component={ServicePageMain} />
             <Route path="/services" component={ServicePageMain} />
             <Route component={MainPage} />
