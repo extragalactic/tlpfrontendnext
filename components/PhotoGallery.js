@@ -23,7 +23,7 @@ class PhotoGallery extends React.Component {
       selectedPhoto: '',
       active: 0,
     };
-    this.numberTotal = 0;
+    this.numberTotal = 12;
     this.numPhotosModifier = 0;
     this.numPhotosByScreenSize = { XS: 0, S: 3, M: 6, L: 10 }; // num default based on screen size
     this.openModal = this.openModal.bind(this);
@@ -77,7 +77,7 @@ class PhotoGallery extends React.Component {
   }
 
   render() {
-    var masonryOptions = {
+    const masonryOptions = {
       transitionDuration: 0,
     }
 
@@ -105,7 +105,7 @@ class PhotoGallery extends React.Component {
         <MediaQuery minWidth={700} maxWidth={999}>
           <StackGrid columnWidth={200} enableSSR monitorImagesLoaded>
             {this.getPhotos(this.getDefaultNum('M'))}
-        </StackGrid>
+          </StackGrid>
         </MediaQuery>
         <MediaQuery minWidth={1000}>
           <StackGrid columnWidth={250} enableSSR monitorImagesLoaded>
@@ -118,9 +118,9 @@ class PhotoGallery extends React.Component {
             <FlatButton
               labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }}
               label="See more photos"
-              primary
+              secondary
               onClick={() => {
-                this.setState({ numberToShow: this.state.numberToShow + 5 });
+                this.setState({ numberToShow: this.state.numberToShow + 10 });
               }}
             />
           </div>

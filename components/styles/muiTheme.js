@@ -2,9 +2,10 @@ import getMuiTheme from "material-ui/styles/getMuiTheme";
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: "#8f9499",
+    // primary1Color: "#8f9499",
+    primary1Color: "#eee",
     primary2Color: "#f00",
-    accent1Color: "#f00",
+    accent1Color: "#888",
     alternateTextColor: "#1a0000"
   },
   appBar: {

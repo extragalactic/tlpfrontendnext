@@ -45,8 +45,8 @@ class AboutUsFull extends React.Component {
         secondary
         onTouchTap={this.closeModal}
         style={{
- width: '100px', display: 'block', marginLeft: 'auto', marginRight: 'auto' 
-}}
+          width: '100px', display: 'block', marginLeft: 'auto', marginRight: 'auto',
+        }}
       />,
     ];
     return (
@@ -55,7 +55,7 @@ class AboutUsFull extends React.Component {
           className="button"
           labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }}
           label="Read the full story"
-          primary
+          secondary
           onClick={this.openModal}
         />
         <Dialog

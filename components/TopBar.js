@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import AppBar from "material-ui/AppBar";
-import IconButton from "material-ui/IconButton";
-import IconMenu from "material-ui/IconMenu";
-import MenuItem from "material-ui/MenuItem";
-import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
+import React from 'react';
+import styled from 'styled-components';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 const StyledTopBar = styled.div`
   justify-content: left;
@@ -34,10 +34,11 @@ const StyledTopBar = styled.div`
   }
 `;
 
+
 class TopBar extends React.Component {
   static goToAnchor(anchor) {
-    const hashAnchor = anchor === "" ? "" : `/#${anchor}`;
-    console.log("anchor: " + hashAnchor);
+    const hashAnchor = anchor === '' ? '' : `/#${anchor}`;
+    console.log('anchor: ' + hashAnchor);
     document.location = `${document.location.protocol}//${
       document.location.host
     }${hashAnchor}`;
@@ -46,24 +47,24 @@ class TopBar extends React.Component {
 
   componentDidMount() {
     // using this component to handle old site redirects to index page anchors (prop passed in from index.js)
-    if (this.props.redirect !== undefined && this.props.redirect !== "") {
+    if (this.props.redirect !== undefined && this.props.redirect !== '') {
       let redirect;
       switch (this.props.redirect) {
-        case "our-commitment":
-        case "our-history":
-          redirect = "about-us";
+        case 'our-commitment':
+        case 'our-history':
+          redirect = 'about-us';
           break;
-        case "testimonials":
-          redirect = "testimonials";
+        case 'testimonials':
+          redirect = 'testimonials';
           break;
-        case "contact-us":
-          redirect = "service-area";
+        case 'contact-us':
+          redirect = 'service-area';
           break;
         default:
-          redirect = "";
+          redirect = '';
       }
       // Note: the redirect is currently not fully working since the photo gallery does not compute its vertical size until later, which pushes down the page.
-      if (redirect !== "") {
+      if (redirect !== '') {
         TopBar.goToAnchor(redirect);
       }
     }
@@ -77,14 +78,15 @@ class TopBar extends React.Component {
             <div>
               <a
                 onClick={() => {
-                  TopBar.goToAnchor("");
+                  TopBar.goToAnchor('');
                 }}
                 role="button"
                 aria-hidden
-                style={{ backgroundColor: "#841F27" }}
+                style={{ backgroundColor: "#eee" }}
               >
                 <img
                   src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/3LPM-title-dark.png"
+                  // src="http://localhost:8080/static/images/3LPM-title-dark.png"
                   alt="Three Little Pigs Masonry"
                 />
               </a>
@@ -93,10 +95,10 @@ class TopBar extends React.Component {
           showMenuIconButton={false}
           iconElementRight={<MainMenu />}
           style={{
-            position: "static",
+            position: 'static',
             top: 0,
-            display: "flex",
-            alignItems: "center"
+            display: 'flex',
+            alignItems: 'center',
           }}
         />
       </StyledTopBar>
@@ -104,7 +106,7 @@ class TopBar extends React.Component {
   }
 }
 
-const MainMenu = props => {
+const MainMenu = (props) => {
   return (
     <IconMenu
       {...props}
@@ -113,44 +115,44 @@ const MainMenu = props => {
           <MoreVertIcon />
         </IconButton>
       }
-      targetOrigin={{ horizontal: "right", vertical: "top" }}
-      anchorOrigin={{ horizontal: "right", vertical: "top" }}
-      iconStyle={{ fill: "rgba(255, 255, 255, 0.87)" }}
+      targetOrigin={{ horizontal: 'right', vertical: 'top' }}
+      anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+      iconStyle={{ fill: 'rgba(100, 100, 100, 0.87)' }}
     >
       <MenuItem
         primaryText="Services"
         onClick={() => {
-          TopBar.goToAnchor("services");
+          TopBar.goToAnchor('services');
         }}
       />
       <MenuItem
         primaryText="About Us"
         onClick={() => {
-          TopBar.goToAnchor("about-us");
+          TopBar.goToAnchor('about-us');
         }}
       />
       <MenuItem
         primaryText="Photo Gallery"
         onClick={() => {
-          TopBar.goToAnchor("photos");
+          TopBar.goToAnchor('photos');
         }}
       />
       <MenuItem
         primaryText="Testimonials"
         onClick={() => {
-          TopBar.goToAnchor("testimonials");
+          TopBar.goToAnchor('testimonials');
         }}
       />
       <MenuItem
         primaryText="Service Area"
         onClick={() => {
-          TopBar.goToAnchor("service-area");
+          TopBar.goToAnchor('service-area');
         }}
       />
     </IconMenu>
   );
 };
 
-MainMenu.muiName = "IconMenu";
+MainMenu.muiName = 'IconMenu';
 
 export default TopBar;
