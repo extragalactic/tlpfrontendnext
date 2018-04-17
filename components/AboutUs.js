@@ -23,6 +23,9 @@ const StyledTextwithLogo = styled.section`
     display: flex;
     margin-top: -20px;
     flex-direction: row;
+    img {
+      height: 200px;
+    }
 `;
 const StyledText = styled.section`
     display: flex;

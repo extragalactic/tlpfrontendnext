@@ -87,11 +87,11 @@ class Testimonials extends React.Component {
         {this.state.numberToShow < this.numberTotal &&
           <div>
             <h3>. . .</h3>
-            <div><FlatButton labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }} label="Read more testimonials" primary onClick={() => { this.setState({ numberToShow: this.state.numberToShow + 5 }); }} /></div>
+            <div><FlatButton labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }} label="Read more testimonials" secondary onClick={() => { this.setState({ numberToShow: this.state.numberToShow + 5 }); }} /></div>
           </div>
         }
         <div>
-          <div><FlatButton labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }} label="Write a testimonial" primary onClick={() => { window.open('https://search.google.com/local/writereview?placeid=ChIJ74NmW2vTKogRAVn6jOwdYUI', '_blank'); }} /></div>
+          <div><FlatButton labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }} label="Write a testimonial" secondary onClick={() => { window.open('https://search.google.com/local/writereview?placeid=ChIJ74NmW2vTKogRAVn6jOwdYUI', '_blank'); }} /></div>
         </div>
       </StyledTestimonials>
     );
