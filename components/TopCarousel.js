@@ -77,14 +77,17 @@ const StyledPhoneSection = styled.div`
   margin-top: 5px;
   background-color: rgba(0,0,0,0.5);
   border-radius: 0.5em;
-  height: 120px;
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h6 {
     color: #fff;
-    font-size: 1.0em !important;
+    font-size: 1.8em !important;
     padding-top: 5px;
-    padding-bottom: 20px;
-    margin-top -5px;
+    padding-bottom: 25px;
+    margin-top -14px;
   }  
 `;
 
@@ -99,25 +102,22 @@ const TopCarousel = (props) => {
     <TopDiv>
       <Carousel
         autoplay
-        autoplayInterval={4000}
+        autoplayInterval={2000}
         wrapAround
         decorators={Decorators}
       >
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_a.jpeg" alt="" /></div>
+        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_b.jpeg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_a.jpeg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_b.jpeg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_mark.jpeg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_sai.jpeg" alt="" /></div>
         <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_stone.jpeg" alt="" /></div>
 
       </Carousel>
       <StyledCarouselContent>
-        <MediaQuery minWidth={451}>
-          <StyledTagline src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/LogoBanner.png" alt="Warranties that blow the others away!" />
-        </MediaQuery>
         <StyledQuoteRequest>
           <StyledPhoneSection>
             <div>
@@ -142,7 +142,7 @@ const TopCarousel = (props) => {
             </div>
             <div>
               <h6 style={{ float: 'left' }}>
-                <a href="tel:+19055080500">905-508-0500</a> or <a href="tel:+14165950100">416-595-0100</a>
+                <a href="tel:+18336000505">1-833-600-0505</a>
               </h6>
             </div>
           </StyledPhoneSection>
