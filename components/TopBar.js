@@ -22,16 +22,16 @@ const StyledTopBar = styled.div`
     }
     @media (max-width: 750px) {
       height: 130px;
-    }    
+    }
     @media (max-width: 650px) {
       height: 85px;
     }
     @media (max-width: 450px) {
       height: 70px;
-    }    
+    }
     @media (max-width: 370px) {
       height: 45px;
-    }    
+    }
   }
 `;
 
