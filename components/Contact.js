@@ -157,10 +157,10 @@ const Contact = (props) => {
         </StyledColumns>
         <StyledSocialIcons>
           <p>You can also check us out on social media!</p>
-          <button onClick={() => { window.open('https://twitter.com/3PigsMasonry', '_blank'); }}>
+          <button onClick={() => { window.open('https://www.facebook.com/Three-Little-Pigs-Masonry-301425343309473', '_blank'); }}>
             <i className="fa fa-facebook-square fa-3x" aria-hidden="true" style={{ color: '#3b5999' }}></i>
           </button>
-          <button onClick={() => { window.open('https://www.facebook.com/Three-Little-Pigs-Masonry-301425343309473', '_blank'); }}>
+          <button onClick={() => { window.open('https://twitter.com/3PigsMasonry', '_blank'); }}>
             <i className="fa fa-twitter fa-3x" aria-hidden="true" style={{ color: '#55acee' }}></i>
           </button>
         </StyledSocialIcons>
