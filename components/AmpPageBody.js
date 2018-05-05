@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class AmpPageBody extends React.Component {
   render() {
@@ -22,7 +22,7 @@ class AmpPageBody extends React.Component {
           height="250"
           type="slides"
           controls
-          loop
+          loop="loop"
           delay="4000"
           layout="responsive"
         >
