@@ -22,7 +22,9 @@ export default class MyDocument extends Document {
 
     // Note: 'page' and 'styleTags' vars will prevent the screen from flashing the unformatted page before styles are applied
     const page = renderPage((App) => {
-      return (props) => { return sheet.collectStyles(<App {...props} />); };
+      return (props) => {
+        return sheet.collectStyles(<App {...props} />);
+      };
     });
     const styleTags = sheet.getStyleElement();
 
@@ -35,7 +37,14 @@ export default class MyDocument extends Document {
     });
     // amp = true;
     return {
-      ...page, styleTags, html, head, errorHtml, chunks, styles, amp,
+      ...page,
+      styleTags,
+      html,
+      head,
+      errorHtml,
+      chunks,
+      styles,
+      amp,
     };
   }
 
@@ -62,10 +71,7 @@ export default class MyDocument extends Document {
       <html amp="">
         <Head>
           <title>Three Little Pigs Masonry</title>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic|Libre+Baskerville"
             rel="stylesheet"
@@ -77,6 +83,18 @@ export default class MyDocument extends Document {
             href="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/favicon.ico"
           />
           <link rel="canonical" href="https://threelittlepigsmasonry.ca" />
+          <style amp-boilerplate="">
+            {
+              'body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}'
+            }
+          </style>
+          <noscript>
+            <style amp-boilerplate="">
+              {
+                'body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}'
+              }
+            </style>
+          </noscript>
           <meta property="og:title" content="Three Little Pigs Masonry" />
           <meta property="og:type" content="website" />
           <meta
