@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
       );
     }
     return (
-      <html>
+      <html amp="">
         <Head>
           <title>Three Little Pigs Masonry</title>
           <meta
