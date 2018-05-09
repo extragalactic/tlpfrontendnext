@@ -7,11 +7,11 @@ class AmpPageBody extends React.Component {
         <amp-fit-text width="750" height="186" layout="responsive">
           <div className="headerImg">
             <amp-img
-              src="./static/images/3LPM-title-light.png"
+              src="./static/images/3LPM-title-dark.jpg"
               width="750"
               height="186"
               layout="responsive"
-              srcset="./static/images/3LPM-title-light.png 800w"
+              srcset="./static/images/3LPM-title-dark.jpg 800w"
             />
           </div>
         </amp-fit-text>
@@ -22,7 +22,7 @@ class AmpPageBody extends React.Component {
           height="250"
           type="slides"
           controls
-          autoplay
+          autoplay="autoplay"
           delay="4000"
           layout="responsive"
         >
@@ -152,10 +152,10 @@ class AmpPageBody extends React.Component {
         </amp-fit-text>
         <div className="centerBlock buttonRow">
           <a
-            href="http://www.threelittlepigsmasonry.com/#services"
+            href="http://www.threelittlepigsmasonry.ca"
             target="_self"
           >
-            <button className="btn btnLarge">Learn More!</button>
+            <button className="btn btnLarge">Get a Quote</button>
           </a>
         </div>
         <div className="titleBlock">
@@ -164,7 +164,7 @@ class AmpPageBody extends React.Component {
         <div className="testimonialCard contentBlock">
           <div className="testimonialTitleBar">★★★★★</div>
           <p>
-            I contacted 3 pigs for a quote to repair crumbling stone work. Tyler
+            I contacted 3 Pigs for a quote to repair crumbling stone work. Tyler
             came out to look and take photos (I didn't even need to be home),
             then Darren phoned me. Darren was extremely knowledgeable and gave
             me lots of advice on the phone. It turns out it would be a big job
@@ -210,7 +210,7 @@ class AmpPageBody extends React.Component {
 
         <div className="centerBlock buttonRow">
           <a
-            href="http://www.threelittlepigsmasonry.com/#testimonials"
+            href="http://www.threelittlepigsmasonry.ca/#testimonials"
             target="_self"
           >
             <button className="btn btnLarge">Read More Testimonials</button>
