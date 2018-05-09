@@ -87,6 +87,7 @@ export default class MyDocument extends Document {
               "body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}"
             }
           </style>
+
           <noscript>
             <style amp-boilerplate="">
               {
@@ -96,7 +97,7 @@ export default class MyDocument extends Document {
           </noscript>
 
           <title>Three Little Pigs Masonry</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1" />
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic|Libre+Baskerville"
             rel="stylesheet"
@@ -108,11 +109,7 @@ export default class MyDocument extends Document {
             href="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/favicon.ico"
           />
           <link rel="canonical" href="https://threelittlepigsmasonry.ca" />
-          <style amp-boilerplate="">
-            {
-              "body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}"
-            }
-          </style>
+
           <meta property="og:title" content="Three Little Pigs Masonry" />
           <meta property="og:type" content="website" />
           <meta
@@ -166,5 +163,19 @@ export default class MyDocument extends Document {
 
   gtag('config', 'UA-118818499-1');
 </script>
+
+          <style amp-boilerplate>
+            {
+              "<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>"
+            }
+          </style>
+          <noscript>
+            <style amp-boilerplate="">
+              {
+                "body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}"
+              }
+            </style>
+          </noscript>
+
 
 */

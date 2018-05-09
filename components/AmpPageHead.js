@@ -112,10 +112,10 @@ class AmpPageHead extends React.Component {
           }
           .headerImg {
             margin-left: 0px;
-            background-color: #841F27;
+            background-color: #eee;
           }
           .headerBar {
-            backgroundColor: #841F27;
+            backgroundColor: #eee;
             margin-left: 0px;
             margin-right: 0px;
             padding: 5px;
@@ -216,7 +216,7 @@ class AmpPageHead extends React.Component {
           }
         `}
         </style>
-        <style amp-custom>
+        <style amp-boilerplate="">
           {
             'body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}'
           }
@@ -238,3 +238,11 @@ function getPagePathname(pathname, nextExport) {
 }
 
 export default AmpPageHead;
+
+/*
+        <style amp-boilerplate>
+          {
+            'body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}'
+          }
+        </style>
+*/

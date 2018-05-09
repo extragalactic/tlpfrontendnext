@@ -22,7 +22,7 @@ class AmpPageBody extends React.Component {
           height="250"
           type="slides"
           controls
-          loop="loop"
+          autoplay
           delay="4000"
           layout="responsive"
         >
