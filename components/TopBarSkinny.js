@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
@@ -8,24 +8,23 @@ import FlatButton from 'material-ui/FlatButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 const StyledTopBar = styled.div`
-  justify-content: left;
-  margin-left: -16px;
-  background-color: #fff;
-
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
 
+  justify-content: left;
+  margin-left: -16px;
+  background-color: #fff;
   img {
     float: left;
     padding: 3px;
     margin-left: 0px;
-    height: 165px;
+    height: 65px;
     @media (max-width: 1000px) {
-      height: 150px;
+      height: 50px;
     }
     @media (max-width: 750px) {
-      height: 130px;
+      height: 30px;
     }
     @media (max-width: 650px) {
       height: 85px;
@@ -38,8 +37,7 @@ const StyledTopBar = styled.div`
     }
   }
 `;
-
-class TopBar extends React.Component {
+export default class TopBar extends Component {
   static goToAnchor(anchor) {
     const hashAnchor = anchor === '' ? '' : `/#${anchor}`;
     console.log(`anchor: ${hashAnchor}`);
@@ -78,6 +76,7 @@ class TopBar extends React.Component {
     return (
       <StyledTopBar>
         <AppBar
+          zDepth={-1}
           title={
             <div>
               <a
@@ -98,7 +97,7 @@ class TopBar extends React.Component {
           }
           showMenuIconButton={false}
           style={{
-            position: 'static',
+            position: 'fixed',
           }}
         >
           <div>
@@ -143,54 +142,3 @@ class TopBar extends React.Component {
     );
   }
 }
-
-const MainMenu = (props) => {
-  return (
-    <IconMenu
-      {...props}
-      iconButtonElement={
-        <IconButton>
-          <MoreVertIcon />
-        </IconButton>
-      }
-      targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-      anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-      iconStyle={{ fill: 'rgba(100, 100, 100, 0.87)' }}
-    >
-      <MenuItem
-        primaryText="Services"
-        onClick={() => {
-          TopBar.goToAnchor('services');
-        }}
-      />
-      <MenuItem
-        primaryText="About Us"
-        onClick={() => {
-          TopBar.goToAnchor('about-us');
-        }}
-      />
-      <MenuItem
-        primaryText="Photo Gallery"
-        onClick={() => {
-          TopBar.goToAnchor('photos');
-        }}
-      />
-      <MenuItem
-        primaryText="Testimonials"
-        onClick={() => {
-          TopBar.goToAnchor('testimonials');
-        }}
-      />
-      <MenuItem
-        primaryText="Service Area"
-        onClick={() => {
-          TopBar.goToAnchor('service-area');
-        }}
-      />
-    </IconMenu>
-  );
-};
-
-MainMenu.muiName = 'IconMenu';
-
-export default TopBar;

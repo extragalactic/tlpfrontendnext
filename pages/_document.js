@@ -1,19 +1,20 @@
-import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
-import flush from "styled-jsx/server";
-import PropTypes from "prop-types";
-import AmpPageHead from "../components/AmpPageHead";
+import React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
+import flush from 'styled-jsx/server';
+import PropTypes from 'prop-types';
+import AmpPageHead from '../components/AmpPageHead';
 
 export default class MyDocument extends Document {
-
   static getInitialProps({ renderPage }) {
-    const { html, head, errorHtml, chunks } = renderPage();
+    const {
+      html, head, errorHtml, chunks,
+    } = renderPage();
     const sheet = new ServerStyleSheet();
 
     // Note: 'page' and 'styleTags' vars will prevent the screen from flashing the unformatted page before styles are applied
-    const page = renderPage(App => {
-      return props => {
+    const page = renderPage((App) => {
+      return (props) => {
         return sheet.collectStyles(<App {...props} />);
       };
     });
@@ -21,8 +22,8 @@ export default class MyDocument extends Document {
 
     const styles = flush();
     let amp = false;
-    head.forEach(element => {
-      if (element.type == "link" && element.props.rel == "canonical") {
+    head.forEach((element) => {
+      if (element.type == 'link' && element.props.rel == 'canonical') {
         amp = true;
       }
     });
@@ -35,12 +36,12 @@ export default class MyDocument extends Document {
       errorHtml,
       chunks,
       styles,
-      amp
+      amp,
     };
   }
 
   static childContextTypes = {
-    _documentProps: PropTypes.any
+    _documentProps: PropTypes.any,
   };
 
   getChildContext() {
@@ -48,7 +49,6 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    console.log();
     if (this.props.amp) {
       const { html } = this.props;
       return (
@@ -62,11 +62,20 @@ export default class MyDocument extends Document {
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto"
             />
-            <style amp-boilerplate="">{`body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}`}</style>
+            <style amp-boilerplate="">
+              {
+                'body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}'
+              }
+            </style>
             <noscript>
-              <style amp-boilerplate="">{`body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}`}</style>
+              <style amp-boilerplate="">
+                {
+                  'body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}'
+                }
+              </style>
             </noscript>
-            <style amp-custom="">{`
+            <style amp-custom="">
+              {`
               body
               {
                 font-family: Open Sans, sans-serif;
@@ -206,32 +215,32 @@ export default class MyDocument extends Document {
               }
            `}
             </style>
-              <script async src="https://cdn.ampproject.org/v0.js" />
-              <script
-            async
-            custom-element="amp-carousel"
-            src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
-          />
-          <script
-            async
-            custom-element="amp-fit-text"
-            src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
-          />
-          <script
-            async
-            custom-element="amp-list"
-            src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
-          />
-          <script
-            async
-            custom-template="amp-mustache"
-            src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
-          />
-          <script
-            async
-            custom-element="amp-form"
-            src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
-          />
+            <script async src="https://cdn.ampproject.org/v0.js" />
+            <script
+              async
+              custom-element="amp-carousel"
+              src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+            />
+            <script
+              async
+              custom-element="amp-fit-text"
+              src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+            />
+            <script
+              async
+              custom-element="amp-list"
+              src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+            />
+            <script
+              async
+              custom-template="amp-mustache"
+              src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+            />
+            <script
+              async
+              custom-element="amp-form"
+              src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+            />
           </Head>
           <body>
             <div id="__next" dangerouslySetInnerHTML={{ __html: html }} />
@@ -244,7 +253,7 @@ export default class MyDocument extends Document {
         <Head>
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=UA-118818499-1`}
+            src="https://www.googletagmanager.com/gtag/js?id=UA-118818499-1"
           />
           <script
             dangerouslySetInnerHTML={{
@@ -253,7 +262,7 @@ export default class MyDocument extends Document {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-118818499-1');
-          `
+          `,
             }}
           />
 

@@ -25,7 +25,8 @@ class MainPage extends React.Component {
         {
           author: 'them',
           data: {
-            text: 'Welcome to Three Little Pigs Masonry. How can I help you?, You can say things like, I need my home refaced or I need my chimney repaired.',
+            text:
+              'Welcome to Three Little Pigs Masonry. How can I help you?, You can say things like, I need my home refaced or I need my chimney repaired.',
           },
           type: 'text',
         },
@@ -42,18 +43,33 @@ class MainPage extends React.Component {
 
   componentWillMount() {
     if (this.props.anchor !== undefined) {
-     document.location = `${document.location.protocol}//${document.location.host}/#${this.props.anchor}`;
+      document.location = `${document.location.protocol}//${
+        document.location.host
+      }/#${this.props.anchor}`;
     }
   }
 
   componentDidMount() {
+    // event listener for scroll event to change app bar dimension
+
+    window.addEventListener('scroll', (e) => {
+      if (window.scrollY > 96 && this.props.skinnyStickyHeaderState === false) {
+        this.props.toggleskinnyStickyHeader(true);
+      }
+      if (window.scrollY < 10 && this.props.skinnyStickyHeaderState === true) {
+        setTimeout(() => {
+          this.props.toggleskinnyStickyHeader(false);
+        }, 20);
+      }
+    });
+
     setTimeout(() => {
       this.setState({
         isOpen: true,
       });
     }, 30000);
   }
-  
+
   openChat() {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -88,7 +104,9 @@ class MainPage extends React.Component {
 
   _sendMessage(text) {
     if (text.length > 0) {
-      const newMessagesCount = this.state.isOpen ? this.state.newMessagesCount : this.state.newMessagesCount + 1;
+      const newMessagesCount = this.state.isOpen
+        ? this.state.newMessagesCount
+        : this.state.newMessagesCount + 1;
       this.setState({
         newMessagesCount,
         messageList: [
@@ -109,13 +127,17 @@ class MainPage extends React.Component {
       newMessagesCount: 0,
     });
   }
-  
+
   render() {
+    const { skinnyStickyHeaderState } = this.props;
     return (
       <div>
         <StyledMainPage>
           {this.state.modalIsOpen && <GetQuote closeModal={this.closeChat} />}
-          <TopCarousel openChat={this.openChat} />
+          <TopCarousel
+            openChat={this.openChat}
+            skinnyStickyHeaderState={skinnyStickyHeaderState}
+          />
           <TextDivider quoteID={0} />
           <div id="services">
             <ServicesThumbContainer />
@@ -132,7 +154,7 @@ class MainPage extends React.Component {
           </div>
           <div id="service-area">
             <Contact openChat={this.openChat} />
-          </div>   
+          </div>
         </StyledMainPage>
         <Launcher
           style={{
@@ -140,14 +162,15 @@ class MainPage extends React.Component {
           }}
           agentProfile={{
             teamName: 'Automated Estimator Pig',
-            imageUrl: 'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
+            imageUrl:
+              'https://s3.ca-central-1.amazonaws.com/3lpm/website/images/PigBot_small.png',
           }}
           onMessageWasSent={this._onMessageWasSent}
           messageList={this.state.messageList}
           newMessagesCount={this.state.newMessagesCount}
           handleClick={this._handleClick}
           isOpen={this.state.isOpen}
-        />   
+        />
       </div>
     );
   }

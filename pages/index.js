@@ -1,21 +1,21 @@
-import React, {Component} from 'react'
-import Head from 'next/head'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin'
+import React, { Component } from 'react';
+import Head from 'next/head';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import styled from 'styled-components';
 import TopBar from '../components/TopBar';
+import TopBarSkinny from '../components/TopBarSkinny';
 import Footer from '../components/Footer';
 import MainPage from '../components/MainPage';
 import muiTheme from '../components/styles/muiTheme';
 import GlobalStyles from '../components/styles/globalStyles';
 import AmpPageBody from '../components/AmpPageBody';
 
-
 // Make sure react-tap-event-plugin only gets injected once
 // Needed for material-ui
 if (!process.tapEventInjected) {
-  injectTapEventPlugin()
-  process.tapEventInjected = true
+  injectTapEventPlugin();
+  process.tapEventInjected = true;
 }
 /* eslint-disable */
 
@@ -29,63 +29,66 @@ const StyledApp = styled.section`
   font-weight: 'lighter';
 `;
 
-
 class Index extends Component {
-  static getInitialProps ({ req, query }) {
+  static getInitialProps({ req, query }) {
     // Ensures material-ui renders the correct css prefixes server-side
-    let userAgent
+    let userAgent;
     if (process.browser) {
-      userAgent = navigator.userAgent
+      userAgent = navigator.userAgent;
     } else {
-      userAgent = req.headers['user-agent']
+      userAgent = req.headers['user-agent'];
     }
-    const amp = query.amp == '1'
-    const url = req ? req.url : window.location.href
-    const ampUrl = amp ? url.replace('?amp=1', '') : url + '?amp=1'
+    const amp = query.amp == '1';
+    const url = req ? req.url : window.location.href;
+    const ampUrl = amp ? url.replace('?amp=1', '') : url + '?amp=1';
 
-    return { userAgent, query, amp, ampUrl }
+    return { userAgent, query, amp, ampUrl };
   }
 
-  constructor (props, context) {
-    super(props, context)
+  constructor(props, context) {
+    super(props, context);
 
     this.state = {
-      open: false
-    }
+      open: false,
+      skinnyStickyHeader: false,
+    };
   }
-
-  render () {
-    const {amp, ampUrl} = this.props;
+  toggleskinnyStickyHeader = value => {
+    this.setState({ skinnyStickyHeader: value });
+  };
+  render() {
+    const { amp, ampUrl } = this.props;
     return (
       <div className="page">
         <Head>
-          {
-            amp ? (
-              <link rel="canonical" href={ampUrl} />
-            ) : (
-              <link rel="amphtml" href={ampUrl} />
-            )
-          }
-        </Head>
-        {
-          amp ? (
-            <AmpPageBody />
+          {amp ? (
+            <link rel="canonical" href={ampUrl} />
           ) : (
-            <StyledApp>
-              <MuiThemeProvider muiTheme={muiTheme}>
-                <GlobalStyles>
-                  <TopBar redirect={this.props.query.redirect} />
-                  <MainPage />
-                  <Footer />
-                </GlobalStyles>
-              </MuiThemeProvider>
-            </StyledApp>
-          )
-        }
+            <link rel="amphtml" href={ampUrl} />
+          )}
+        </Head>
+        {amp ? (
+          <AmpPageBody />
+        ) : (
+          <StyledApp>
+            <MuiThemeProvider muiTheme={muiTheme}>
+              <GlobalStyles>
+                <TopBar
+                  skinnyStickyHeaderState={this.state.skinnyStickyHeader}
+                  redirect={this.props.query.redirect}
+                />
+                <MainPage
+                  skinnyStickyHeaderState={this.state.skinnyStickyHeader}
+                  toggleskinnyStickyHeader={this.toggleskinnyStickyHeader}
+                />
+                <Footer />
+              </GlobalStyles>
+            </MuiThemeProvider>
+          </StyledApp>
+        )}
       </div>
     );
   }
-
 }
 
-export default Index
+export default Index;

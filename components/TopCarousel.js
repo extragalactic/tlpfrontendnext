@@ -74,7 +74,6 @@ const StyledQuoteRequest = styled.div`
 `;
 const StyledPhoneSection = styled.div`
   padding: 3px 3px 7px 10px;
-  margin-top: 5px;
   background-color: rgba(0,0,0,0.5);
   border-radius: 0.5em;
   height: 125px;
@@ -91,7 +90,9 @@ const StyledPhoneSection = styled.div`
   }  
 `;
 
-const TopCarousel = (props) => {
+const TopCarousel = props => {
+  console.log('top', props);
+  const { skinnyStickyHeaderState } = props;
   const openChat = props.openChat;
 
   // Note: the Decorators array can be used to make custom controls for nuka-carousel. Here I'm just passing in an empty array to clear all the controls.
@@ -106,16 +107,60 @@ const TopCarousel = (props) => {
         wrapAround
         decorators={Decorators}
       >
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_a.jpeg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_b.jpeg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_mark.jpeg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_sai.jpeg" alt="" /></div>
-        <div><SlickSlide src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_stone.jpeg" alt="" /></div>
-
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_a.jpeg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_b.jpeg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_mark.jpeg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_sai.jpeg"
+            alt=""
+          />
+        </div>
+        <div>
+          <SlickSlide
+            src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_stone.jpeg"
+            alt=""
+          />
+        </div>
       </Carousel>
       <StyledCarouselContent>
         <StyledQuoteRequest>
@@ -137,7 +182,10 @@ const TopCarousel = (props) => {
               />
             </div>
             <div>
-              <PhoneIcon color={'#fff'} style={{ width: 50, height: 50, float: 'left' }} />
+              <PhoneIcon
+                color={'#fff'}
+                style={{ width: 50, height: 50, float: 'left' }}
+              />
               <p style={{ float: 'left' }}>or give us a call at:</p>
             </div>
             <div>
