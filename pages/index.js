@@ -71,6 +71,11 @@ class Index extends Component {
           <AmpPageBody />
         ) : (
           <StyledApp>
+            <Head>
+              <title>
+                Three Little Pigs Masonry | Masonry and Concrete Experts
+              </title>
+            </Head>
             <MuiThemeProvider muiTheme={muiTheme}>
               <GlobalStyles>
                 <TopBar
