@@ -74,6 +74,14 @@ class Index extends Component {
               <title>
                 Three Little Pigs Masonry | Masonry and Concrete Experts
               </title>
+              <meta
+                property="description"
+                content="Three Little Pigs Masonry provides high quality masonry restoration and renovation services for the GTA home and business owner."
+              />
+              <meta
+                property="keywords"
+                content="stone, brick, concrete, refacing, parging, masonry"
+              />
             </Head>
             <MuiThemeProvider muiTheme={muiTheme}>
               <GlobalStyles>
