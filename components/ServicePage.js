@@ -86,7 +86,6 @@ class ServicePage extends React.Component {
   }
 
   handleAfterSlide(newSlideIndex) {
-    console.log(newSlideIndex);
     this.setState({
       currentSlideIndex: newSlideIndex,
     });
@@ -94,7 +93,6 @@ class ServicePage extends React.Component {
 
   getSlides() {
     const selectedService = ServiceData[this.props.selectedTab].pageName;
-    // console.log(selectedService, this.serviceType);
     if (selectedService !== this.serviceType) {
       return <div />;
     }

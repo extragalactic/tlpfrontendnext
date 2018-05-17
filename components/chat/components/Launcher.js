@@ -21,7 +21,6 @@ class Launcher extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { isOpen, handleClick } = this.props;
     const classList = ['sc-launcher', isOpen ? 'opened' : ''];
     return (

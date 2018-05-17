@@ -23,7 +23,6 @@ import {
 class TopBar extends React.Component {
   goToAnchor(anchor) {
     const hashAnchor = anchor === '' ? '' : `/#${anchor}`;
-    console.log(`anchor: ${hashAnchor}`);
     document.location = `${document.location.protocol}//${
       document.location.host
     }${hashAnchor}`;
