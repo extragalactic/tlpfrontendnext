@@ -7,7 +7,6 @@ import AboutUs from './AboutUs';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
 import TextDivider from './TextDivider';
-import GetQuote from './GetQuote';
 import PhotoGallery from './PhotoGallery';
 import returnLexResponse from './util/LexBot';
 
@@ -34,11 +33,8 @@ class MainPage extends React.Component {
       newMessagesCount: 0,
       isOpen: false,
     };
-    this.openChat = this.openChat.bind(this);
-    this.closeChat = this.closeChat.bind(this);
     this._onMessageWasSent = this._onMessageWasSent.bind(this);
     this._sendMessage = this._sendMessage.bind(this);
-    this._handleClick = this._handleClick.bind(this);
   }
 
   componentWillMount() {
@@ -51,18 +47,6 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     // event listener for scroll event to change app bar dimension
-
-    window.addEventListener('scroll', (e) => {
-      if (window.scrollY > 96 && this.props.skinnyStickyHeaderState === false) {
-        this.props.toggleskinnyStickyHeader(true);
-      }
-      if (window.scrollY < 10 && this.props.skinnyStickyHeaderState === true) {
-        setTimeout(() => {
-          this.props.toggleskinnyStickyHeader(false);
-        }, 20);
-      }
-    });
-
     setTimeout(() => {
       this.setState({
         isOpen: true,
@@ -70,17 +54,6 @@ class MainPage extends React.Component {
     }, 30000);
   }
 
-  openChat() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  }
-
-  closeChat() {
-    this.setState({
-      modalIsOpen: false,
-    });
-  }
   _onMessageWasSent(message) {
     returnLexResponse(message.data.text).then((res) => {
       const response = {
@@ -121,23 +94,12 @@ class MainPage extends React.Component {
     }
   }
 
-  _handleClick() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-      newMessagesCount: 0,
-    });
-  }
-
   render() {
-    const { skinnyStickyHeaderState } = this.props;
+    const { isOpen, handleClick } = this.props;
     return (
       <div>
         <StyledMainPage>
-          {this.state.modalIsOpen && <GetQuote closeModal={this.closeChat} />}
-          <TopCarousel
-            openChat={this.openChat}
-            skinnyStickyHeaderState={skinnyStickyHeaderState}
-          />
+          <TopCarousel openChat={handleClick} />
           <TextDivider quoteID={0} />
           <div id="services">
             <ServicesThumbContainer />
@@ -153,7 +115,7 @@ class MainPage extends React.Component {
             <Testimonials />
           </div>
           <div id="service-area">
-            <Contact openChat={this.openChat} />
+            <Contact openChat={handleClick} />
           </div>
         </StyledMainPage>
         <Launcher
@@ -167,9 +129,8 @@ class MainPage extends React.Component {
           }}
           onMessageWasSent={this._onMessageWasSent}
           messageList={this.state.messageList}
-          newMessagesCount={this.state.newMessagesCount}
-          handleClick={this._handleClick}
-          isOpen={this.state.isOpen}
+          handleClick={handleClick}
+          isOpen={isOpen}
         />
       </div>
     );

@@ -3,7 +3,6 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import flush from 'styled-jsx/server';
 import PropTypes from 'prop-types';
-import AmpPageHead from '../components/AmpPageHead';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -299,6 +298,14 @@ export default class MyDocument extends Document {
           <meta
             property="og:description"
             content="Three Little Pigs Masonry provides high quality masonry restoration and renovation services for the GTA home and business owner."
+          />
+          <meta
+            property="description"
+            content="Three Little Pigs Masonry provides high quality masonry restoration and renovation services for the GTA home and business owner."
+          />
+          <meta
+            property="keywords"
+            content="stone, brick, concrete, refacing, parging, masonry"
           />
           <meta name="twitter:site" content="@3PigsMasonry" />
           <meta name="twitter:creator" content="@3PigsMasonry" />

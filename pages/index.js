@@ -3,8 +3,7 @@ import Head from 'next/head';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import styled from 'styled-components';
-import TopBar from '../components/TopBar';
-import TopBarSkinny from '../components/TopBarSkinny';
+import TopBar from '../components/Topbar';
 import Footer from '../components/Footer';
 import MainPage from '../components/MainPage';
 import muiTheme from '../components/styles/muiTheme';
@@ -47,15 +46,15 @@ class Index extends Component {
 
   constructor(props, context) {
     super(props, context);
-
     this.state = {
-      open: false,
-      skinnyStickyHeader: false,
+      isOpen: false,
     };
   }
-  toggleskinnyStickyHeader = value => {
-    this.setState({ skinnyStickyHeader: value });
+
+  handleClick = () => {
+    this.setState(currentState => ({ isOpen: !currentState.isOpen }));
   };
+
   render() {
     const { amp, ampUrl } = this.props;
     return (
@@ -79,12 +78,12 @@ class Index extends Component {
             <MuiThemeProvider muiTheme={muiTheme}>
               <GlobalStyles>
                 <TopBar
-                  skinnyStickyHeaderState={this.state.skinnyStickyHeader}
                   redirect={this.props.query.redirect}
+                  handleClick={this.handleClick}
                 />
                 <MainPage
-                  skinnyStickyHeaderState={this.state.skinnyStickyHeader}
-                  toggleskinnyStickyHeader={this.toggleskinnyStickyHeader}
+                  isOpen={this.state.isOpen}
+                  handleClick={this.handleClick}
                 />
                 <Footer />
               </GlobalStyles>

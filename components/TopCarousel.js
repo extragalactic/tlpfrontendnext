@@ -91,7 +91,6 @@ const StyledPhoneSection = styled.div`
 `;
 
 const TopCarousel = props => {
-  console.log('top', props);
   const { skinnyStickyHeaderState } = props;
   const openChat = props.openChat;
 
