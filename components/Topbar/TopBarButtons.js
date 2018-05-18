@@ -17,7 +17,7 @@ export default ({ onClick, containerStyle }) => {
         }}
       />
       <FlatButton
-        label="Photo Gallery"
+        label="Photos"
         onClick={() => {
           onClick('photos');
         }}

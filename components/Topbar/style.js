@@ -68,8 +68,7 @@ export const StyledSmallHeaderButtons = styled.div`
     display: none;
   }
 
-  width: 40%;
-  display: flex;
+  width: 50% flex;
   align-items: center;
   justify-content: center;
 `;
