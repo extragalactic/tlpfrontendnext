@@ -271,7 +271,6 @@ export default class MyDocument extends Document {
         })(window,document,'script','dataLayer','GTM-M8WXPFQ');`
             }}
           />
-          <title>Three Little Pigs Masonry</title>
           <meta
             name="viewport"
             content="width=device-width, minimum-scale=1, initial-scale=1"
