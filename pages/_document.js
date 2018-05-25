@@ -5,10 +5,6 @@ import flush from "styled-jsx/server";
 import PropTypes from "prop-types";
 
 export default class MyDocument extends Document {
-<<<<<<< HEAD
-
-=======
->>>>>>> 77714e0e74d7d7120bd8f1d7b32c4c7a58f53ef2
   static getInitialProps({ renderPage }) {
     const { html, head, errorHtml, chunks } = renderPage();
     const sheet = new ServerStyleSheet();
@@ -64,13 +60,6 @@ export default class MyDocument extends Document {
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto"
             />
-<<<<<<< HEAD
-            <style amp-boilerplate="">{`body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}`}</style>
-            <noscript>
-              <style amp-boilerplate="">{`body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}`}</style>
-            </noscript>
-            <style amp-custom="">{`
-=======
             <style amp-boilerplate="">
               {
                 "body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}"
@@ -85,7 +74,6 @@ export default class MyDocument extends Document {
             </noscript>
             <style amp-custom="">
               {`
->>>>>>> 77714e0e74d7d7120bd8f1d7b32c4c7a58f53ef2
               body
               {
                 font-family: Open Sans, sans-serif;
@@ -225,34 +213,6 @@ export default class MyDocument extends Document {
               }
            `}
             </style>
-<<<<<<< HEAD
-              <script async src="https://cdn.ampproject.org/v0.js" />
-              <script
-            async
-            custom-element="amp-carousel"
-            src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
-          />
-          <script
-            async
-            custom-element="amp-fit-text"
-            src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
-          />
-          <script
-            async
-            custom-element="amp-list"
-            src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
-          />
-          <script
-            async
-            custom-template="amp-mustache"
-            src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
-          />
-          <script
-            async
-            custom-element="amp-form"
-            src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
-          />
-=======
             <script async src="https://cdn.ampproject.org/v0.js" />
             <script
               async
@@ -279,7 +239,6 @@ export default class MyDocument extends Document {
               custom-element="amp-form"
               src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
             />
->>>>>>> 77714e0e74d7d7120bd8f1d7b32c4c7a58f53ef2
           </Head>
           <body>
             <div id="__next" dangerouslySetInnerHTML={{ __html: html }} />
@@ -304,10 +263,6 @@ export default class MyDocument extends Document {
           `
             }}
           />
-<<<<<<< HEAD
-
-          <title>Three Little Pigs Masonry</title>
-=======
           <script
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -317,7 +272,6 @@ export default class MyDocument extends Document {
         })(window,document,'script','dataLayer','GTM-M8WXPFQ');`
             }}
           />
->>>>>>> 77714e0e74d7d7120bd8f1d7b32c4c7a58f53ef2
           <meta
             name="viewport"
             content="width=device-width, minimum-scale=1, initial-scale=1"
