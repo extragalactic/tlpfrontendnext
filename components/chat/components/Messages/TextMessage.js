@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import chatIconUrl from '../../../../static/chat-icon.svg';
+import React, { Component } from "react";
 
 const TextMessage = props => {
   return (

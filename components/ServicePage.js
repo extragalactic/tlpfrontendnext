@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import SlideShow from 'react-slick';
 import Carousel from 'nuka-carousel';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import ServiceData from './ServiceData';
 
 import defaultDecorators from 'nuka-carousel/lib/decorators';
@@ -19,7 +19,7 @@ const StyledServicePage = styled.section`
     padding-left: 5px;
   }
   p {
-    font-size: 1.0em;
+    font-size: 1em;
     text-align: left;
   }
 `;
@@ -53,14 +53,19 @@ const Arrow = (props) => {
   return (
     <div
       className={className}
-      style={{...style, display: 'block', background: '#777', height: '60px', lineHeight: '80px' }}
+      style={{
+        ...style,
+        display: 'block',
+        background: '#777',
+        height: '60px',
+        lineHeight: '80px',
+      }}
       onClick={onClick}
     />
   );
 };
 
 class ServicePage extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -69,36 +74,40 @@ class ServicePage extends React.Component {
     };
 
     this.serviceType = props.serviceType;
-    this.serviceData = ServiceData.find((service) => { return service.pageName === this.serviceType; });
+    this.serviceData = ServiceData.find((service) => {
+      return service.pageName === this.serviceType;
+    });
     this.handleAfterSlide = this.handleAfterSlide.bind(this);
   }
 
   componentDidMount() {
     // need to recalculate the height of the page on resize (for Card components)
-    window.addEventListener("resize", this.props.refresh);
+    window.addEventListener('resize', this.props.refresh);
   }
 
-	handleAfterSlide(newSlideIndex) {
-    console.log(newSlideIndex);
-		this.setState({
-			currentSlideIndex: newSlideIndex,
-		});
+  handleAfterSlide(newSlideIndex) {
+    this.setState({
+      currentSlideIndex: newSlideIndex,
+    });
   }
 
   getSlides() {
-    let selectedService = ServiceData[this.props.selectedTab].pageName;
-    // console.log(selectedService, this.serviceType);
+    const selectedService = ServiceData[this.props.selectedTab].pageName;
     if (selectedService !== this.serviceType) {
-      return <div></div>;
+      return <div />;
     }
     const numSlides = this.serviceData.photos.length;
 
     return this.serviceData.photos.map((photoSrc, key) => {
       if (key <= this.state.currentSlideIndex + 3 || key >= numSlides - 2) {
         const imgSrc = `https://s3.ca-central-1.amazonaws.com/3lpm/website/images/before-and-after-pics/${photoSrc}`;
-        return <div key={key}><SlickSlide src={imgSrc} alt=""/></div>;
+        return (
+          <div key={key}>
+            <SlickSlide src={imgSrc} alt="" />
+          </div>
+        );
       }
-      return <div key={key}></div>;
+      return <div key={key} />;
     });
   }
 
@@ -107,67 +116,70 @@ class ServicePage extends React.Component {
       return (
         <Card
           key={`${section.title}`}
-          initiallyExpanded={false}
-          onExpandChange={() => { this.props.refresh(); }}
+          initiallyExpanded
+          onExpandChange={() => {
+            this.props.refresh();
+          }}
         >
           <CardHeader
             title={section.title}
             actAsExpander
             showExpandableButton
-            titleStyle={{ fontSize: '1.2em', marginTop: '10px', padding: '3px 3px 10px 3px' }}
+            titleStyle={{
+              fontSize: '1.2em',
+              marginTop: '10px',
+              padding: '3px 3px 10px 3px',
+            }}
             style={{ backgroundColor: '#eee' }}
           />
-          <CardText expandable >
+          <CardText expandable>
             <div>
-              {
-                section.content.map((subsection, i) => {
-                  /* render section as a list */
-                  if (subsection.list !== undefined) {
-                    return (
-                      <div key={`${subsection.title}${i}`}>
-                        {
-                          subsection.title !== '' &&
-                            subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
-                        }
-                        <ul>
-                          {
-                            subsection.list.map((body) => {
-                              return (
-                                <StyledListItem key={body.substring(0, 30)}>
-                                  <li>{body}</li>
-                                </StyledListItem>
-                              );
-                            })
-                          }
-                        </ul>
-                      </div>
-                    );
-                  }
-                  // else render section as regular paragraphs
+              {section.content.map((subsection, i) => {
+                /* render section as a list */
+                if (subsection.list !== undefined) {
                   return (
                     <div key={`${subsection.title}${i}`}>
-                      {
-                        subsection.title !== '' &&
-                          subsection.mainTitle === true ? <h4>{subsection.title}</h4> : <h5>{subsection.title}</h5>
-                      }
-                      {
-                        subsection.text.map((body) => {
+                      {subsection.title !== '' &&
+                      subsection.mainTitle === true ? (
+                        <h4>{subsection.title}</h4>
+                      ) : (
+                        <h5>{subsection.title}</h5>
+                      )}
+                      <ul>
+                        {subsection.list.map((body) => {
                           return (
-                            <StyledParagraph key={body.substring(0, 30)}>
-                              <p>{body}</p>
-                            </StyledParagraph>
+                            <StyledListItem key={body.substring(0, 30)}>
+                              <li>{body}</li>
+                            </StyledListItem>
                           );
-                        })
-                      }
-                      {
-                        // if it's the last text item in the array, leave a bottom spacer
-                        (i + 1) >= section.content.length &&
-                          <div style={{ paddingBottom: '30px' }} />
-                      }
+                        })}
+                      </ul>
                     </div>
                   );
-                })
-              }
+                }
+                // else render section as regular paragraphs
+                return (
+                  <div key={`${subsection.title}${i}`}>
+                    {subsection.title !== '' &&
+                    subsection.mainTitle === true ? (
+                      <h4>{subsection.title}</h4>
+                    ) : (
+                      <h5>{subsection.title}</h5>
+                    )}
+                    {subsection.text.map((body) => {
+                      return (
+                        <StyledParagraph key={body.substring(0, 30)}>
+                          <p>{body}</p>
+                        </StyledParagraph>
+                      );
+                    })}
+                    {// if it's the last text item in the array, leave a bottom spacer
+                    i + 1 >= section.content.length && (
+                      <div style={{ paddingBottom: '30px' }} />
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </CardText>
         </Card>
@@ -177,7 +189,7 @@ class ServicePage extends React.Component {
 
   render() {
     // removes the dots from the interface
-    const Decorators = defaultDecorators.slice(0,2);
+    const Decorators = defaultDecorators.slice(0, 2);
 
     return (
       <StyledServicePage>
@@ -188,18 +200,20 @@ class ServicePage extends React.Component {
           slidesToShow={2}
           slidesToScroll={2}
           cellSpacing={5}
-          style={{marginTop: '-20px'}}
-          afterSlide={ this.handleAfterSlide }
+          style={{ marginTop: '-20px' }}
+          afterSlide={this.handleAfterSlide}
           decorators={Decorators}
         >
           {this.getSlides()}
         </Carousel>
         <StyledMain>
-          <div>
-            {this.getContent()}
-          </div>
+          <div>{this.getContent()}</div>
         </StyledMain>
-        <RaisedButton label="Get Quote" secondary onClick={this.props.openChat} />
+        <RaisedButton
+          label="Get Quote"
+          secondary
+          onClick={this.props.openChat}
+        />
       </StyledServicePage>
     );
   }
