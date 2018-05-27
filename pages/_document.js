@@ -46,6 +46,7 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    console.log();
     if (this.props.amp) {
       const { html } = this.props;
       return (

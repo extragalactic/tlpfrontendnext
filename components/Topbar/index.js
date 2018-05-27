@@ -26,6 +26,7 @@ class TopBar extends React.Component {
     document.location = `${document.location.protocol}//${
       document.location.host
     }${hashAnchor}`;
+    window.scrollBy(0,25);
     return false;
   }
 

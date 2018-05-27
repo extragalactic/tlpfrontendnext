@@ -5,6 +5,7 @@ import Columns from 'react-columns';
 import RaisedButton from 'material-ui/RaisedButton';
 import GoogleMaps from './GoogleMaps';
 
+
 /* Note: This component should be renamed (is no longer for contact, it's for Service Area) */
 
 const StyledContact = styled.section`
@@ -50,23 +51,6 @@ const StyledColumns = styled(Columns)`
   margin: 20px;
   color: #777;
 `;
-const StyledSocialIcons = styled.div`
-  width: 100%;
-  text-align: center;
-
-  p {
-    text-transform: uppercase;
-    color: #777;
-    font-size: 0.9em;
-  }
-  button {
-    cursor: pointer;
-    margin: 5px;
-    height: 55px;
-    width: 55px;
-  }
-`;
-
 const queries = [
   {
     columns: 2,
@@ -178,48 +162,6 @@ const Contact = (props) => {
             return <li key={area}>{area}</li>;
           })}
         </StyledColumns>
-        <StyledSocialIcons>
-          <p>You can also check us out on social media!</p>
-          <button
-            onClick={() => {
-              window.open(
-                'https://www.facebook.com/Three-Little-Pigs-Masonry-301425343309473',
-                '_blank',
-              );
-            }}
-          >
-            <i
-              className="fa fa-facebook-square fa-3x"
-              aria-hidden="true"
-              style={{ color: '#3b5999' }}
-            />
-          </button>
-          <button
-            onClick={() => {
-              window.open('https://twitter.com/3PigsMasonry', '_blank');
-            }}
-          >
-            <i
-              className="fa fa-twitter fa-3x"
-              aria-hidden="true"
-              style={{ color: '#55acee' }}
-            />
-          </button>
-          <button
-            onClick={() => {
-              window.open(
-                'https://www.instagram.com/threelittlepigsmasonry/',
-                '_blank',
-              );
-            }}
-          >
-            <i
-              className="fa fa-instagram fa-3x"
-              aria-hidden="true"
-              style={{ color: '#55acee' }}
-            />
-          </button>
-        </StyledSocialIcons>
       </section>
     </StyledContact>
   );
