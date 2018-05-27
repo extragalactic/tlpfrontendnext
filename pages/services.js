@@ -7,6 +7,8 @@ import GlobalStyles from "../components/styles/globalStyles";
 import TopBar from "../components/Topbar";
 import Footer from "../components/Footer";
 import ServicesPageMain from "../components/ServicePageMain";
+import StructuredData from '../components/StructuredData';
+
 
 const StyledApp = styled.section`
   text-align: center;
@@ -48,6 +50,7 @@ class Services extends React.Component {
       <div className="page">
         <Head>
           <link rel="amphtml" href={ampUrl} />
+          <StructuredData />
           <title>
             Three Little Pigs Masonry | Masonry and Concrete Experts
           </title>

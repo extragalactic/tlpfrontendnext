@@ -9,6 +9,7 @@ import MainPage from '../components/MainPage';
 import muiTheme from '../components/styles/muiTheme';
 import GlobalStyles from '../components/styles/globalStyles';
 import AmpPageBody from '../components/AmpPageBody';
+import StructuredData from '../components/StructuredData';
 
 // Make sure react-tap-event-plugin only gets injected once
 // Needed for material-ui
@@ -71,22 +72,7 @@ class Index extends Component {
         ) : (
           <StyledApp>
             <Head>
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                  __html: `{ 
-              "@context": "http://schema.org",
-              "@type": "LocalBusiness", 
-              "url": "http://www.threelittlepigsmasonry.ca",
-              "name": "Three Little Pigs Masonry.",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-833-600-05052",
-                "contactType": "Customer service"
-              }
-            }`,
-                }}
-              />
+              <StructuredData />
               <title>
                 Three Little Pigs Masonry | Masonry and Concrete Experts
               </title>

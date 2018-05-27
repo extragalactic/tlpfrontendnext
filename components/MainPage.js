@@ -13,6 +13,11 @@ import returnLexResponse from './util/LexBot';
 const StyledMainPage = styled.section`
   position: relative;
   z-index: 0;
+
+  .anchorDiv {
+    position: relative;
+    top: -55px;
+  }
 `;
 
 class MainPage extends React.Component {
@@ -101,20 +106,25 @@ class MainPage extends React.Component {
         <StyledMainPage>
           <TopCarousel openChat={handleClick} />
           <TextDivider quoteID={0} />
-          <div id="services">
+          <div id="services" className="anchorDiv" />
+          <div>
             <ServicesThumbContainer />
           </div>
-          <div id="about-us">
+          <div id="about-us" className="anchorDiv" />
+          <div >
             <AboutUs />
           </div>
           <TextDivider quoteID={1} />
-          <div id="photos">
+          <div id="photos" className="anchorDiv" />
+          <div>
             <PhotoGallery />
           </div>
-          <div id="testimonials">
+          <div id="testimonials" className="anchorDiv" />
+          <div>
             <Testimonials />
           </div>
-          <div id="service-area">
+          <div id="service-area" className="anchorDiv" />
+          <div>
             <Contact openChat={handleClick} />
           </div>
         </StyledMainPage>

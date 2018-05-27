@@ -21,7 +21,7 @@ const gd3 = fs.readFileSync("./certs/gd3.crt");
 app.prepare().then(() => {
   http
     .createServer((req, res) => {
-      res.writeHead(301, { Location: "https://threelittlepigsmasonry.ca" });
+      res.writeHealocd(301, { Location: "https://threelittlepigsmasonry.ca/services/walls" });
       res.end();
     })
     .listen(80, err => {
@@ -41,4 +41,5 @@ app.prepare().then(() => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${port}`);
   });
+
 });
