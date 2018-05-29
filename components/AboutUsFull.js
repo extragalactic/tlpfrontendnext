@@ -44,7 +44,7 @@ class AboutUsFull extends React.Component {
       <RaisedButton
         label="OK"
         secondary
-        onTouchTap={this.closeModal}
+        onClick={this.closeModal}
         style={{
           width: '100px',
           display: 'block',

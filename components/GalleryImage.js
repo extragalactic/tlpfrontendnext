@@ -9,7 +9,7 @@ const StyledGalleryImage = styled.div`
   img {
     width: 100%;
     display: block;
-    border: 1px solid #444;    
+    border: 1px solid #444;
   }
 `;
 
@@ -24,7 +24,7 @@ const GalleryImage = (props) => {
         <img
           onTouchTap={() => { launchFullsize(); }}
           src={props.photo}
-          alt=""
+          alt="gallery photo"
         />
      </div>
    </StyledGalleryImage>

@@ -22,6 +22,9 @@ const StyledServicePage = styled.section`
     font-size: 1em;
     text-align: left;
   }
+  .spacer {
+    height: 30px;
+  }
 `;
 const StyledSlideshow = styled(SlideShow)`
   margin: -20px 30px 0px 30px;
@@ -103,7 +106,7 @@ class ServicePage extends React.Component {
         const imgSrc = `https://s3.ca-central-1.amazonaws.com/3lpm/website/images/before-and-after-pics/${photoSrc}`;
         return (
           <div key={key}>
-            <SlickSlide src={imgSrc} alt="" />
+            <SlickSlide src={imgSrc} alt="Before and After Photos" />
           </div>
         );
       }
@@ -123,8 +126,6 @@ class ServicePage extends React.Component {
         >
           <CardHeader
             title={section.title}
-            actAsExpander
-            showExpandableButton
             titleStyle={{
               fontSize: '1.2em',
               marginTop: '10px',
@@ -139,11 +140,11 @@ class ServicePage extends React.Component {
                 if (subsection.list !== undefined) {
                   return (
                     <div key={`${subsection.title}${i}`}>
-                      {subsection.title !== '' &&
-                      subsection.mainTitle === true ? (
-                        <h4>{subsection.title}</h4>
-                      ) : (
+                      {subsection.title && subsection.title !== '' ?
+                      (
                         <h5>{subsection.title}</h5>
+                      ) : (
+                        <div className="spacer" />
                       )}
                       <ul>
                         {subsection.list.map((body) => {
@@ -160,11 +161,11 @@ class ServicePage extends React.Component {
                 // else render section as regular paragraphs
                 return (
                   <div key={`${subsection.title}${i}`}>
-                    {subsection.title !== '' &&
-                    subsection.mainTitle === true ? (
-                      <h4>{subsection.title}</h4>
-                    ) : (
+                    {subsection.title && subsection.title !== '' ?
+                    (
                       <h5>{subsection.title}</h5>
+                    ) : (
+                      <div className="spacer" />
                     )}
                     {subsection.text.map((body) => {
                       return (

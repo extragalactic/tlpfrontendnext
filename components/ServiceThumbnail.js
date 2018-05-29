@@ -9,14 +9,14 @@ import { Router } from '../routes';
 
 const StyledServiceThumbnail = styled.section`
   padding: 0px 5px 5px 5px;
-  width: 95wh;
+  width: 95vw;
   text-align: center;
 
   p {
     font-size: 1.0em;
     text-align: center;
     text-justify: auto;
-    max-width: 500px; 
+    max-width: 500px;
     display: inline-block;
   }
   img {
@@ -31,7 +31,7 @@ const ServiceThumbnail = (props) => {
   return (
     <StyledServiceThumbnail>
       <h3>{props.service.title}</h3>
-      <img src={`https://s3.ca-central-1.amazonaws.com/3lpm/website/images/services/${props.service.imgSrc}`} alt="" />
+      <img src={`https://s3.ca-central-1.amazonaws.com/3lpm/website/images/services/${props.service.imgSrc}`} alt={`"${props.service.pageName}"`} />
       <div>
         <p>{props.service.summary}</p>
         <div>

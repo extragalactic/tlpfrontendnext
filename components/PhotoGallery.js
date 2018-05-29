@@ -11,6 +11,10 @@ import GalleryDetail from './GalleryDetail';
 const StyledGallery = styled.section`
   width: 100%;
   padding-top: 5px;
+
+  .spacer {
+    height: 25px;
+  }
 `;
 
 class PhotoGallery extends React.Component {
@@ -114,7 +118,7 @@ class PhotoGallery extends React.Component {
         </MediaQuery>
         {this.state.numberToShow < this.numberTotal && (
           <div>
-            <h3>. . .</h3>
+            <div className="spacer"><p>. . .</p></div>
             <FlatButton
               labelStyle={{ fontSize: '1.0em', padding: '5px 10px' }}
               label="See more photos"

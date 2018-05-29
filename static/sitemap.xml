@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
-  <url>
-    <loc>https://threelittlepigsmasonry.com</loc> 
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://threelittlepigsmasonry.ca/</loc>
+  <lastmod>2018-05-28T21:37:46+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://threelittlepigsmasonry.ca/services/refacing</loc>
+  <lastmod>2018-05-28T21:37:46+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://threelittlepigsmasonry.ca/services/flagstone</loc>
+  <lastmod>2018-05-28T21:37:46+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://threelittlepigsmasonry.ca/services/walls</loc>
+  <lastmod>2018-05-28T21:37:46+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://threelittlepigsmasonry.ca/services/masonry</loc>
+  <lastmod>2018-05-28T21:37:46+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://threelittlepigsmasonry.ca/services/foundation</loc>
+  <lastmod>2018-05-28T21:37:46+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://threelittlepigsmasonry.ca/services/concrete</loc>
+  <lastmod>2018-05-28T21:37:46+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.90</priority>
+</url>
+
 </urlset>

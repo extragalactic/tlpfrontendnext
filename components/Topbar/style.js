@@ -24,7 +24,7 @@ export const StyledLargeHeader = styled.div`
   position: relative;
   top: 0;
   z-index: 1039;
-  textalign: center;
+  textAlign: center;
 `;
 
 export const StyledLargeHeaderButtons = styled.div`
