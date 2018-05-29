@@ -18,6 +18,7 @@ export const StyledLogo = styled.div`
 
 export const StyledLargeHeader = styled.div`
   flex-direction: row;
+  flex-wrap: wrap;
   display: flex;
   background-color: #eee;
   width: 100%;
@@ -34,7 +35,7 @@ export const StyledLargeHeaderButtons = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   @media (max-width: 750px) {
-    display: none;
+    width: 95%;
   }
 `;
 
@@ -71,6 +72,7 @@ export const StyledSmallHeaderButtons = styled.div`
   width: 50% flex;
   align-items: center;
   justify-content: center;
+  padding-top: 5px;
 `;
 
 export const StyledSmallHeaderEstimate = styled.div`

@@ -32,6 +32,9 @@ const StyledSlideshow = styled(SlideShow)`
 const SlickSlide = styled.img`
   height: 45vw;
   width: 98%;
+  @media (max-width: 750px) {
+    height: 90vw;
+  }
 `;
 const StyledMain = styled.div`
   padding: 40px 5px 30px 5px;
@@ -191,6 +194,7 @@ class ServicePage extends React.Component {
   render() {
     // removes the dots from the interface
     const Decorators = defaultDecorators.slice(0, 2);
+    const smallScreen = window.matchMedia('(max-width: 750px)');
 
     return (
       <StyledServicePage>
@@ -198,8 +202,8 @@ class ServicePage extends React.Component {
         <Carousel
           autoplay={false}
           wrapAround
-          slidesToShow={2}
-          slidesToScroll={2}
+          slidesToShow={smallScreen.matches ? 1 : 2}
+          slidesToScroll={smallScreen.matches ? 1 : 2}
           cellSpacing={5}
           style={{ marginTop: '-20px' }}
           afterSlide={this.handleAfterSlide}

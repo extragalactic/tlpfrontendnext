@@ -13,7 +13,7 @@ export default ({ onClick, containerStyle }) => {
       <FlatButton
         label="Services"
         onClick={() => {
-          onClick('services');
+          location.assign('/services/refacing');
         }}
       />
       <FlatButton

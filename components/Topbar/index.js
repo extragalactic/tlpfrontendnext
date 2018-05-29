@@ -57,6 +57,7 @@ class TopBar extends React.Component {
 
   render() {
     const { handleClick } = this.props;
+    // Note: "Large" refers to the normal menu, "Small" is the thin & WIDE menu for big screens, "Tiny" is the actual smallest one for small screens
     return (
       <DynamicHeader hasEffect effectDuration={600} useHeadersDifference>
         <StyledLargeHeader>
@@ -109,6 +110,7 @@ class TopBar extends React.Component {
             />
           </StyledSmallHeaderEstimate>
         </StyledSmallHeader>
+
       </DynamicHeader>
     );
   }
