@@ -26,7 +26,6 @@ const StyledApp = styled.section`
   width: 100%;
   flex: 1;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 'lighter';
 `;
 
 class Index extends Component {

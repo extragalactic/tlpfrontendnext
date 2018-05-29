@@ -110,7 +110,7 @@ const GalleryDetail = (props) => {
             >
               <img
                 src={props.selectedPhoto}
-                alt=""
+                alt="sample work"
               />
             </StyledGalleryDetail>
           </div>
@@ -125,38 +125,6 @@ const GalleryDetail = (props) => {
     </StyledGetQuote>
   );
 };
-
-
-/*
-
-<Ionicon icon="ion-close-circled" fontSize="35px" color="#c00" />
-
-            <RaisedButton
-              label="return"
-              secondary
-              onTouchTap={props.closeModal}
-            />
-*/
-
-/*
-          <StyledSlideshow {...gallerySettings}>
-            {getSlides(props.photos)}
-          </StyledSlideshow>
-*/
-
-/*
-        <div>
-          <StyledGalleryDetail
-            onClick={() => { props.closeModal(); }}
-          >
-            <img
-              src={props.selectedPhoto}
-              alt=""
-            />
-          </StyledGalleryDetail>
-        </div>
-          
-*/
 
 GalleryDetail.propTypes = {
   selectedPhoto: PropTypes.string.isRequired,

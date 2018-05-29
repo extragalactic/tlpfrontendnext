@@ -87,7 +87,7 @@ const StyledPhoneSection = styled.div`
     padding-top: 5px;
     padding-bottom: 25px;
     margin-top -14px;
-  }  
+  }
 `;
 
 const TopCarousel = props => {
@@ -109,55 +109,55 @@ const TopCarousel = props => {
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_a.jpeg"
-            alt=""
+            alt="intro slide 1"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_douglas_b.jpeg"
-            alt=""
+            alt="intro slide 2"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro2.jpg"
-            alt=""
+            alt="intro slide 3"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro4.jpg"
-            alt=""
+            alt="intro slide 4"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro1.jpg"
-            alt=""
+            alt="intro slide 5"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/intro3.jpg"
-            alt=""
+            alt="intro slide 6"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_mark.jpeg"
-            alt=""
+            alt="intro slide 7"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_sai.jpeg"
-            alt=""
+            alt="intro slide 8"
           />
         </div>
         <div>
           <SlickSlide
             src="https://s3.ca-central-1.amazonaws.com/3lpm/website/images/intro/main_stone.jpeg"
-            alt=""
+            alt="intro slide 9"
           />
         </div>
       </Carousel>

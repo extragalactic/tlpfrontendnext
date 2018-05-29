@@ -72,7 +72,7 @@ class Header extends Component {
             }
           `}
         </style>
-        <img className="sc-header--img" src={this.props.imageUrl} alt="" />
+        <img className="sc-header--img" src={this.props.imageUrl} alt="pigbot" />
         <div className="sc-header--team-name"> {this.props.teamName} </div>
         <div className="sc-header--close-button" onClick={this.props.onClose}>
           <CloseIcon className="img" style={{ color: '#fff' }} />
