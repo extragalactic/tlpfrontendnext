@@ -5,6 +5,7 @@ import TopCarousel from './TopCarousel';
 import ServicesThumbContainer from './ServicesThumbContainer';
 import AboutUs from './AboutUs';
 import Testimonials from './Testimonials';
+import TestimonialsHomeStars from './TestimonialsHomeStars';
 import Contact from './Contact';
 import TextDivider from './TextDivider';
 import PhotoGallery from './PhotoGallery';
@@ -111,7 +112,7 @@ class MainPage extends React.Component {
             <ServicesThumbContainer />
           </div>
           <div id="about-us" className="anchorDiv" />
-          <div >
+          <div>
             <AboutUs />
           </div>
           <TextDivider quoteID={1} />
@@ -122,6 +123,9 @@ class MainPage extends React.Component {
           <div id="testimonials" className="anchorDiv" />
           <div>
             <Testimonials />
+          </div>
+          <div>
+            <TestimonialsHomeStars />
           </div>
           <div id="service-area" className="anchorDiv" />
           <div>

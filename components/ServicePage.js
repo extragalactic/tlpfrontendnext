@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import SlideShow from 'react-slick';
+// import SlideShow from 'react-slick';
 import Carousel from 'nuka-carousel';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import ServiceData from './ServiceData';
-
+import { Card, CardHeader, CardText } from 'material-ui/Card';
+import MediaQuery from 'react-responsive';
 import defaultDecorators from 'nuka-carousel/lib/decorators';
+
+import ServiceData from './ServiceData';
 
 const StyledServicePage = styled.section`
   padding: 5px;
@@ -26,9 +27,9 @@ const StyledServicePage = styled.section`
     height: 30px;
   }
 `;
-const StyledSlideshow = styled(SlideShow)`
-  margin: -20px 30px 0px 30px;
-`;
+// const StyledSlideshow = styled(SlideShow)`
+//   margin: -20px 30px 0px 30px;
+// `;
 const SlickSlide = styled.img`
   height: 45vw;
   width: 98%;
@@ -143,8 +144,7 @@ class ServicePage extends React.Component {
                 if (subsection.list !== undefined) {
                   return (
                     <div key={`${subsection.title}${i}`}>
-                      {subsection.title && subsection.title !== '' ?
-                      (
+                      {subsection.title && subsection.title !== '' ? (
                         <h5>{subsection.title}</h5>
                       ) : (
                         <div className="spacer" />
@@ -164,8 +164,7 @@ class ServicePage extends React.Component {
                 // else render section as regular paragraphs
                 return (
                   <div key={`${subsection.title}${i}`}>
-                    {subsection.title && subsection.title !== '' ?
-                    (
+                    {subsection.title && subsection.title !== '' ? (
                       <h5>{subsection.title}</h5>
                     ) : (
                       <div className="spacer" />
@@ -194,23 +193,40 @@ class ServicePage extends React.Component {
   render() {
     // removes the dots from the interface
     const Decorators = defaultDecorators.slice(0, 2);
-    const smallScreen = window.matchMedia('(max-width: 750px)');
 
     return (
       <StyledServicePage>
         <h1>{this.serviceData.title}</h1>
-        <Carousel
-          autoplay={false}
-          wrapAround
-          slidesToShow={smallScreen.matches ? 1 : 2}
-          slidesToScroll={smallScreen.matches ? 1 : 2}
-          cellSpacing={5}
-          style={{ marginTop: '-20px' }}
-          afterSlide={this.handleAfterSlide}
-          decorators={Decorators}
-        >
-          {this.getSlides()}
-        </Carousel>
+
+        <MediaQuery maxWidth={750}>
+          <Carousel
+            autoplay={false}
+            wrapAround
+            slidesToShow={1}
+            slidesToScroll={1}
+            cellSpacing={5}
+            style={{ marginTop: '-20px' }}
+            afterSlide={this.handleAfterSlide}
+            decorators={Decorators}
+          >
+            {this.getSlides()}
+          </Carousel>
+        </MediaQuery>
+        <MediaQuery minWidth={751}>
+          <Carousel
+            autoplay={false}
+            wrapAround
+            slidesToShow={2}
+            slidesToScroll={2}
+            cellSpacing={5}
+            style={{ marginTop: '-20px' }}
+            afterSlide={this.handleAfterSlide}
+            decorators={Decorators}
+          >
+            {this.getSlides()}
+          </Carousel>
+        </MediaQuery>
+
         <StyledMain>
           <div>{this.getContent()}</div>
         </StyledMain>

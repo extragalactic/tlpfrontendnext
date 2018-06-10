@@ -72,6 +72,9 @@ const StyledQuoteRequest = styled.div`
     }
   }
 `;
+const StyledHomeStarsBadge = styled.div`
+  padding: 10px;
+`;
 const StyledPhoneSection = styled.div`
   padding: 3px 3px 7px 10px;
   background-color: rgba(0,0,0,0.5);
@@ -194,6 +197,15 @@ const TopCarousel = props => {
             </div>
           </StyledPhoneSection>
         </StyledQuoteRequest>
+        <MediaQuery minWidth={625}>
+          <StyledHomeStarsBadge>
+            <img
+              src="https://cdn.homestars.com/assets/boa_resources/2018/HS-BOA-2018-Logo-3fcf7004a6509b21380f0952182f2c1d.png"
+              width="150"
+              alt="HomeStars 2018 badge"
+            />
+          </StyledHomeStarsBadge>
+        </MediaQuery>
       </StyledCarouselContent>
     </TopDiv>
   );

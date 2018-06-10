@@ -22,7 +22,7 @@ if (!process.tapEventInjected) {
 const StyledApp = styled.section`
   text-align: center;
   position: relative;
-  margin: -8px;
+  margin: 0px;
   width: 100%;
   flex: 1;
   font-family: 'Open Sans', sans-serif;

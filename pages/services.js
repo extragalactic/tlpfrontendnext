@@ -1,22 +1,21 @@
-import React from "react";
-import Head from "next/head";
-import styled from "styled-components";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import muiTheme from "../components/styles/muiTheme";
-import GlobalStyles from "../components/styles/globalStyles";
-import TopBar from "../components/Topbar";
-import Footer from "../components/Footer";
-import ServicesPageMain from "../components/ServicePageMain";
+import React from 'react';
+import Head from 'next/head';
+import styled from 'styled-components';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import muiTheme from '../components/styles/muiTheme';
+import GlobalStyles from '../components/styles/globalStyles';
+import TopBar from '../components/Topbar';
+import Footer from '../components/Footer';
+import ServicesPageMain from '../components/ServicePageMain';
 import StructuredData from '../components/StructuredData';
-
 
 const StyledApp = styled.section`
   text-align: center;
   position: relative;
-  margin: -8px;
+  margin: 0px;
   width: 100%;
   flex: 1;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 `;
 
 class Services extends React.Component {
@@ -25,20 +24,20 @@ class Services extends React.Component {
     if (process.browser) {
       userAgent = navigator.userAgent;
     } else {
-      userAgent = req.headers["user-agent"];
+      userAgent = req.headers['user-agent'];
     }
-    const amp = query.amp == "1";
+    const amp = query.amp == '1';
     const url = req ? req.url : window.location.href;
-    const ampUrl = amp ? url.replace("?amp=1", "") : `${url}?amp=1`;
+    const ampUrl = amp ? url.replace('?amp=1', '') : `${url}?amp=1`;
 
     return { userAgent, query, ampUrl };
   }
 
   state = {
-    isOpen: false
+    isOpen: false,
   };
   handleClick = () => {
-    this.setState(currentState => {
+    this.setState((currentState) => {
       return { isOpen: !currentState.isOpen };
     });
   };

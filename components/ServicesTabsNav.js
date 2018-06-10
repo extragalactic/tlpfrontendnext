@@ -8,17 +8,19 @@ import ServiceData from './ServiceData';
 import ServicePage from './ServicePage';
 import ServiceThumbnail from './ServiceThumbnail';
 
-
 // styled-components needs this small workaround to pass in a custom prop when wrapping another component to prevent an 'unknown prop' warning
-const StyledTabs = styled(({ isBottomRow, ...rest }) => { return <Tabs {...rest} />; })`
-  margin-top: ${(props) => { return props.isBottomRow ? 0 : 30; }}px;
+const StyledTabs = styled(({ isBottomRow, ...rest }) => {
+  return <Tabs {...rest} />;
+})`
+  margin-top: ${(props) => {
+    return props.isBottomRow ? 0 : 30;
+  }}px;
+  overflow-x: hidden;
 `;
 
 // create all tabs for wide screens
 const allServicesTabs = ServiceData.map((service, i) => {
-  return (
-    <Tab label={service.pageName} value={i} key={service.pageName} />
-  );
+  return <Tab label={service.pageName} value={i} key={service.pageName} />;
 });
 
 // split the tabs menu into 2 rows on small screens
@@ -36,7 +38,6 @@ const servicesTabsRow2 = ServiceData.map((service, i) => {
   }
   return val;
 });
-
 
 class ServicesTabsNav extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class ServicesTabsNav extends React.Component {
     }, 10);
   }
 
-  // **** 
+  // ****
   // Note: need to updateHeight onResize (via react-window-resize-listener maybe?)
   // ****
 
@@ -81,25 +82,24 @@ class ServicesTabsNav extends React.Component {
     if (this.props.bIsMainPage) {
       return ServiceData.map((service) => {
         return (
-          <div key={service.pageName}>
+          <div key={service.pageName} style={{ overflowX: 'hidden' }}>
             <ServiceThumbnail service={service} />
           </div>
         );
       });
-    } else {
-      return ServiceData.map((service) => {
-        return (
-          <div key={service.pageName} style={{ overflowY: 'auto' }}>
-            <ServicePage 
-              serviceType={service.pageName}
-              openChat={this.props.openChat}
-              refresh={this.refresh}
-              selectedTab={this.state.selectedTab}
-            />
-          </div>
-        );
-      });
     }
+    return ServiceData.map((service) => {
+      return (
+        <div key={service.pageName} style={{ overflowY: 'auto' }}>
+          <ServicePage
+            serviceType={service.pageName}
+            openChat={this.props.openChat}
+            refresh={this.refresh}
+            selectedTab={this.state.selectedTab}
+          />
+        </div>
+      );
+    });
   }
 
   render() {
@@ -134,7 +134,9 @@ class ServicesTabsNav extends React.Component {
           onChangeIndex={this.handleChange}
           animateHeight={this.props.variableHeight}
           animateTransitions={false}
-          ref={(view) => { this.swipeableViewsRef = view; }}
+          ref={(view) => {
+            this.swipeableViewsRef = view;
+          }}
         >
           {this.allServices()}
         </SwipeableViews>

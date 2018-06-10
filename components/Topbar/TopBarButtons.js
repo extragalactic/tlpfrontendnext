@@ -13,7 +13,9 @@ export default ({ onClick, containerStyle }) => {
       <FlatButton
         label="Services"
         onClick={() => {
-          location.assign('/services/refacing');
+          // Note: jumping direct to page is breaking on the first visit using SSR
+          // location.assign('/services/refacing');
+          onClick('services');
         }}
       />
       <FlatButton
